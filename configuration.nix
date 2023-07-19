@@ -10,6 +10,7 @@
       <home-manager/nixos>
       ./hardware-configuration.nix
       ./nvidia.nix
+      ./packages.nix
     ];
 
   fonts.fonts = with pkgs; [
