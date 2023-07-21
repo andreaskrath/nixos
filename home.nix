@@ -28,6 +28,7 @@
     bitwarden
     brave
     discord
+    qbittorrent
   ];
 
   # Let home-manager install and manage itself
