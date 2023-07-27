@@ -15,6 +15,7 @@
 
     # terminal tools
     git
+    lazygit
     bat
     tree
 
