@@ -16,6 +16,7 @@
       "......" = "cd ../../../";
       update = "sudo nixos-rebuild switch";
       setup_env = "touch .envrc && touch shell.nix && echo 'use nix' >> .envrc && echo '(import /etc/nixos/shells/PLACEHOLDER.nix)' >> shell.nix && echo 'replace PLACEHOLDER in shell.nix and type: direnv allow'";
+      lg = "lazygit";
     };
 
     initExtra = ''
