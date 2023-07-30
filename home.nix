@@ -44,4 +44,9 @@
     enableZshIntegration = true;
   };
   programs.bash.enable = true;
+
+  programs.lazygit = {
+    enable = true;
+    settings.promptToReturnFromSubprocess = false;
+  };
 }
