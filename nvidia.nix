@@ -3,7 +3,7 @@
   # Nvidia Configurations
   hardware = {
     opengl.enable = true;
-    nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+    nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
   };
