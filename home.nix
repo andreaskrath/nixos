@@ -28,7 +28,10 @@
     spotify
     bitwarden
     brave
-    discord
+    (discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
     qbittorrent
   ];
 
