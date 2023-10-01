@@ -8,5 +8,10 @@ pkgs.mkShell {
     lazydocker
   ];
 
+  shellHook =
+  ''
+    export PATH="$PATH:/home/krath/.dotnet/tools"
+  '';
+
   DOTNET_ROOT="${pkgs.dotnet-sdk_8}";
 }
