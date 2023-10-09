@@ -9,6 +9,9 @@ pkgs.mkShell {
     rust-analyzer
     vscode-extensions.rust-lang.rust-analyzer
 
+    # tool for deployment
+    cargo-shuttle
+
     # required for things like tokio
     pkg-config
     openssl
