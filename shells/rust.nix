@@ -1,22 +1,18 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { overlays = [ (import <rust-overlay>) ];} }:
+let
+  rust = pkgs.rust-bin.stable.latest.default.override {
+    extensions = [ "rust-src" ];
+  };
+in
 pkgs.mkShell {
-  nativeBuildInputs = with pkgs; [
-    gcc
-    rustc
-    cargo
-    rustfmt
-    clippy
-    rust-analyzer
+  buildInputs = with pkgs; [
+    rust
     vscode-extensions.rust-lang.rust-analyzer
-
-    # tool for deployment
-    cargo-shuttle
 
     # required for things like tokio
     pkg-config
     openssl
   ];
 
-  RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-  RUST_BACKTRACE = "1";
+  RUST_BACKTRACE = "full";
 }
