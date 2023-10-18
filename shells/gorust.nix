@@ -1,5 +1,9 @@
-{ pkgs ? import <nixpkgs> {} }:
-
+{ pkgs ? import <nixpkgs> { overlays = [ (import <rust-overlay>) ];} }:
+let
+  rust = pkgs.rust-bin.stable.latest.default.override {
+    extensions = [ "rust-src" ];
+  };
+in
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     # both
@@ -11,15 +15,9 @@ pkgs.mkShell {
     vscode-extensions.golang.go
 
     # rust
-    rustc
-    cargo
-    rustfmt
-    clippy
-    rust-analyzer
+    rust
     vscode-extensions.rust-lang.rust-analyzer
   ];
 
-  # rust env
-  RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
   RUST_BACKTRACE = "1";
 }
