@@ -16,5 +16,5 @@ pkgs.mkShell {
     openssl
   ];
 
-  RUST_BACKTRACE = "full";
+  RUST_BACKTRACE = "1";
 }
