@@ -1,4 +1,4 @@
-{config, ... }:
+{ pkgs, config, lib, ... }:
 {
   # Nvidia Configurations
   hardware = {
@@ -10,10 +10,16 @@
   services = {
     xserver = {
       enable = true;
-      # configures desktop and display managers
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.wayland = false; # disables wayland 
+      desktopManager.xterm.enable = false;
+      displayManager.lightdm.enable = true;
+      windowManager.session = lib.singleton {
+        name = "xsession";
+        start = pkgs.writeScript "xsession" ''
+          #!${pkgs.runtimeShell}
+          echo "No windowManager specified, use ~/.XSession"
+          exit 1
+        '';
+      };
       # configures keymap in X11
       layout = "dk";
       xkbVariant = "";

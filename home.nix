@@ -17,6 +17,10 @@ in
   imports = [
     ./git.nix
     ./zsh.nix
+    ./i3.nix
+    ./rofi.nix
+    ./redshift.nix
+    ./alacritty.nix
   ];
 
   home.username = "krath";
