@@ -10,7 +10,8 @@
       <home-manager/nixos>
       ./hardware-configuration.nix
       ./nvidia.nix
-      ./packages.nix
+      ./games.nix
+      ./docker.nix
     ];
 
   fonts.packages = with pkgs; [
@@ -93,7 +94,7 @@
   users.users.krath = {
     isNormalUser = true;
     description = "Krath";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
   };
   programs.zsh.enable = true;
@@ -104,7 +105,6 @@
     useUserPackages = true;
     users.krath = import ./home.nix;
   };
-  
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
