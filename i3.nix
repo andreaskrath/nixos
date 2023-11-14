@@ -24,6 +24,11 @@ let
   font_weight = "Bold";
 in
 {
+  home.packages = with pkgs; [
+    xrandr
+    xinput
+  ];
+
   programs.i3status.enable = true;
   programs.feh.enable = true;
   xsession.enable = true;
@@ -100,7 +105,7 @@ in
           notification = false;
         }
         {
-          command = ''xinput set-prop "pointer:Logitech G903 LS" "libinput Middle Emulation Enabled" 0'';
+          command = ''${pkgs.xorg.xinput}/bin/xinput set-prop "pointer:Logitech G903 LS" "libinput Middle Emulation Enabled" 0'';
           always = true;
           notification = false;
         }
@@ -108,19 +113,19 @@ in
     };
 
     extraConfig = ''
-      set $${m1} "DP-2"
-      set $${m2} "DP-4"
+      set ${m1} "DP-2"
+      set ${m2} "DP-4"
 
-      workspace ${ws1} output $${m2}
-      workspace ${ws2} output $${m2}
-      workspace ${ws3} output $${m2}
-      workspace ${ws4} output $${m2}
-      workspace ${ws5} output $${m2}
-      workspace ${ws6} output $${m2}
-      workspace ${ws7} output $${m2}
-      workspace ${ws8} output $${m2}
-      workspace ${ws9} output $${m1}
-      workspace ${ws10} output $${m1}
+      workspace ${ws1} output ${m2}
+      workspace ${ws2} output ${m2}
+      workspace ${ws3} output ${m2}
+      workspace ${ws4} output ${m2}
+      workspace ${ws5} output ${m2}
+      workspace ${ws6} output ${m2}
+      workspace ${ws7} output ${m2}
+      workspace ${ws8} output ${m2}
+      workspace ${ws9} output ${m1}
+      workspace ${ws10} output ${m1}
 
       for_window [class="wow.exe"] move to workspace ${ws5}
       for_window [class="Spotify"] move to workspace ${ws10}
