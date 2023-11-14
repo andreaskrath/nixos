@@ -25,6 +25,7 @@ let
 in
 {
   programs.i3status.enable = true;
+  programs.feh.enable = true;
   xsession.enable = true;
   xsession.windowManager.i3 = {
     enable = true;
@@ -89,21 +90,15 @@ in
 
       startup = [
         {
-          command = "echo dinmor";
-          always = true;
-          notification = false;
-        }
-        {
           command = "--no-startup-id ${pkgs.xorg.xrandr}/bin/xrandr --output ${m2_port} --auto --right-of ${m1_port}";
           always = true;
           notification = false;
         }
-
-        # {
-        #   command = "${pkgs.feh}/bin/feh --bg-scale ~/background.png";
-        #   always = true;
-        #   notification = false;
-        # }
+        {
+          command = "${pkgs.feh}/bin/feh --bg-scale wallpaper.png";
+          always = true;
+          notification = false;
+        }
       ];
     };
 
@@ -125,6 +120,5 @@ in
       for_window [class="wow.exe"] move to workspace ${ws5}
       for_window [class="Spotify"] move to workspace ${ws10}
     '';
-      # for_window [class="Lutris"] move to workspace ${ws4}
   };
 }
