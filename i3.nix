@@ -25,8 +25,8 @@ let
 in
 {
   home.packages = with pkgs; [
-    xrandr
-    xinput
+    xorg.xrandr
+    xorg.xinput
   ];
 
   programs.i3status.enable = true;
