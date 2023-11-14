@@ -99,6 +99,11 @@ in
           always = true;
           notification = false;
         }
+        {
+          command = ''xinput set-prop "pointer:Logitech G903 LS" "libinput Middle Emulation Enabled" 0'';
+          always = true;
+          notification = false;
+        }
       ];
     };
 
