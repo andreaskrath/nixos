@@ -12,6 +12,9 @@ pkgs.mkShell {
     # required for things like tokio
     pkg-config
     openssl
+
+    # command runner
+    just
   ];
 
   RUST_BACKTRACE = "full";
