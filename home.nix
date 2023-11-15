@@ -18,6 +18,7 @@ in
     ./git.nix
     ./zsh.nix
     ./i3.nix
+    ./i3status.nix
     ./rofi.nix
     ./redshift.nix
     ./alacritty.nix

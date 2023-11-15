@@ -29,7 +29,6 @@ in
     xorg.xinput
   ];
 
-  programs.i3status.enable = true;
   programs.feh.enable = true;
   xsession.enable = true;
   xsession.windowManager.i3 = {
