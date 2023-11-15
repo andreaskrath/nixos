@@ -45,15 +45,14 @@
           max_threshold = 5;
         };
       };
-    # currently not working, unsure of how to get working
-    #   "ethernet eth0" = {
-    #     enable = true;
-    #     position = 5;
-    #     settings = {
-    #       format_up = "↑ %speed_up%";
-    #       format_down = "↓ %speed_down%";
-    #     };
-    #   };
+      # "ethernet _first_" = {
+      #   enable = true;
+      #   position = 5;
+      #   settings = {
+      #     format_up = "↑ %speed_up";
+      #     format_down = "↓ %speed_down";
+      #   };
+      # };
       "disk /" = {
         enable = true;
         position = 6;

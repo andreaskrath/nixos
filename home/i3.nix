@@ -21,6 +21,7 @@ let
   # fonts
   fira_code = "Fira Code";
   fira_code_symbols = "Fira Code Symbols";
+  fira_code_nerd_font = "Fira Code Nerd Font";
   font_weight = "Bold";
 in
 {
@@ -45,14 +46,14 @@ in
           command = "${pkgs.i3}/bin/i3bar";
           statusCommand = "${pkgs.i3status}/bin/i3status";
           fonts = {
-            names = [ "${fira_code}" "${fira_code_symbols}" ];
+            names = [ "${fira_code}" "${fira_code_symbols}" "${fira_code_nerd_font}"];
             style = "${font_weight}";
             size = 12.0;
           };
       }];
 
       fonts = {
-        names = [ "${fira_code}" "${fira_code_symbols}" ];
+        names = [ "${fira_code}" "${fira_code_symbols}" "${fira_code_nerd_font}"];
         style = "${font_weight}";
         size = 12.0;
       };
@@ -99,7 +100,7 @@ in
           notification = false;
         }
         {
-          command = "${pkgs.feh}/bin/feh --bg-scale wallpaper.png";
+          command = "${pkgs.feh}/bin/feh --bg-scale /etc/nixos/home/wallpaper.png";
           always = true;
           notification = false;
         }

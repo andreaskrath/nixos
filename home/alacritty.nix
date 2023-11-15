@@ -15,7 +15,7 @@
       };
 
       font = {
-        normal.family = "Fira Code";
+        normal.family = "Fira Code Nerd Font";
         size = 16.0;
       };
 
