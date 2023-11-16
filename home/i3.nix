@@ -28,6 +28,8 @@ in
   home.packages = with pkgs; [
     xorg.xrandr
     xorg.xinput
+    xclip
+    maim
   ];
 
   programs.feh.enable = true;
@@ -91,6 +93,7 @@ in
         "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
         "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
         "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
+        "${modifier}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
       };
 
       startup = [
