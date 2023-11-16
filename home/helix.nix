@@ -48,6 +48,9 @@
         space.w = ":w";
         space.q = ":q";
       };
+      keys.normal."+" = {
+        t = ":run-shell-command just test";
+      };
     };
 
     languages = {
