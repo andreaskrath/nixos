@@ -8,6 +8,7 @@
     ./rofi.nix
     ./redshift.nix
     ./alacritty.nix
+    ./helix.nix
     ./discord.nix
   ];
 
