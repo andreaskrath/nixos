@@ -9,6 +9,7 @@
       nil # nix lsp
       nixpkgs-fmt # nix formatter
       rust-analyzer # rust lsp
+      taplo # toml toolkit
     ];
     
     settings = {
