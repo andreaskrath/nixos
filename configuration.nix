@@ -5,12 +5,12 @@
       <home-manager/nixos>
       ./hardware-configuration.nix
       ./nvidia.nix
-      ./games.nix
-      ./docker.nix
-      ./fonts.nix
-      ./boot.nix
-      ./network.nix
-      ./audio.nix
+      ./system/games.nix
+      ./system/docker.nix
+      ./system/fonts.nix
+      ./system/boot.nix
+      ./system/network.nix
+      ./system/audio.nix
     ];
 
   # Set your time zone.
