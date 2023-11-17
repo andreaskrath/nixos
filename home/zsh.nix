@@ -45,7 +45,8 @@ in
         if [ $? -eq 0 ]; then
           echo "$content" > justfile
           echo "Fetched $lang justfile and saved as 'justfile'."
-          echo "Make sure to check the contents of the justfile, and make appropriate modifications if necessary."
+          echo "Make sure to check the contents of the justfile, and make appropriate modifications if necessary:"
+          ${pkgs.bat}/bin/bat justfile        
         else
           echo "Could not fetch $lang justfile from the repository. Ensure that '$lang' is spelled correctly and matches a justfile in the repository."
         fi
