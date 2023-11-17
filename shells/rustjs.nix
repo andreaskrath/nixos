@@ -5,7 +5,7 @@ let
   };
 in
 pkgs.mkShell {
-  nativeBuildInputs = with pkgs; [
+  buildInputs = with pkgs; [
     rust
     vscode-extensions.rust-lang.rust-analyzer
 
