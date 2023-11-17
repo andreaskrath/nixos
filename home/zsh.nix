@@ -20,7 +20,6 @@
     };
 
     initExtra = ''
-      export VISUAL="code -nw" # allows for the "sudo -e" command to open in vscode
       eval "$(direnv hook zsh)"
     '';
 
