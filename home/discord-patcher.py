@@ -1,3 +1,6 @@
+# credit goes to github user "sersorrel" for creating this script
+# https://github.com/NixOS/nixpkgs/issues/195512#issuecomment-1813210210
+
 import sys
 import shutil
 

@@ -1,3 +1,6 @@
+# credit goes to github user "eyJhb" for creating this module
+# https://github.com/NixOS/nixpkgs/issues/195512#issuecomment-1814318443
+
 { config, pkgs, lib, ... }:
 let
   cfg = config.programs.discord;
