@@ -15,12 +15,25 @@
       "...." = "cd ../../";
       "......" = "cd ../../../";
       update = "sudo nixos-rebuild switch";
-      setup_env = "touch .envrc && touch shell.nix && echo 'use nix' >> .envrc && echo '(import /etc/nixos/shells/PLACEHOLDER.nix)' >> shell.nix && echo 'replace PLACEHOLDER in shell.nix and type: direnv allow'";
       lg = "lazygit";
     };
 
     initExtra = ''
       eval "$(direnv hook zsh)"
+      # a function to setup direnv based on predefined shells in /etc/nix/shells
+      setup_env() {
+        if [ -z "$1" ]; then
+          echo "Please specify which shell you wish to utilize. Available options are:"
+          ls /etc/nixos/shells
+          return 1
+        fi
+
+        echo "use nix" > .envrc
+        echo "(import /etc/nixos/shells/$1.nix)" > shell.nix
+        direnv allow
+
+        echo "Nix environment setup is complete."
+      }
     '';
 
     oh-my-zsh = {
