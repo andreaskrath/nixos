@@ -8,7 +8,6 @@ in
 pkgs.mkShell {
   buildInputs = with pkgs; [
     rust
-    vscode-extensions.rust-lang.rust-analyzer
     cargo-leptos
     cargo-generate
     trunk

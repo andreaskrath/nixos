@@ -16,7 +16,6 @@ pkgs.mkShell {
 
     # rust
     rust
-    vscode-extensions.rust-lang.rust-analyzer
   ];
 
   RUST_BACKTRACE = "1";
