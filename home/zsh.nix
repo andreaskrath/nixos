@@ -47,7 +47,7 @@ in
           echo "Fetched $lang justfile and saved as 'justfile'."
           echo "Make sure to check the contents of the justfile, and make appropriate modifications if necessary."
         else
-          echo "Could not fetch $lang justfile from the repository. Ensure that '$lang' is spelled correctly and matches the contents of the repository."
+          echo "Could not fetch $lang justfile from the repository. Ensure that '$lang' is spelled correctly and matches a justfile in the repository."
         fi
       }
 
