@@ -1,8 +1,8 @@
 { pkgs, lib, ... }:
 let
   # monitors
-  m1 = "m1"; # left monitor
-  m2 = "m2"; # right monitor
+  m1 = "$m1"; # left monitor
+  m2 = "$m2"; # right monitor
   m1_port = "DP-2";
   m2_port = "DP-4";
 
@@ -116,19 +116,19 @@ in
     };
 
     extraConfig = ''
-      set $${m1} "DP-2"
-      set $${m2} "DP-4"
+      set ${m1} "DP-2"
+      set ${m2} "DP-4"
 
-      workspace ${ws1} output $${m2}
-      workspace ${ws2} output $${m2}
-      workspace ${ws3} output $${m2}
-      workspace ${ws4} output $${m2}
-      workspace ${ws5} output $${m2}
-      workspace ${ws6} output $${m2}
-      workspace ${ws7} output $${m2}
-      workspace ${ws8} output $${m2}
-      workspace ${ws9} output $${m1}
-      workspace ${ws10} output $${m1}
+      workspace ${ws1} output ${m2}
+      workspace ${ws2} output ${m2}
+      workspace ${ws3} output ${m2}
+      workspace ${ws4} output ${m2}
+      workspace ${ws5} output ${m2}
+      workspace ${ws6} output ${m2}
+      workspace ${ws7} output ${m2}
+      workspace ${ws8} output ${m2}
+      workspace ${ws9} output ${m1}
+      workspace ${ws10} output ${m1}
 
       for_window [class="wow.exe"] move to workspace ${ws5}
       for_window [class="Spotify"] move to workspace ${ws10}
