@@ -15,7 +15,10 @@ pkgs.mkShell {
 
     # command runner
     just
-  ];
+
+    # watch cargo commands
+    cargo-watch
+    ];
 
   RUST_BACKTRACE = "full";
 }
