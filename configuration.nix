@@ -4,7 +4,7 @@
     [ # Include the results of the hardware scan.
       <home-manager/nixos>
       ./hardware-configuration.nix
-      ./nvidia.nix
+      ./system/display.nix
       ./system/games.nix
       ./system/docker.nix
       ./system/fonts.nix
