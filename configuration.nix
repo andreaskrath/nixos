@@ -47,7 +47,7 @@
     isNormalUser = true;
     description = "Krath";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    packages = [];
   };
   programs.zsh.enable = true;
   
