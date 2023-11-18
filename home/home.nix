@@ -17,13 +17,7 @@
   home.homeDirectory = "/home/krath";
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
-    # terminal setup
-    zsh
-    oh-my-zsh
-
     # terminal tools
-    git
-    lazygit
     bat
     tree
 
