@@ -10,6 +10,7 @@
     ./alacritty.nix
     ./helix.nix
     ./discord.nix
+    ./tmux.nix
   ];
 
   home.username = "krath";
