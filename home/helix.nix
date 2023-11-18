@@ -12,6 +12,7 @@
       nil # nix lsp
       rust-analyzer # rust lsp
       taplo # toml toolkit
+      gopls # go lsp
     ];
 
     settings = {
@@ -92,6 +93,10 @@
             };
           };
         };
+      };
+
+      language-server.gopls = {
+        command = "${pkgs.gopls}/bin/gopls";
       };
     };
   };
