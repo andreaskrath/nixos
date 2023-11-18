@@ -1,6 +1,6 @@
-{ pkgs ? import <nixpkgs> { overlays = [ (import <rust-overlay>) ];} }:
+{ pkgs ? import <nixpkgs> { overlays = [ (import <rust-overlay>) ]; } }:
 let
-  rust = pkgs.rust-bin.selectLatestNightlyWith(toolchain: toolchain.default.override {
+  rust = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
     extensions = [ "rust-src" ];
     targets = [ "wasm32-unknown-unknown" ];
   });

@@ -26,7 +26,7 @@
       # configures gpu drivers
       videoDrivers = [ "nvidia" ];
       # dpi = 96; #fixes screen resolutions
-      
+
       # fix screen tearing - https://nixos.wiki/wiki/Nvidia#Fix_screen_tearing
       screenSection = ''
         Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"

@@ -1,4 +1,4 @@
-{ pkgs,... }:
+{ pkgs, ... }:
 let
   owner = "andreaskrath";
   repo = "justfiles";

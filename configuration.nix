@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       <home-manager/nixos>
       ./hardware-configuration.nix
       ./system/display.nix
@@ -41,16 +42,16 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  environment.shells = with pkgs; [zsh];
+  environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   users.users.krath = {
     isNormalUser = true;
     description = "Krath";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = [];
+    packages = [ ];
   };
   programs.zsh.enable = true;
-  
+
   # home-manager setup
   home-manager = {
     useGlobalPkgs = true;
@@ -60,7 +61,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

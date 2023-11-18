@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     jetbrains.rider
@@ -6,9 +6,9 @@ pkgs.mkShell {
   ];
 
   shellHook =
-  ''
-    export PATH="$PATH:/home/krath/.dotnet/tools"
-  '';
+    ''
+      export PATH="$PATH:/home/krath/.dotnet/tools"
+    '';
 
-  DOTNET_ROOT="${pkgs.dotnet-sdk_8}";
+  DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
 }
