@@ -10,7 +10,6 @@
     extraPackages = with pkgs; [
       marksman # markdown lsp
       nil # nix lsp
-      # nixpkgs-fmt # nix formatter
       rust-analyzer # rust lsp
       taplo # toml toolkit
     ];
@@ -59,9 +58,6 @@
     languages = {
       language-server.nil = {
         command = "${pkgs.nil}/bin/nil";
-        # config = {
-        #   formatting.command = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
-        # };
       };
 
       language-server.rust-analyzer = {
