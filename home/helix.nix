@@ -50,6 +50,8 @@
       keys.normal = {
         space.w = ":w";
         space.q = ":q";
+        space.c = ":buffer-close";
+        space.C = ":buffer-close!";
       };
       keys.normal."+" = {
         t = ":run-shell-command just test";
