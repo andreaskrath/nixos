@@ -33,105 +33,110 @@ in
   ];
 
   programs.feh.enable = true;
-  xsession.enable = true;
-  xsession.windowManager.i3 = {
+  xsession = {
     enable = true;
+    windowManager.i3 = {
+      enable = true;
 
-    config = rec {
-      modifier = "Mod4";
-      focus.followMouse = false;
-      floating.titlebar = false;
-      terminal = "alacritty";
+      config = rec {
+        modifier = "Mod4";
+        focus = {
+          followMouse = false;
+          mouseWarping = false;
+        };
+        floating.titlebar = false;
+        terminal = "alacritty";
 
-      bars = [{
+        bars = [{
           id = "bar-default";
           command = "${pkgs.i3}/bin/i3bar";
           statusCommand = "${pkgs.i3status}/bin/i3status";
           fonts = {
-            names = [ "${fira_code}" "${fira_code_symbols}" "${fira_code_nerd_font}"];
+            names = [ "${fira_code}" "${fira_code_symbols}" "${fira_code_nerd_font}" ];
             style = "${font_weight}";
             size = 12.0;
           };
-      }];
+        }];
 
-      fonts = {
-        names = [ "${fira_code}" "${fira_code_symbols}" "${fira_code_nerd_font}"];
-        style = "${font_weight}";
-        size = 12.0;
+        fonts = {
+          names = [ "${fira_code}" "${fira_code_symbols}" "${fira_code_nerd_font}" ];
+          style = "${font_weight}";
+          size = 12.0;
+        };
+
+        assigns = {
+          "${ws1}" = [{ class = "^Brave-browser$"; } { class = "^brave-browser$"; }];
+          "${ws2}" = [{ class = "^Alacritty$"; }];
+          "${ws3}" = [{ class = "^code$"; } { class = "^Code$"; }];
+          "${ws4}" = [{ class = "^steam$"; } { class = "^Lutris$"; } { class = "^lutris$"; } { class = "^battle.net.exe$"; }];
+          "${ws5}" = [{ class = "^wow.exe$"; }];
+          "${ws6}" = [{ class = "^obsidian$"; }];
+          # "${ws7}" = [{ class = "^brave-browser$"; }];
+          # "${ws8}" = [{ class = "^brave-browser$"; }];
+          "${ws9}" = [{ class = "^discord$"; }];
+          "${ws10}" = [{ class = "^spotify$"; }];
+        };
+
+        window = {
+          border = 0;
+          titlebar = false;
+        };
+
+        gaps = {
+          inner = 15;
+          outer = 5;
+        };
+
+        keybindings = lib.mkOptionDefault {
+          # "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
+          # "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
+          "XF86AudioMute" = "exec amixer set Master toggle";
+          "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
+          "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
+          "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+          "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
+          "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
+          "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
+          "${modifier}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
+        };
+
+        startup = [
+          {
+            command = "--no-startup-id ${pkgs.xorg.xrandr}/bin/xrandr --output ${m2_port} --auto --right-of ${m1_port}";
+            always = true;
+            notification = false;
+          }
+          {
+            command = "${pkgs.feh}/bin/feh --bg-scale /etc/nixos/home/wallpaper.png";
+            always = true;
+            notification = false;
+          }
+          {
+            command = ''${pkgs.xorg.xinput}/bin/xinput set-prop "pointer:Logitech G903 LS" "libinput Middle Emulation Enabled" 0'';
+            always = true;
+            notification = false;
+          }
+        ];
       };
 
-      assigns = {
-        "${ws1}" = [ { class = "^Brave-browser$"; } { class = "^brave-browser$"; } ];
-        "${ws2}" = [ { class = "^Alacritty$"; } ];
-        "${ws3}" = [ { class = "^code$"; } { class = "^Code$"; } ];
-        "${ws4}" = [ { class = "^steam$"; } { class = "^Lutris$"; } { class = "^lutris$"; } { class = "^battle.net.exe$"; } ];
-        "${ws5}" = [ { class = "^wow.exe$"; } ];
-        # "${ws6}" = [{ class = "^brave-browser$"; }];
-        # "${ws7}" = [{ class = "^brave-browser$"; }];
-        # "${ws8}" = [{ class = "^brave-browser$"; }];
-        "${ws9}" = [ { class = "^discord$"; } ];
-        "${ws10}" = [ { class = "^spotify$"; } ];
-      };
+      extraConfig = ''
+        set ${m1} "DP-2"
+        set ${m2} "DP-4"
 
-      window = {
-        border = 0;
-        titlebar = false;
-      };
+        workspace ${ws1} output ${m2}
+        workspace ${ws2} output ${m2}
+        workspace ${ws3} output ${m2}
+        workspace ${ws4} output ${m2}
+        workspace ${ws5} output ${m2}
+        workspace ${ws6} output ${m2}
+        workspace ${ws7} output ${m2}
+        workspace ${ws8} output ${m2}
+        workspace ${ws9} output ${m1}
+        workspace ${ws10} output ${m1}
 
-      gaps = {
-        inner = 15;
-        outer = 5;
-      };
-
-      keybindings = lib.mkOptionDefault {
-        # "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
-        # "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
-        "XF86AudioMute" = "exec amixer set Master toggle";
-        "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
-        "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
-        "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
-        "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
-        "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
-        "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
-        "${modifier}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
-      };
-
-      startup = [
-        {
-          command = "--no-startup-id ${pkgs.xorg.xrandr}/bin/xrandr --output ${m2_port} --auto --right-of ${m1_port}";
-          always = true;
-          notification = false;
-        }
-        {
-          command = "${pkgs.feh}/bin/feh --bg-scale /etc/nixos/home/wallpaper.png";
-          always = true;
-          notification = false;
-        }
-        {
-          command = ''${pkgs.xorg.xinput}/bin/xinput set-prop "pointer:Logitech G903 LS" "libinput Middle Emulation Enabled" 0'';
-          always = true;
-          notification = false;
-        }
-      ];
+        for_window [class="wow.exe"] move to workspace ${ws5}
+        for_window [class="Spotify"] move to workspace ${ws10}
+      '';
     };
-
-    extraConfig = ''
-      set ${m1} "DP-2"
-      set ${m2} "DP-4"
-
-      workspace ${ws1} output ${m2}
-      workspace ${ws2} output ${m2}
-      workspace ${ws3} output ${m2}
-      workspace ${ws4} output ${m2}
-      workspace ${ws5} output ${m2}
-      workspace ${ws6} output ${m2}
-      workspace ${ws7} output ${m2}
-      workspace ${ws8} output ${m2}
-      workspace ${ws9} output ${m1}
-      workspace ${ws10} output ${m1}
-
-      for_window [class="wow.exe"] move to workspace ${ws5}
-      for_window [class="Spotify"] move to workspace ${ws10}
-    '';
   };
 }
