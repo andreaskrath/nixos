@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  home.packages = [
+    pkgs.nixpkgs-fmt
+  ];
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -11,7 +14,7 @@
       rust-analyzer # rust lsp
       taplo # toml toolkit
     ];
-    
+
     settings = {
       theme = "autumn";
       editor = {
