@@ -19,10 +19,9 @@
     secureSocket = true;
     sensibleOnTop = true;
     shell = "${pkgs.zsh}/bin/zsh";
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
 
     extraConfig = ''
-      set-option -sa terminal-overrides ",xterm*:Tc"
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
       set -sg escape-time 0
