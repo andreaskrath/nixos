@@ -16,7 +16,7 @@
 
       font = {
         normal.family = "Fira Code Nerd Font";
-        size = 16.0;
+        size = 15.0;
       };
 
       shell = { program = "${pkgs.zsh}/bin/zsh"; };
