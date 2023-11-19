@@ -47,7 +47,7 @@
   users.users.krath = {
     isNormalUser = true;
     description = "Krath";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "dialout" "video" ];
     packages = [ ];
   };
   programs.zsh.enable = true;
