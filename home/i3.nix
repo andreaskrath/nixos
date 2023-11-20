@@ -102,11 +102,6 @@ in
 
         startup = [
           {
-            command = "--no-startup-id ${pkgs.xorg.xrandr}/bin/xrandr --output ${m2_port} --auto --right-of ${m1_port}";
-            always = true;
-            notification = false;
-          }
-          {
             command = "${pkgs.feh}/bin/feh --bg-scale /etc/nixos/home/wallpaper.png";
             always = true;
             notification = false;
