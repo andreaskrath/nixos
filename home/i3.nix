@@ -115,8 +115,8 @@ in
       };
 
       extraConfig = ''
-        set ${m1} "DP-2"
-        set ${m2} "DP-4"
+        set ${m1} "${m1_port}"
+        set ${m2} "${m2_port}"
 
         workspace ${ws1} output ${m2}
         workspace ${ws2} output ${m2}
