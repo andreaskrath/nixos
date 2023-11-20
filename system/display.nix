@@ -64,10 +64,10 @@
           exit 1
         '';
       };
-      # configures keymap in X11
-      layout = "dk";
-      xkbVariant = "";
-      # configures gpu drivers
+      xkb = {
+        variant = "";
+        layout = "dk";
+      };
       videoDrivers = [ "nvidia" ];
       # dpi = 96; #fixes screen resolutions
 
