@@ -10,6 +10,7 @@
   services = {
     xserver = {
       enable = true;
+      xautolock.enable = false;
       desktopManager.xterm.enable = false;
       displayManager.lightdm.enable = true;
       windowManager.session = lib.singleton {
