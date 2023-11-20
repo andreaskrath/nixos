@@ -51,6 +51,7 @@ in
           id = "bar-default";
           command = "${pkgs.i3}/bin/i3bar";
           statusCommand = "${pkgs.i3status}/bin/i3status";
+          trayOutput = "primary";
           fonts = {
             names = [ "${fira_code}" "${fira_code_symbols}" "${fira_code_nerd_font}" ];
             style = "${font_weight}";
