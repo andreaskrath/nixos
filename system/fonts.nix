@@ -6,13 +6,14 @@
       fira-code-symbols
       fira-code-nerdfont
       dejavu_fonts
+      open-sans
     ];
 
     fontconfig = {
       enable = true;
       defaultFonts = {
         serif = [ "DejaVu Serif" ];
-        sansSerif = [ "DejaVu Sans " ];
+        sansSerif = [ "Open Sans" ];
         monospace = [ "Fira Code Nerd Font" ];
       };
     };
