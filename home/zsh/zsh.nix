@@ -7,6 +7,7 @@ in
 {
   home.packages = with pkgs; [
     curl
+    (import /etc/nixos/home/zsh/scripts/setup_env.nix { inherit pkgs; })
   ];
   programs.zsh = {
     enable = true;
@@ -51,21 +52,6 @@ in
         else
           echo "Could not fetch $lang justfile from the repository. Ensure that '$lang' is spelled correctly and matches a justfile in the repository."
         fi
-      }
-
-      # a function to setup direnv based on predefined shells in /etc/nix/shells
-      setup_env() {
-        if [ -z "$1" ]; then
-          echo "Please specify which shell you wish to utilize. Available options are:"
-          ls /etc/nixos/shells
-          return 1
-        fi
-
-        echo "use nix" > .envrc
-        echo "(import /etc/nixos/shells/$1.nix)" > shell.nix
-        direnv allow
-
-        echo "Nix environment setup is complete."
       }
     '';
 
