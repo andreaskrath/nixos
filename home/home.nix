@@ -2,14 +2,14 @@
 {
   imports = [
     ./git.nix
-    ./zsh.nix
+    ./zsh/zsh.nix
     ./i3.nix
     ./i3status.nix
     ./rofi.nix
     ./redshift.nix
     ./alacritty.nix
     ./helix.nix
-    ./discord.nix
+    ./discord/discord.nix
     ./tmux.nix
   ];
 
