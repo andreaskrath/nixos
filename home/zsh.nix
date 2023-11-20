@@ -23,6 +23,7 @@ in
       "...." = "cd ../../";
       "......" = "cd ../../../";
       switch = "sudo nixos-rebuild switch";
+      boot = "sudo nixos-rebuild boot";
       lg = "lazygit";
     };
 
