@@ -8,6 +8,8 @@ in
   home.packages = with pkgs; [
     curl
     (import /etc/nixos/home/zsh/scripts/setup_env.nix { inherit pkgs; })
+    lazygit
+    bat
   ];
   programs.zsh = {
     enable = true;
@@ -19,13 +21,13 @@ in
       xo = "xdg-open";
       ll = "ls -l";
       la = "ls -A";
-      cat = "bat";
+      cat = "${pkgs.bat}/bin/bat";
       ".." = "cd ../";
       "...." = "cd ../../";
       "......" = "cd ../../../";
       switch = "sudo nixos-rebuild switch";
       boot = "sudo nixos-rebuild boot";
-      lg = "lazygit";
+      lg = "${pkgs.lazygit}/bin/lazygit";
     };
 
     initExtra = ''
