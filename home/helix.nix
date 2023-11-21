@@ -22,6 +22,7 @@
         middle-click-paste = false;
         shell = [ "${pkgs.zsh}/bin/zsh" "-c" ];
         line-number = "relative";
+        color-modes = true;
         auto-completion = true;
         auto-format = true;
         idle-timeout = 200;
