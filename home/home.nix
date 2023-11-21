@@ -48,7 +48,14 @@
 
   programs.lazygit = {
     enable = true;
-    settings.promptToReturnFromSubprocess = false;
+    settings = {
+      promptToReturnFromSubprocess = false;
+      gui = {
+        border = "single";
+        mouseEvents = false;
+        showBottomLine = false;
+      };      
+    };
   };
 
   programs.discord = {
