@@ -4,7 +4,7 @@ let
 in
 pkgs.writeShellApplication {
   name = "setup_env";
-  runtimeInputs = [];
+  runtimeInputs = [ ];
   text = ''
     set +o nounset
     
