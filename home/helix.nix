@@ -50,7 +50,9 @@
       };
       keys.normal = {
         space.w = ":w";
+        space.W = ":w!";
         space.q = ":q";
+        space.Q = ":q!";
         space.c = ":buffer-close";
         space.C = ":buffer-close!";
       };
