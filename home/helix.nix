@@ -48,13 +48,16 @@
           };
         };
       };
+
       keys.normal = {
-        space.w = ":w";
-        space.W = ":w!";
-        space.q = ":q";
-        space.Q = ":q!";
-        space.c = ":buffer-close";
-        space.C = ":buffer-close!";
+        space = {
+          w = ":w";
+          W = ":w!";
+          q = ":q";
+          Q = ":q!";
+          c = ":buffer-close";
+          C = ":buffer-close!";
+        };
       };
     };
 
