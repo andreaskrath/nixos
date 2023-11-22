@@ -25,12 +25,9 @@ let
   font_weight = "Bold";
 in
 {
-  home.packages = with pkgs; [
-    xorg.xrandr
-    xorg.xinput
-    xclip
-    maim
-  ];
+  # home.packages = [
+    # findutils
+  # ];
 
   programs.feh.enable = true;
   xsession = {
