@@ -14,6 +14,8 @@
         };
       };
 
+      cursor.style.shape = "Beam";
+
       font = {
         normal.family = "Fira Code Nerd Font";
         size = 15.0;
