@@ -11,6 +11,7 @@
     ./helix.nix
     ./discord/discord.nix
     ./tmux.nix
+    ./gtk.nix
   ];
 
   home.username = "krath";
