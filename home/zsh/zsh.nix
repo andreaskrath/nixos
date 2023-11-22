@@ -1,10 +1,8 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = [
     (import /etc/nixos/home/zsh/scripts/setup_env.nix { inherit pkgs; })
     (import /etc/nixos/home/zsh/scripts/justfiles.nix { inherit pkgs; })
-    lazygit
-    bat
   ];
   programs.zsh = {
     enable = true;
