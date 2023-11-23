@@ -24,7 +24,7 @@
         enable = true;
         position = 2;
         settings = {
-          format = " %usage";
+          format = "  %usage";
           max_threshold = 80;
         };
       };
@@ -41,7 +41,7 @@
         enable = true;
         position = 4;
         settings = {
-          format = "󰟦 %1min";
+          format = "󰟦  %1min";
           max_threshold = 5;
         };
       };
@@ -64,7 +64,7 @@
         enable = true;
         position = 7;
         settings = {
-          format = " %volume";
+          format = "  %volume";
           mixer = "Master";
         };
       };
@@ -72,7 +72,7 @@
         enable = true;
         position = 8;
         settings = {
-          format = "󰥔 %Y-%m-%d %H:%M:%S";
+          format = "󰥔  %Y-%m-%d %H:%M:%S";
         };
       };
     };
