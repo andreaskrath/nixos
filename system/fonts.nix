@@ -7,6 +7,7 @@
       fira-code-nerdfont
       dejavu_fonts
       open-sans
+      cascadia-code
     ];
 
     fontconfig = {
@@ -14,7 +15,7 @@
       defaultFonts = {
         serif = [ "DejaVu Serif" ];
         sansSerif = [ "Open Sans" ];
-        monospace = [ "Fira Code Nerd Font" ];
+        monospace = [ "Cascadia Mono" ];
       };
     };
   };
