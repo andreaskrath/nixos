@@ -11,8 +11,11 @@
     ./helix.nix
     ./discord/discord.nix
     ./tmux/tmux.nix
+    ./tmux/tmuxinator-service.nix
     ./gtk.nix
   ];
+
+  systemd.user.startServices = true;
 
   home.username = "krath";
   home.homeDirectory = "/home/krath";
