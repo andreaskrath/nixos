@@ -2,7 +2,6 @@
 {
   imports =
     [
-      # Include the results of the hardware scan.
       <home-manager/nixos>
       ./hardware-configuration.nix
       ./system/display.nix
@@ -48,9 +47,8 @@
   users.defaultUserShell = pkgs.zsh;
   users.users.krath = {
     isNormalUser = true;
-    description = "Krath";
+    description = "krath";
     extraGroups = [ "networkmanager" "wheel" "docker" "dialout" "video" ];
-    packages = [ ];
   };
   programs.zsh.enable = true;
 
