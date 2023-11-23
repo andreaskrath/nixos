@@ -18,11 +18,6 @@ let
   ws9 = "9";
   ws10 = "10";
 
-  # fonts
-  fira_code = "Fira Code";
-  fira_code_symbols = "Fira Code Symbols";
-  fira_code_nerd_font = "Fira Code Nerd Font";
-  font_weight = "Bold";
 in
 {
   # home.packages = [
@@ -50,16 +45,16 @@ in
           statusCommand = "${pkgs.i3status}/bin/i3status";
           trayOutput = "primary";
           fonts = {
-            names = [ "${fira_code}" "${fira_code_symbols}" "${fira_code_nerd_font}" ];
-            style = "${font_weight}";
+            names = [ "Cascadia Mono" ];
+            style = "Bold";
             size = 12.0;
           };
         }];
 
         fonts = {
-          names = [ "${fira_code}" "${fira_code_symbols}" "${fira_code_nerd_font}" ];
-          style = "${font_weight}";
-          size = 12.0;
+            names = [ "Cascadia Mono" ];
+            style = "Bold";
+            size = 12.0;
         };
 
         assigns = {
