@@ -17,7 +17,10 @@
       cursor.style.shape = "Beam";
 
       font = {
-        normal.family = "Fira Code Nerd Font";
+        normal = {
+          family = "Cascadia Mono";
+          style = "Bold";
+        };
         size = 15.0;
       };
 
