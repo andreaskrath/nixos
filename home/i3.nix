@@ -17,13 +17,8 @@ let
   ws8 = "8";
   ws9 = "9";
   ws10 = "10";
-
 in
 {
-  # home.packages = [
-    # findutils
-  # ];
-
   programs.feh.enable = true;
   xsession = {
     enable = true;
