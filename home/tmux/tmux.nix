@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   programs.tmux = {
+    tmuxinator.enable = true;
     enable = true;
     package = pkgs.tmux;
     aggressiveResize = false;
@@ -26,10 +27,10 @@
       bind % split-window -h -c "#{pane_current_path}"
       set -sg escape-time 0
     '';
-    plugins = with pkgs; [
-      tmuxPlugins.vim-tmux-navigator
+    plugins = with pkgs.tmuxPlugins; [
+      vim-tmux-navigator
       {
-        plugin = tmuxPlugins.catppuccin;
+        plugin = catppuccin;
         extraConfig = ''
           set -g @catppuccin_window_right_separator "█ "
           set -g @catppuccin_window_number_position "left"
@@ -45,21 +46,6 @@
           set -g @catppuccin_status_left_separator "█"
           set -g @catppuccin_status_right_separator "█"
           set -g @catppuccin_directory_text "#{pane_current_path}"
-
-        '';
-      }
-      {
-        plugin = tmuxPlugins.resurrect;
-        extraConfig = ''
-          set -g @resurrect-capture-pane-conents 'on'
-        '';
-      }
-      {
-        plugin = tmuxPlugins.continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-boot 'on'
-          set -g @continuum-save-internal '5'
         '';
       }
     ];

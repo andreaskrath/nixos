@@ -10,7 +10,7 @@
     ./alacritty.nix
     ./helix.nix
     ./discord/discord.nix
-    ./tmux.nix
+    ./tmux/tmux.nix
     ./gtk.nix
   ];
 
