@@ -5,7 +5,7 @@
 
     settings = {
       window = {
-        title = "Console";
+        title = "Terminal";
         opacity = 1.0;
         padding = { y = 5; x = 5; };
         dimensions = {
