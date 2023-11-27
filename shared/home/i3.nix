@@ -66,8 +66,8 @@ in
 
         keybindings = lib.mkOptionDefault {
           "XF86AudioMute" = "exec amixer set Master toggle";
-          "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
-          "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
+          "XF86AudioLowerVolume" = "exec amixer set Master 5%-";
+          "XF86AudioRaiseVolume" = "exec amixer set Master 5%+";
           "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
           "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
           "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
