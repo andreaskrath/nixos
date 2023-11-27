@@ -5,7 +5,6 @@
     grub = {
       enable = true;
       devices = [ "nodev" ];
-      useOSProber = true; # checks for multiple OS
       efiSupport = true;
     };
     efi = {
