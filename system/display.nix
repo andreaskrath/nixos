@@ -1,8 +1,5 @@
 { pkgs, config, lib, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    xorg.xrandr
-  ];
   # Nvidia Configurations
   hardware = {
     opengl.enable = true;
