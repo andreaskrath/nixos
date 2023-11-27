@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = [
-    (import /etc/nixos/home/zsh/scripts/setup_env.nix { inherit pkgs; })
-    (import /etc/nixos/home/zsh/scripts/justfiles.nix { inherit pkgs; })
+    (import /etc/nixos/shared/home/zsh/scripts/setup_env.nix { inherit pkgs; })
+    (import /etc/nixos/shared/home/zsh/scripts/justfiles.nix { inherit pkgs; })
   ];
   programs.zsh = {
     enable = true;
