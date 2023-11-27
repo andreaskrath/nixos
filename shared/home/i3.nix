@@ -1,11 +1,5 @@
 { pkgs, lib, ... }:
 let
-  # monitors
-  m1 = "$m1"; # left monitor
-  m2 = "$m2"; # right monitor
-  m1_port = "DP-2";
-  m2_port = "DP-4";
-
   # workspaces
   ws1 = "1";
   ws2 = "2";
@@ -19,7 +13,6 @@ let
   ws10 = "10";
 in
 {
-  programs.feh.enable = true;
   xsession = {
     enable = true;
     windowManager.i3 = {
@@ -56,11 +49,7 @@ in
           "${ws1}" = [{ class = "^Brave-browser$"; } { class = "^brave-browser$"; }];
           "${ws2}" = [{ class = "^Alacritty$"; }];
           "${ws3}" = [{ class = "^code$"; } { class = "^Code$"; }];
-          "${ws4}" = [{ class = "^steam$"; } { class = "^Lutris$"; } { class = "^lutris$"; } { class = "^battle.net.exe$"; }];
-          "${ws5}" = [{ class = "^wow.exe$"; }];
           "${ws6}" = [{ class = "^obsidian$"; }];
-          # "${ws7}" = [{ class = "^brave-browser$"; }];
-          # "${ws8}" = [{ class = "^brave-browser$"; }];
           "${ws9}" = [{ class = "^discord$"; }];
           "${ws10}" = [{ class = "^spotify$"; }];
         };
@@ -76,8 +65,6 @@ in
         };
 
         keybindings = lib.mkOptionDefault {
-          # "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
-          # "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
           "XF86AudioMute" = "exec amixer set Master toggle";
           "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
           "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
@@ -90,12 +77,7 @@ in
 
         startup = [
           {
-            command = "${pkgs.feh}/bin/feh --bg-scale /etc/nixos/home/wallpaper.png";
-            always = true;
-            notification = false;
-          }
-          {
-            command = ''${pkgs.xorg.xinput}/bin/xinput set-prop "pointer:Logitech G903 LS" "libinput Middle Emulation Enabled" 0'';
+            command = "${pkgs.feh}/bin/feh --bg-scale /etc/nixos/shared/home/wallpaper.png";
             always = true;
             notification = false;
           }
@@ -103,21 +85,6 @@ in
       };
 
       extraConfig = ''
-        set ${m1} "${m1_port}"
-        set ${m2} "${m2_port}"
-
-        workspace ${ws1} output ${m2}
-        workspace ${ws2} output ${m2}
-        workspace ${ws3} output ${m2}
-        workspace ${ws4} output ${m2}
-        workspace ${ws5} output ${m2}
-        workspace ${ws6} output ${m2}
-        workspace ${ws7} output ${m2}
-        workspace ${ws8} output ${m2}
-        workspace ${ws9} output ${m1}
-        workspace ${ws10} output ${m1}
-
-        for_window [class="wow.exe"] move to workspace ${ws5}
         for_window [class="Spotify"] move to workspace ${ws10}
       '';
     };

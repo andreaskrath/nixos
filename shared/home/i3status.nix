@@ -70,7 +70,7 @@
       };
       "time" = {
         enable = true;
-        position = 8;
+        position = 9;
         settings = {
           format = "󰥔  %Y-%m-%d %H:%M:%S";
         };
