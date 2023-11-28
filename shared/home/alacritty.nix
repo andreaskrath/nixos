@@ -21,7 +21,6 @@
           family = "Cascadia Mono";
           style = "Bold";
         };
-        size = 15.0;
       };
 
       shell = { program = "${pkgs.zsh}/bin/zsh"; };
