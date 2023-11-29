@@ -5,13 +5,7 @@
       <home-manager/nixos>
       /etc/nixos/hosts/desktop/hardware-configuration.nix
       /etc/nixos/hosts/desktop/system/system.nix
-
-      /etc/nixos/system/display.nix
-      /etc/nixos/system/docker.nix
-      /etc/nixos/system/fonts.nix
-      /etc/nixos/system/boot.nix
-      /etc/nixos/system/network.nix
-      /etc/nixos/system/audio.nix
+      /etc/nixos/shared/system/system.nix
     ];
 
   fileSystems."/mnt/external" = {
