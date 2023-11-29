@@ -20,6 +20,7 @@ in
 
       config = rec {
         modifier = "Mod4";
+        defaultWorkspace = "workspace ${ws1}";
         focus = {
           followMouse = false;
           mouseWarping = false;
