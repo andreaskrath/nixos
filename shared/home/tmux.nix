@@ -75,9 +75,9 @@ in
       text = ''
         find ${tmuxinatorBasePath} -maxdepth 1 -mindepth 1 -exec tmuxinator start -p {} \;
       '';
-      })
+    })
   ];
-  
+
   programs.tmux = {
     tmuxinator.enable = true;
     enable = true;
