@@ -6,6 +6,6 @@
   ];
 
   home.packages = [
-    (pkgs.callPackage ./monitor-script.nix {})
+    (pkgs.callPackage ./monitor-script.nix { })
   ];
 }
