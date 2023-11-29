@@ -33,7 +33,6 @@
         position = 3;
         settings = {
           format = " %degrees °C";
-          path = "/sys/devices/platform/coretemp.0/hwmon*/hwmon*/temp1_input";
           max_threshold = 80;
         };
       };

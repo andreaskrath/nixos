@@ -12,5 +12,8 @@
         low_threshold = 20;
       };
     };
+    "cpu_temperature 0" = {
+      settings.path = "/sys/devices/virtual/thermal/thermal_zone0/temp";
+    };
   };
 }
