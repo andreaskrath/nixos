@@ -1,1 +1,0 @@
-hosts/desktop/configuration.nix
