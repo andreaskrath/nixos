@@ -23,6 +23,7 @@
     # terminal tools
     bat
     tree
+    lf
 
     # text editors
     vscode
