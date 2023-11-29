@@ -41,9 +41,9 @@ in
         }];
 
         fonts = {
-            names = [ "Cascadia Mono" ];
-            style = "Bold";
-            size = 12.0;
+          names = [ "Cascadia Mono" ];
+          style = "Bold";
+          size = 12.0;
         };
 
         assigns = {
