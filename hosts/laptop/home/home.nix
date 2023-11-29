@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   imports = [
-    /etc/nixos/hosts/laptop/home/i3.nix
-    /etc/nixos/hosts/laptop/home/i3status.nix
-    /etc/nixos/hosts/laptop/home/alacritty.nix
+    ./i3.nix
+    ./i3status.nix
+    ./alacritty.nix
   ];
 
   home.packages = [

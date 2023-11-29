@@ -3,10 +3,10 @@
   imports =
     [
       <home-manager/nixos>
-      /etc/nixos/hosts/desktop/hardware-configuration.nix
-      /etc/nixos/hosts/desktop/system/system.nix
-      /etc/nixos/shared/system/system.nix
-      /etc/nixos/shared/base-config.nix
+      ./hardware-configuration.nix
+      ./system/system.nix
+      ../../shared/system/system.nix
+      ../../shared/base-config.nix
     ];
 
   fileSystems."/mnt/external" = {
@@ -19,8 +19,8 @@
     useUserPackages = true;
     users.krath = {
       imports = [
-        /etc/nixos/hosts/desktop/home/home.nix
-        /etc/nixos/shared/home/home.nix
+        ./home/home.nix
+        ../../shared/home/home.nix
       ];
     };
   };
