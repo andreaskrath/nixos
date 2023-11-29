@@ -56,7 +56,8 @@
         border = "single";
         mouseEvents = false;
         showBottomLine = false;
-      };      
+        mainPanelSplitMode = "horizontal";
+      };
     };
   };
 
