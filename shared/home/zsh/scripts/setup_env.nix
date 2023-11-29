@@ -33,7 +33,7 @@ pkgs.writeShellApplication {
     fi
 
     echo "use nix" > .envrc
-    echo "(import ${basePath}$1.nix)" > shell.nix
+    cat ${basePath}"$1".nix > shell.nix
     direnv allow
 
     echo "Nix shell setup is complete."
