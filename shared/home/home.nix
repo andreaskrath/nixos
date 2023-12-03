@@ -35,6 +35,7 @@
     bitwarden
     brave
     qbittorrent
+    vlc
   ];
 
   programs.home-manager.enable = true;
