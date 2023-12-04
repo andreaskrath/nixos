@@ -7,7 +7,6 @@ in
 pkgs.mkShell {
   buildInputs = with pkgs; [
     rust
-    vscode-extensions.rust-lang.rust-analyzer
 
     # required for things like tokio
     pkg-config
