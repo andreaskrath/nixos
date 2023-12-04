@@ -6,17 +6,7 @@ let
 in
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
-    # both
-    gcc
-
-    # golang
     go
-    gopls
-    vscode-extensions.golang.go
-
-    # rust
     rust
   ];
-
-  RUST_BACKTRACE = "1";
 }
