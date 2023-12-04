@@ -8,7 +8,7 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     rust
 
-    # required for things like tokio
+    # tokio
     pkg-config
     openssl
 
@@ -18,6 +18,6 @@ pkgs.mkShell {
     # watch cargo commands
     cargo-watch
   ];
-
-  RUST_BACKTRACE = "full";
+  # environment variables
+  # RUST_BACKTRACE = "1";
 }

@@ -13,7 +13,7 @@ pkgs.mkShell {
     trunk
     tailwindcss
 
-    # required for things like tokio
+    # tokio
     pkg-config
     openssl
 
@@ -28,5 +28,6 @@ pkgs.mkShell {
     nodePackages.typescript-language-server
   ];
 
-  RUST_BACKTRACE = "1";
+  # environment variables
+  # RUST_BACKTRACE = "1";
 }

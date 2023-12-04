@@ -30,5 +30,6 @@ pkgs.mkShell {
     nodePackages.typescript-language-server
   ];
 
-  RUST_BACKTRACE = "full";
+  # environment variables
+  # RUST_BACKTRACE = "full";
 }
