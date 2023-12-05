@@ -11,3 +11,13 @@ Instead, the configuration for a given machine is symlinked into the root of the
 # Considerations
 Personally, I am not a big fan of some of the file splitting this configuration leads to, as some of the host specific configuration files are only a couple of lines long and modify a single option.
 However, I do think that this structure allows for additions to be easy and rather simply, if further machines are added to the host list.
+
+# Channels
+I use the following channels for my configuration:
+
+```
+home-manager https://github.com/nix-community/home-manager/archive/master.tar.gz
+nixos https://nixos.org/channels/nixos-unstable
+nixpkgs https://nixos.org/channels/nixpkgs-unstable
+rust-overlay https://github.com/oxalica/rust-overlay/archive/master.tar.gz
+```
