@@ -36,6 +36,10 @@
           select = "underline";
         };
 
+        indent-guides = {
+          render = true;
+        };
+
         statusline = {
           separator = "|";
           left = [ "mode" "spinner" "version-control" "file-modification-indicator" ];
