@@ -40,13 +40,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-
-    enableBashIntegration = true;
-    enableZshIntegration = true;
-  };
   programs.bash.enable = true;
 
   programs.discord = {
