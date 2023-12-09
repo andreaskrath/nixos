@@ -12,6 +12,7 @@
     ./discord/discord.nix
     ./tmux.nix
     ./gtk.nix
+    ./direnv.nix
   ];
 
   systemd.user.startServices = true;
