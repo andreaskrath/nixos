@@ -40,8 +40,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.bash.enable = true;
-
   programs.discord = {
     enable = true;
     wrapDiscord = true;
