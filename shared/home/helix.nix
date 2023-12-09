@@ -28,8 +28,11 @@
         idle-timeout = 200;
         bufferline = "always";
         gutters = [ "diagnostics" "line-numbers" "spacer" "diff" ];
-        lsp.display-messages = true;
-
+        lsp = {
+          display-messages = true;
+          auto-signature-help = false;
+        };
+        
         cursor-shape = {
           normal = "block";
           insert = "bar";
