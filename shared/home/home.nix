@@ -49,19 +49,6 @@
   };
   programs.bash.enable = true;
 
-  programs.lazygit = {
-    enable = true;
-    settings = {
-      promptToReturnFromSubprocess = false;
-      gui = {
-        border = "single";
-        mouseEvents = false;
-        showBottomLine = false;
-        mainPanelSplitMode = "horizontal";
-      };
-    };
-  };
-
   programs.discord = {
     enable = true;
     wrapDiscord = true;

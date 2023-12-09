@@ -15,4 +15,17 @@
       user.signingkey = "~/.ssh/id_ed25519.pub";
     };
   };
+
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      promptToReturnFromSubprocess = false;
+      gui = {
+        border = "single";
+        mouseEvents = false;
+        showBottomLine = false;
+        mainPanelSplitMode = "horizontal";
+      };
+    };
+  };
 }
