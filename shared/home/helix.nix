@@ -28,6 +28,8 @@
         idle-timeout = 200;
         bufferline = "always";
         gutters = [ "diagnostics" "line-numbers" "spacer" "diff" ];
+        preview-completion-insert = false;
+        
         lsp = {
           display-messages = true;
           auto-signature-help = false;
