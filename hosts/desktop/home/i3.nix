@@ -21,7 +21,7 @@ in
     config = {
       assigns = lib.mkAfter {
         "${ws4}" = [{ class = "^steam$"; } { class = "^Lutris$"; } { class = "^lutris$"; } { class = "^battle.net.exe$"; }];
-        "${ws5}" = [{ class = "^wow.exe$"; }];
+        "${ws5}" = [{ class = "^wow.exe$"; } { class = "^pathofexile.exe$"; } ];
       };
 
       startup = lib.mkAfter [
