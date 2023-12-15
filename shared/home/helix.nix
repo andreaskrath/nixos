@@ -13,6 +13,7 @@
       rust-analyzer # rust lsp
       taplo # toml toolkit
       gopls # go lsp
+      lldb # debugger 
     ];
 
     settings = {
