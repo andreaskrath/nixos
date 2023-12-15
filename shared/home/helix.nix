@@ -115,6 +115,10 @@
       language-server.gopls = {
         command = "${pkgs.gopls}/bin/gopls";
       };
+
+      language-server.taplo = {
+        command = "${pkgs.taplo}/bin/taplo";
+      };
     };
   };
 }
