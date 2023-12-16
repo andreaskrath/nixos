@@ -14,6 +14,7 @@
       taplo # toml toolkit
       gopls # go lsp
       lldb # debugger 
+      python3
     ];
 
     settings = {
@@ -112,6 +113,35 @@
           };
         };
       };
+
+      language = [
+        {
+          name = "rust";
+          debugger = {
+            name = "lldb-vscode";
+            transport = "stdio";
+            command = "${pkgs.lldb}/bin/lldb-vscode";
+            templates = [
+              {
+                name = "binary";
+                request = "launch";
+                completion = [
+                   {
+                    name = "binary";
+                    completion = "filename";
+                  }
+                ];
+                args = {
+                  program = "{0}";
+                  initCommands = [
+                    "command script import /etc/nixos/shared/home/rustc_lldb.py"
+                  ];
+                };
+              }
+            ];
+          };
+        }
+      ];
 
       language-server.gopls = {
         command = "${pkgs.gopls}/bin/gopls";
