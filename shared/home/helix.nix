@@ -17,7 +17,7 @@
     ];
 
     settings = {
-      theme = "autumn";
+      theme = "onedark";
       editor = {
         mouse = false;
         middle-click-paste = false;
