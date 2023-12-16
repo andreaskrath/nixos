@@ -70,6 +70,7 @@
         };
         "C-j" = [ "delete_selection" "paste_after" ];
         "C-k" = [ "delete_selection" "move_line_up" "paste_before" ];
+        X = "extend_line_up";
       };
     };
 
