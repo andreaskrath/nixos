@@ -21,6 +21,7 @@
       switch = "sudo nixos-rebuild switch";
       boot = "sudo nixos-rebuild boot";
       lg = "${pkgs.lazygit}/bin/lazygit";
+      ld = "${pkgs.lazydocker}/bin/lazydocker";
     };
 
     initExtra = ''
