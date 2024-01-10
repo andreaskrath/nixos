@@ -1,7 +1,26 @@
 { pkgs, config, ... }:
 {
   hardware = {
-    nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
+    nvidia = {
+      package = config.boot.kernelPackages.nvidiaPackages.production;
+      modesetting.enable = false;
+      powerManagement = {
+        enable = false;
+        finegrained = false;
+      };
+      open = true;
+      nvidiaSettings = true;
+    };
+
+    opengl = {
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        rocm-opencl-icd
+        rocm-opencl-runtime
+      ];
+    };
+    
     cpu.intel.updateMicrocode = true;
   };
   services.xserver = {
