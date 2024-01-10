@@ -51,7 +51,7 @@ in
           "${ws2}" = [{ class = "^Alacritty$"; }];
           "${ws3}" = [{ class = "^code$"; } { class = "^Code$"; }];
           "${ws6}" = [{ class = "^obsidian$"; }];
-          "${ws9}" = [{ class = "^discord$"; }];
+          "${ws9}" = [{ class = "^vencorddesktop$"; } { class = "^VencordDesktop$"; }];
           "${ws10}" = [{ class = "^spotify$"; }];
         };
 

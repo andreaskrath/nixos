@@ -9,7 +9,6 @@
     ./redshift.nix
     ./alacritty.nix
     ./helix.nix
-    ./discord/discord.nix
     ./tmux.nix
     ./gtk.nix
     ./direnv.nix
@@ -37,12 +36,8 @@
     brave
     qbittorrent
     vlc
+    vesktop
   ];
 
   programs.home-manager.enable = true;
-
-  programs.discord = {
-    enable = true;
-    wrapDiscord = true;
-  };
 }
