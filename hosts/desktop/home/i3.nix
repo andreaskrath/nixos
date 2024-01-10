@@ -46,6 +46,7 @@ in
       workspace ${ws10} output ${m1_port}
   
       for_window [class="wow.exe"] move to workspace ${ws5}
+      for_window [class="awakened-poe-trade"] floating enable
     '';
   };
 }
