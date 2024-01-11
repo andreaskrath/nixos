@@ -37,6 +37,7 @@
     qbittorrent
     vlc
     vesktop
+    galculator
   ];
 
   programs.home-manager.enable = true;
