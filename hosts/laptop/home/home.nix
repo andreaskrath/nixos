@@ -6,7 +6,8 @@
     ./git.nix
   ];
 
-  home.packages = [
+  home.packages = with pkgs; [
     (pkgs.callPackage ./monitor-script.nix { })
+    libreoffice
   ];
 }
