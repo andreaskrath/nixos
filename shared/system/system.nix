@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
     ./audio.nix
@@ -7,5 +7,6 @@
     ./fonts.nix
     ./docker.nix
     ./display.nix
+    ./settings.nix
   ];
 }
