@@ -24,6 +24,7 @@
     bat
     tree
     lf
+    btop
 
     # text editors
     vscode
