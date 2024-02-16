@@ -38,7 +38,7 @@
     qbittorrent
     vlc
     vesktop
-    galculator
+    speedcrunch
   ];
 
   programs.home-manager.enable = true;
