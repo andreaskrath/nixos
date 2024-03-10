@@ -39,6 +39,7 @@
     vlc
     vesktop
     speedcrunch
+    thunderbird
   ];
 
   programs.home-manager.enable = true;
