@@ -22,6 +22,7 @@
       boot = "sudo nixos-rebuild boot";
       lg = "${pkgs.lazygit}/bin/lazygit";
       ld = "${pkgs.lazydocker}/bin/lazydocker";
+      config = "/etc/nixos";
     };
 
     initExtra = ''
