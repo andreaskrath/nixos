@@ -37,7 +37,21 @@
     brave
     qbittorrent
     vlc
-    vesktop
+    # vesktop
+        (vesktop.overrideAttrs (old: {
+      version = "unstable-2024-04-21";
+
+      src = fetchFromGitHub {
+        owner = "Vencord";
+        repo = "Vesktop";
+        rev = "2733727a40a4cf542277dedcf89e87e7740f962d";
+        hash = "sha256-EF36HbbhTuAdwBEKqYgBBu7JoP1LJneU78bROHoKqDw=";
+      };
+
+      pnpmDeps = old.pnpmDeps.overrideAttrs (_: {
+        outputHash = "sha256-6ezEBeYmK5va3gCh00YnJzZ77V/Ql7A3l/+csohkz68=";
+      });
+    }))
     speedcrunch
     thunderbird
   ];
