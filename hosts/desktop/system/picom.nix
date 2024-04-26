@@ -3,7 +3,7 @@
   services.picom = {
     enable = true;
     backend = "glx";
-    vSync = "none";
+    vSync = false;
 
     settings = {
       mark-wmwin-focus = true;
