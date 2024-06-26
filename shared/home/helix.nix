@@ -31,12 +31,12 @@
         bufferline = "always";
         gutters = [ "diagnostics" "line-numbers" "spacer" "diff" ];
         preview-completion-insert = false;
-        
+
         lsp = {
           display-messages = true;
           auto-signature-help = false;
         };
-        
+
         cursor-shape = {
           normal = "block";
           insert = "bar";
@@ -126,7 +126,7 @@
                 name = "binary";
                 request = "launch";
                 completion = [
-                   {
+                  {
                     name = "binary";
                     completion = "filename";
                   }

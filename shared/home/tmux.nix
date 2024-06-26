@@ -102,8 +102,8 @@ in
 
     extraConfig = ''
       bind '"' split-window -v -c "#{pane_current_path}"
-      bind % split-window -h -c "#{pane_current_path}"
-      set -sg escape-time 0
+       bind % split-window -h -c "#{pane_current_path}"
+       set -sg escape-time 0
     '';
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator

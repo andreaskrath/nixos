@@ -9,6 +9,6 @@
 
   home.packages = with pkgs; [
     appimage-run
-    (pkgs.callPackage ./awakened-poe-trade.nix {})
+    (pkgs.callPackage ./awakened-poe-trade.nix { })
   ];
 }

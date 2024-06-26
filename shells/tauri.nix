@@ -26,7 +26,7 @@ let
     appimagekit
     cargo-tauri
   ];
- in
+in
 pkgs.mkShell {
   buildInputs = packages;
 
