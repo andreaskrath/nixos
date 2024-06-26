@@ -14,6 +14,7 @@
       taplo # toml toolkit
       gopls # go lsp
       lldb # debugger 
+      svelte-language-server #svelte lsp
       python3
     ];
 
