@@ -12,15 +12,14 @@
       nvidiaSettings = true;
     };
 
-    opengl = {
-      driSupport = true;
-      driSupport32Bit = true;
+    graphics = {
+      enable32Bit = true;
       extraPackages = with pkgs; [
         rocm-opencl-icd
         rocm-opencl-runtime
       ];
     };
-    
+
     cpu.intel.updateMicrocode = true;
   };
   services.xserver = {
