@@ -25,6 +25,8 @@
     tree
     lf
     btop
+    p7zip
+    unzip
 
     # text editors
     vscode
@@ -40,6 +42,7 @@
     # vesktop
         (vesktop.overrideAttrs (old: {
       version = "unstable-2024-04-21";
+    element-desktop
 
       src = fetchFromGitHub {
         owner = "Vencord";
