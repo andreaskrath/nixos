@@ -17,14 +17,14 @@
         enable = true;
         position = 1;
         settings = {
-          format = "󰘚 %percentage_used";
+          format = "RAM %percentage_used";
         };
       };
       "cpu_usage" = {
         enable = true;
         position = 2;
         settings = {
-          format = "  %usage";
+          format = "CPU %usage";
           max_threshold = 80;
         };
       };
@@ -32,7 +32,7 @@
         enable = true;
         position = 3;
         settings = {
-          format = " %degrees °C";
+          format = "TEMP %degrees °C";
           max_threshold = 80;
         };
       };
@@ -40,7 +40,7 @@
         enable = true;
         position = 4;
         settings = {
-          format = "󰟦  %1min";
+          format = "LOAD %1min";
           max_threshold = 5;
         };
       };
@@ -56,14 +56,14 @@
         enable = true;
         position = 6;
         settings = {
-          format = " %free";
+          format = "DISK %free";
         };
       };
       "volume master" = {
         enable = true;
         position = 7;
         settings = {
-          format = "  %volume";
+          format = "VOL %volume";
           mixer = "Master";
         };
       };
@@ -71,7 +71,7 @@
         enable = true;
         position = 9;
         settings = {
-          format = "󰥔  %Y-%m-%d %H:%M:%S";
+          format = "%Y-%m-%d %H:%M:%S";
         };
       };
     };
