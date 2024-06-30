@@ -18,6 +18,12 @@
         config = builtins.readFile ./plugin/comment.lua;
         type = "lua";
       }
+
+      {
+        plugin = nvim-tree-lua;
+        config = builtins.readFile ./plugin/nvim-tree.lua;
+        type = "lua";
+      }
     ];
   };
 }
