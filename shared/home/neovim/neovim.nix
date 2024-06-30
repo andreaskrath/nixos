@@ -7,5 +7,11 @@
     vimdiffAlias = true;
 
     extraLuaConfig = builtins.readFile ./options.lua;
+    plugins = with pkgs.vimPlugins; [
+      {
+        plugin = gruvbox-nvim;
+        config = "colorscheme gruvbox";
+      }
+    ];
   };
 }
