@@ -12,6 +12,12 @@
         plugin = gruvbox-nvim;
         config = "colorscheme gruvbox";
       }
+      
+      {
+        plugin = comment-nvim;
+        config = builtins.readFile ./plugin/comment.lua;
+        type = "lua";
+      }
     ];
   };
 }
