@@ -12,6 +12,7 @@
     ./tmux.nix
     ./gtk.nix
     ./direnv.nix
+    ./neovim/neovim.nix
   ];
 
   systemd.user.startServices = true;
