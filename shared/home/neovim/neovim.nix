@@ -42,6 +42,12 @@
         type = "lua";
       }
       cmp-nvim-lsp
+
+      {
+        plugin = lsp_lines-nvim;
+        config = builtins.readFile ./plugin/lsp_lines.lua;
+        type = "lua";
+      }
     ];
   };
 }
