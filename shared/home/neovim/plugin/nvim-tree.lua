@@ -1,14 +1,14 @@
-local api = require "nvim-tree.api"
+local nvimtree_api = require "nvim-tree.api"
 
-local function on_attach(bufnr)
-  api.config.mappings.default_on_attach(bufnr)
+local function nvim_tree_attach(bufnr)
+  nvimtree_api.config.mappings.default_on_attach(bufnr)
 
-  vim.keymap.set("n", "<leader>F", api.tree.toggle)
+  vim.keymap.set("n", "<leader>F", nvimtree_api.tree.toggle)
 
 end
 
 require("nvim-tree").setup {
-  on_attach = on_attach,
+  on_attach = nvim_tree_attach,
 }
 
 -- defines behaviour on VimEnter
@@ -22,9 +22,7 @@ local function open_nvim_tree(data)
 
   vim.cmd.cd(data.file)
 
-  api.tree.open()
+  nvimtree_api.tree.open()
 end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
-
-
