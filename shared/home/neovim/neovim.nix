@@ -7,6 +7,11 @@
     vimdiffAlias = true;
 
     extraLuaConfig = builtins.readFile ./options.lua;
+
+    extraPackages = with pkgs; [
+      rust-analyzer # rust lsp
+    ];
+
     plugins = with pkgs.vimPlugins; [
       {
         plugin = gruvbox-nvim;
@@ -23,6 +28,13 @@
         plugin = nvim-tree-lua;
         config = builtins.readFile ./plugin/nvim-tree.lua;
         type = "lua";
+      }
+
+  	  {
+  	  	plugin = rustaceanvim;
+    		config = builtins.readFile ./plugin/rustaceanvim.lua;
+  	  	type = "lua";
+  	  }
       }
     ];
   };
