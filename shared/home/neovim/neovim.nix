@@ -35,7 +35,13 @@
     		config = builtins.readFile ./plugin/rustaceanvim.lua;
   	  	type = "lua";
   	  }
+
+      {
+        plugin = nvim-cmp;
+        config = builtins.readFile ./plugin/cmp.lua;
+        type = "lua";
       }
+      cmp-nvim-lsp
     ];
   };
 }
