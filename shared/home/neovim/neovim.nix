@@ -63,6 +63,12 @@
         config = builtins.readFile ./plugin/treesitter.lua;
         type = "lua";
       }
+
+	  {
+		plugin = gitsigns-nvim;
+		config = builtins.readFile ./plugin/gitsigns.lua;
+		type = "lua";
+	  }
     ];
   };
 }
