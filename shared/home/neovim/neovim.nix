@@ -48,6 +48,21 @@
         config = builtins.readFile ./plugin/lsp_lines.lua;
         type = "lua";
       }
+
+      {
+        plugin = (nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-nix
+          p.tree-sitter-vim
+          p.tree-sitter-bash
+          p.tree-sitter-lua
+          p.tree-sitter-json
+          p.tree-sitter-rust
+          p.tree-sitter-go
+          p.tree-sitter-svelte
+        ]));
+        config = builtins.readFile ./plugin/treesitter.lua;
+        type = "lua";
+      }
     ];
   };
 }
