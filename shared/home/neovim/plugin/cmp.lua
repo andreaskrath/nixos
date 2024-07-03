@@ -1,5 +1,6 @@
 local cmp = require("cmp")
 
+-- standard cmp with lsp integration
 cmp.setup {
     window = {
         completion = {
@@ -37,6 +38,7 @@ cmp.setup {
     },
 }
 
+-- completions for search mode, i.e. "/"
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
@@ -44,6 +46,7 @@ cmp.setup.cmdline("/", {
     }
 })
 
+-- completions for command mode, i.e. ":"
 cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
