@@ -14,8 +14,8 @@
 
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
+        plugin = onedark-nvim;
+        config = "colorscheme onedark";
       }
       
       {
