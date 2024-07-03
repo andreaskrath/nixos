@@ -7,6 +7,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.o.pumheight = 10
+vim.o.timeout = false
+
 vim.o.clipboard = "unnamedplus"
 
 vim.o.number = true
