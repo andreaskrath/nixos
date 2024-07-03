@@ -3,7 +3,7 @@ local nvimtree_api = require "nvim-tree.api"
 local function nvim_tree_attach(bufnr)
   nvimtree_api.config.mappings.default_on_attach(bufnr)
 
-  vim.keymap.set("n", "<leader>F", nvimtree_api.tree.toggle)
+  vim.keymap.set("n", "<leader>F", nvimtree_api.tree.open)
 
 end
 
