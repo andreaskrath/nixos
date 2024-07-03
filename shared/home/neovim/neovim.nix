@@ -42,6 +42,7 @@
         type = "lua";
       }
       cmp-nvim-lsp
+      cmp-cmdline
 
       {
         plugin = lsp_lines-nvim;
