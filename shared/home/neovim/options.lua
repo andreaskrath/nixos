@@ -24,3 +24,7 @@ vim.o.updatetime = 300
 vim.o.termguicolors = true
 
 vim.o.mouse = ""
+
+vim.api.nvim_create_autocmd("VimLeave", {
+	command = "set guicursor= | call chansend(v:stderr, '\x1b[ q')"
+})
