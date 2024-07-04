@@ -70,6 +70,12 @@
 		config = builtins.readFile ./plugin/gitsigns.lua;
 		type = "lua";
 	  }
+
+	  {
+		plugin = lualine-nvim;
+		config = builtins.readFile ./plugin/lualine.lua;
+		type = "lua";
+	  }
     ];
   };
 }
