@@ -1,7 +1,7 @@
 { ... }:
 {
   # Enable networking
-  networking.hostName = "nixos";
+  networking.hostName = "krath";
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
