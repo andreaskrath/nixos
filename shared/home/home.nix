@@ -9,7 +9,6 @@
     ./redshift.nix
     ./alacritty.nix
     ./helix.nix
-    ./tmux.nix
     ./gtk.nix
     ./direnv.nix
     ./neovim/neovim.nix
