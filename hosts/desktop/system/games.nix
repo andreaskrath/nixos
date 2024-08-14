@@ -11,5 +11,6 @@
     wine
     winetricks
     path-of-building
+  	wowup-cf
   ];
 }
