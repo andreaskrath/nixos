@@ -9,6 +9,8 @@
     extraLuaConfig = builtins.readFile ./options.lua;
 
     extraPackages = with pkgs; [
+	  xclip
+
       rust-analyzer # rust lsp
     ];
 
