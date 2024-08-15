@@ -1,8 +1,7 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = [
-    (import ./scripts/setup_env.nix { inherit pkgs; })
-    (import ./scripts/justfiles.nix { inherit pkgs; })
+    (import ./scripts/setup_env.nix {inherit pkgs;})
+    (import ./scripts/justfiles.nix {inherit pkgs;})
   ];
   programs.zsh = {
     enable = true;
@@ -31,7 +30,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = ["git"];
       theme = "robbyrussell";
     };
   };

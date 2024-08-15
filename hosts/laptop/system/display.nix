@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   hardware.cpu.amd.updateMicrocode = true;
 
   services.xserver = {
@@ -7,6 +6,6 @@
       enable = true;
       touchpad.naturalScrolling = true;
     };
-    videoDrivers = [ "amdgpu" ];
+    videoDrivers = ["amdgpu"];
   };
 }

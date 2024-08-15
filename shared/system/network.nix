@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   # Enable networking
   networking.hostName = "krath";
 

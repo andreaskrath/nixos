@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   services.picom = {
     enable = true;
     backend = "glx";
@@ -17,7 +16,7 @@
       unredir-if-possible = true;
       detect-transient = true;
       detect-client-leader = true;
-      invert-color-include = [ ];
+      invert-color-include = [];
     };
   };
 }

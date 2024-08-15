@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   xsession.windowManager.i3 = {
     config = {
       keybindings = lib.mkAfter {

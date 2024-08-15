@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.i3status.modules = {
     "battery all" = {
       enable = true;

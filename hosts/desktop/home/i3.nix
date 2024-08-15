@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   # monitors
   m1_port = "DP-2";
   m2_port = "DP-4";
@@ -15,13 +18,12 @@ let
   ws8 = "8";
   ws9 = "9";
   ws10 = "10";
-in
-{
+in {
   xsession.windowManager.i3 = {
     config = {
       assigns = lib.mkAfter {
-        "${ws4}" = [{ class = "^steam$"; } { class = "^Lutris$"; } { class = "^lutris$"; } { class = "^battle.net.exe$"; }];
-        "${ws5}" = [{ class = "^wow.exe$"; } { class = "^pathofexile.exe$"; } { class = "^steam_app_739630$"; }];
+        "${ws4}" = [{class = "^steam$";} {class = "^Lutris$";} {class = "^lutris$";} {class = "^battle.net.exe$";}];
+        "${ws5}" = [{class = "^wow.exe$";} {class = "^pathofexile.exe$";} {class = "^steam_app_739630$";}];
       };
 
       startup = lib.mkAfter [
@@ -44,7 +46,7 @@ in
       workspace ${ws8} output ${m2_port}
       workspace ${ws9} output ${m1_port}
       workspace ${ws10} output ${m1_port}
-  
+
       for_window [class="wow.exe"] move to workspace ${ws5}
       for_window [class="awakened-poe-trade"] floating enable
     '';

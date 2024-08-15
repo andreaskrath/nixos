@@ -1,23 +1,22 @@
-{ pkgs ? import <nixpkgs> { overlays = [ (import <rust-overlay>) ]; } }:
-let
+{pkgs ? import <nixpkgs> {overlays = [(import <rust-overlay>)];}}: let
   rust = pkgs.rust-bin.stable.latest.default.override {
-    extensions = [ "rust-src" ];
+    extensions = ["rust-src"];
   };
 in
-pkgs.mkShell {
-  buildInputs = with pkgs; [
-    rust
+  pkgs.mkShell {
+    buildInputs = with pkgs; [
+      rust
 
-    # tokio
-    pkg-config
-    openssl
+      # tokio
+      pkg-config
+      openssl
 
-    # command runner
-    just
+      # command runner
+      just
 
-    # watch cargo commands
-    cargo-watch
-  ];
-  # environment variables
-  # RUST_BACKTRACE = "1";
-}
+      # watch cargo commands
+      cargo-watch
+    ];
+    # environment variables
+    # RUST_BACKTRACE = "1";
+  }

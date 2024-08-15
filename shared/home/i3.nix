@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   # workspaces
   ws1 = "1";
   ws2 = "2";
@@ -11,8 +10,7 @@ let
   ws8 = "8";
   ws9 = "9";
   ws10 = "10";
-in
-{
+in {
   xsession = {
     enable = true;
     windowManager.i3 = {
@@ -28,31 +26,33 @@ in
         floating.titlebar = false;
         terminal = "alacritty";
 
-        bars = [{
-          id = "bar-default";
-          command = "${pkgs.i3}/bin/i3bar";
-          statusCommand = "${pkgs.i3status}/bin/i3status";
-          trayOutput = "primary";
-          fonts = {
-            names = [ "Cascadia Mono" ];
-            style = "Bold";
-            size = 12.0;
-          };
-        }];
+        bars = [
+          {
+            id = "bar-default";
+            command = "${pkgs.i3}/bin/i3bar";
+            statusCommand = "${pkgs.i3status}/bin/i3status";
+            trayOutput = "primary";
+            fonts = {
+              names = ["Cascadia Mono"];
+              style = "Bold";
+              size = 12.0;
+            };
+          }
+        ];
 
         fonts = {
-          names = [ "Cascadia Mono" ];
+          names = ["Cascadia Mono"];
           style = "Bold";
           size = 12.0;
         };
 
         assigns = {
-          "${ws1}" = [{ class = "^Brave-browser$"; } { class = "^brave-browser$"; }];
-          "${ws2}" = [{ class = "^Alacritty$"; }];
-          "${ws3}" = [{ class = "^code$"; } { class = "^Code$"; }];
-          "${ws6}" = [{ class = "^obsidian$"; }];
-          "${ws9}" = [{ class = "^vesktop$"; }];
-          "${ws10}" = [{ class = "^spotify$"; }];
+          "${ws1}" = [{class = "^Brave-browser$";} {class = "^brave-browser$";}];
+          "${ws2}" = [{class = "^Alacritty$";}];
+          "${ws3}" = [{class = "^code$";} {class = "^Code$";}];
+          "${ws6}" = [{class = "^obsidian$";}];
+          "${ws9}" = [{class = "^vesktop$";}];
+          "${ws10}" = [{class = "^spotify$";}];
         };
 
         window = {
@@ -77,26 +77,16 @@ in
           "${modifier}+9" = "workspace ${ws9}";
           "${modifier}+0" = "workspace ${ws10}";
 
-          "${modifier}+Shift+1" =
-            "move container to workspace ${ws1}";
-          "${modifier}+Shift+2" =
-            "move container to workspace ${ws2}";
-          "${modifier}+Shift+3" =
-            "move container to workspace ${ws3}";
-          "${modifier}+Shift+4" =
-            "move container to workspace ${ws4}";
-          "${modifier}+Shift+5" =
-            "move container to workspace ${ws5}";
-          "${modifier}+Shift+6" =
-            "move container to workspace ${ws6}";
-          "${modifier}+Shift+7" =
-            "move container to workspace ${ws7}";
-          "${modifier}+Shift+8" =
-            "move container to workspace ${ws8}";
-          "${modifier}+Shift+9" =
-            "move container to workspace ${ws9}";
-          "${modifier}+Shift+0" =
-            "move container to workspace ${ws10}";
+          "${modifier}+Shift+1" = "move container to workspace ${ws1}";
+          "${modifier}+Shift+2" = "move container to workspace ${ws2}";
+          "${modifier}+Shift+3" = "move container to workspace ${ws3}";
+          "${modifier}+Shift+4" = "move container to workspace ${ws4}";
+          "${modifier}+Shift+5" = "move container to workspace ${ws5}";
+          "${modifier}+Shift+6" = "move container to workspace ${ws6}";
+          "${modifier}+Shift+7" = "move container to workspace ${ws7}";
+          "${modifier}+Shift+8" = "move container to workspace ${ws8}";
+          "${modifier}+Shift+9" = "move container to workspace ${ws9}";
+          "${modifier}+Shift+0" = "move container to workspace ${ws10}";
 
           "${modifier}+Shift+q" = "kill";
 

@@ -1,33 +1,33 @@
-{ pkgs ? import <nixpkgs> { overlays = [ (import <rust-overlay>) ]; } }:
-let
-  rust = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
-    extensions = [ "rust-src" ];
-    targets = [ "wasm32-unknown-unknown" ];
-  });
+{pkgs ? import <nixpkgs> {overlays = [(import <rust-overlay>)];}}: let
+  rust = pkgs.rust-bin.selectLatestNightlyWith (toolchain:
+    toolchain.default.override {
+      extensions = ["rust-src"];
+      targets = ["wasm32-unknown-unknown"];
+    });
 in
-pkgs.mkShell {
-  buildInputs = with pkgs; [
-    rust
-    cargo-leptos
-    cargo-generate
-    trunk
-    tailwindcss
+  pkgs.mkShell {
+    buildInputs = with pkgs; [
+      rust
+      cargo-leptos
+      cargo-generate
+      trunk
+      tailwindcss
 
-    # tokio
-    pkg-config
-    openssl
+      # tokio
+      pkg-config
+      openssl
 
-    # basic js
-    nodejs
-    nodePackages.npm
-    nodePackages.prettier # formatter
-    nodePackages.eslint # linter
+      # basic js
+      nodejs
+      nodePackages.npm
+      nodePackages.prettier # formatter
+      nodePackages.eslint # linter
 
-    # typescript
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-  ];
+      # typescript
+      nodePackages.typescript
+      nodePackages.typescript-language-server
+    ];
 
-  # environment variables
-  # RUST_BACKTRACE = "1";
-}
+    # environment variables
+    # RUST_BACKTRACE = "1";
+  }

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -11,6 +10,6 @@
     wine
     winetricks
     path-of-building
-  	wowup-cf
+    wowup-cf
   ];
 }

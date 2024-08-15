@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./games.nix
     ./display.nix

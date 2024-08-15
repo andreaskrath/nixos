@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   fonts = {
     packages = with pkgs; [
       fira-code
@@ -13,9 +12,9 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "DejaVu Serif" ];
-        sansSerif = [ "Open Sans" ];
-        monospace = [ "Cascadia Mono" ];
+        serif = ["DejaVu Serif"];
+        sansSerif = ["Open Sans"];
+        monospace = ["Cascadia Mono"];
       };
     };
   };

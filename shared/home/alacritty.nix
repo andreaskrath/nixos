@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.alacritty = {
     enable = true;
 
@@ -7,7 +6,10 @@
       window = {
         title = "Terminal";
         opacity = 1.0;
-        padding = { y = 5; x = 5; };
+        padding = {
+          y = 5;
+          x = 5;
+        };
         dimensions = {
           lines = 75;
           columns = 100;
@@ -23,7 +25,7 @@
         };
       };
 
-      shell = { program = "${pkgs.zsh}/bin/zsh"; };
+      shell = {program = "${pkgs.zsh}/bin/zsh";};
 
       colors = {
         primary = {

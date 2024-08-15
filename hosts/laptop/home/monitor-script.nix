@@ -1,4 +1,4 @@
-{ pkgs }:
+{pkgs}:
 pkgs.writeShellApplication {
   name = "select-display";
   runtimeInputs = with pkgs; [
@@ -20,7 +20,7 @@ pkgs.writeShellApplication {
 
       if [ "$(echo "$screens" | grep -cv "$primary")" -ge "2" ]; then
         secondary=$(echo "$screens" | grep -v "$primary" | rofi -dmenu -i -p "Select secondary display:")
-      else 
+      else
         secondary=$(echo "$screens" | grep -v "$primary")
       fi
       [ -z "$secondary" ] && return

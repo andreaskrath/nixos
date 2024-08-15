@@ -1,10 +1,9 @@
-{ pkgs ? import <nixpkgs> { overlays = [ (import <rust-overlay>) ]; } }:
-let
+{pkgs ? import <nixpkgs> {overlays = [(import <rust-overlay>)];}}: let
   rust = pkgs.rust-bin.stable.latest.default.override {
-    extensions = [ "rust-src" ];
+    extensions = ["rust-src"];
   };
 
-  libraries = with pkgs;[
+  libraries = with pkgs; [
     webkitgtk
     gtk3
     cairo
@@ -27,10 +26,10 @@ let
     cargo-tauri
   ];
 in
-pkgs.mkShell {
-  buildInputs = packages;
+  pkgs.mkShell {
+    buildInputs = packages;
 
-  LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath libraries}:$LD_LIBRARY_PATH";
-  XDG_DATA_DIRS = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}:$XDG_DATA_DIRS";
-  __NV_PRIME_RENDER_OFFLOAD = 1;
-}
+    LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath libraries}:$LD_LIBRARY_PATH";
+    XDG_DATA_DIRS = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}:$XDG_DATA_DIRS";
+    __NV_PRIME_RENDER_OFFLOAD = 1;
+  }

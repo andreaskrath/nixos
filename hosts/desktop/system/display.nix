@@ -1,5 +1,8 @@
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   hardware = {
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.production;
@@ -23,7 +26,7 @@
     cpu.intel.updateMicrocode = true;
   };
   services.xserver = {
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = ["nvidia"];
 
     displayManager.setupCommands = ''
       LEFT='DP-2'

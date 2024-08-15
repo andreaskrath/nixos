@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   system.stateVersion = "23.05";
 
   time.timeZone = "Europe/Copenhagen";
@@ -23,12 +22,12 @@
 
   services.printing.enable = true;
 
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
   users.users.krath = {
     isNormalUser = true;
     description = "krath";
-    extraGroups = [ "networkmanager" "wheel" "docker" "dialout" "video" ];
+    extraGroups = ["networkmanager" "wheel" "docker" "dialout" "video"];
   };
   programs.zsh.enable = true;
 

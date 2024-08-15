@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   hardware = {
     graphics.enable = true;
     enableRedistributableFirmware = true;
@@ -20,7 +23,7 @@
           invalid-password-text = Invalid Password
           show-input-cursor = false
           password-alignment = right
-        
+
           [greeter-theme]
           font = Cascadia Mono
           font-weight = bold
