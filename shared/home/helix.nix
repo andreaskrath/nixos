@@ -1,18 +1,6 @@
-{pkgs, ...}: let
-  # pin for now due to termial cursor bug https://github.com/helix-editor/helix/issues/10089
-  pin =
-    import
-    (pkgs.fetchFromGitHub {
-      owner = "nixos";
-      repo = "nixpkgs";
-      rev = "a3ed7406349a9335cb4c2a71369b697cecd9d351";
-      sha256 = "sha256-PDwAcHahc6hEimyrgGmFdft75gmLrJOZ0txX7lFqq+I=";
-    })
-    {};
-in {
+{pkgs, ...}: {
   programs.helix = {
     enable = true;
-    package = pin.helix;
     defaultEditor = true;
 
     extraPackages = with pkgs; [
