@@ -11,9 +11,6 @@ let
     { };
 in
 {
-  home.packages = [
-    pkgs.nixpkgs-fmt
-  ];
   programs.helix = {
     enable = true;
     package = pin.helix;
@@ -22,6 +19,7 @@ in
     extraPackages = with pkgs; [
       marksman # markdown lsp
       nil # nix lsp
+      alejandra # nix formatter
       rust-analyzer # rust lsp
       taplo # toml toolkit
       gopls # go lsp
@@ -122,6 +120,12 @@ in
               enumVariant.enable = true;
               method.enable = true;
               trait.enable = true;
+          nil = {
+            nix = {
+              binary = "/run/current-system/sw/bin/nix";
+            };
+            formatting = {
+              command = ["${pkgs.alejandra}/bin/alejandra" "--"];
             };
           };
         };
@@ -153,6 +157,11 @@ in
               }
             ];
           };
+        }
+
+        {
+          name = "nix";
+          auto-format = true;
         }
       ];
 
