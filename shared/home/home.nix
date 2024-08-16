@@ -11,7 +11,6 @@
     ./gtk.nix
     ./direnv.nix
     ./zellij.nix
-    # ./neovim/neovim.nix
   ];
 
   systemd.user.startServices = true;
