@@ -10,6 +10,7 @@
     ./helix.nix
     ./gtk.nix
     ./direnv.nix
+    ./zellij.nix
     # ./neovim/neovim.nix
   ];
 
