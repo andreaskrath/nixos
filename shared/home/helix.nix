@@ -25,7 +25,7 @@
         color-modes = true;
         auto-completion = true;
         auto-format = true;
-        idle-timeout = 200;
+        idle-timeout = 0;
         bufferline = "always";
         gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
         preview-completion-insert = false;
