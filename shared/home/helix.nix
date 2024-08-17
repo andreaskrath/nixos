@@ -16,7 +16,7 @@
     ];
 
     settings = {
-      theme = "onedark";
+      theme = "gruvbox_dark_soft";
       editor = {
         mouse = false;
         middle-click-paste = false;
