@@ -62,7 +62,7 @@
           Q = ":q!";
           c = ":buffer-close";
           C = ":buffer-close!";
-          t = ":run-shell-command ${pkgs.zellij}/bin/zellij run -f -- ${pkgs.direnv}/bin/direnv exec . cargo test";
+          t = ":run-shell-command ${pkgs.zellij}/bin/zellij run -f -- ${pkgs.direnv}/bin/direnv exec . just test";
         };
         "C-j" = ["delete_selection" "paste_after"];
         "C-k" = ["delete_selection" "move_line_up" "paste_before"];
