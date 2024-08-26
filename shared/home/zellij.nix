@@ -13,7 +13,6 @@
       simplified_ui = true;
       pane_frames = false;
       theme = "gruvbox";
-      mouse_mode = false;
       plugins = {};
       ui = {
         pane_frames = {
