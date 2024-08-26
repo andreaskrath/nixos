@@ -26,6 +26,7 @@
     btop
     p7zip
     unzip
+    time
 
     # text editors
     vscode
