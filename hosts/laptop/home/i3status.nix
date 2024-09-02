@@ -6,8 +6,8 @@
       settings = {
         format = "%status %percentage %remaining";
         status_chr = "";
-        status_bat = " ";
-        status_full = " ";
+        status_bat = "BAT";
+        status_full = "BAT";
         low_threshold = 20;
       };
     };
