@@ -43,14 +43,6 @@
           max_threshold = 5;
         };
       };
-      # "ethernet _first_" = {
-      #   enable = true;
-      #   position = 5;
-      #   settings = {
-      #     format_up = "↑ %speed_up";
-      #     format_down = "↓ %speed_down";
-      #   };
-      # };
       "disk /" = {
         enable = true;
         position = 6;
