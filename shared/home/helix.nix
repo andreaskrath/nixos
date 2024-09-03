@@ -21,6 +21,8 @@ in {
       taplo # toml toolkit
       gopls # go lsp
       svelte-language-server #svelte lsp
+      python312Packages.python-lsp-server # python3 lsp
+      haskell-language-server # haskell lsp
     ];
 
     settings = {
