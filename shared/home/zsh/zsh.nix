@@ -24,10 +24,6 @@
       config = "/etc/nixos";
     };
 
-    initExtra = ''
-      eval "$(direnv hook zsh)"
-    '';
-
     oh-my-zsh = {
       enable = true;
       plugins = ["git"];
