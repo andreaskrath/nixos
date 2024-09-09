@@ -70,19 +70,33 @@ in {
         };
       };
 
-      keys.normal = {
-        space = {
-          w = ":w";
-          W = ":w!";
-          q = ":q";
-          Q = ":q!";
-          c = ":buffer-close";
-          C = ":buffer-close!";
-          t = ":run-shell-command ${pkgs.zellij}/bin/zellij run -f -- ${pkgs.direnv}/bin/direnv exec . just test";
+      keys = {
+        normal = {
+          space = {
+            w = ":w";
+            W = ":w!";
+            q = ":q";
+            Q = ":q!";
+            c = ":buffer-close";
+            C = ":buffer-close!";
+            t = ":run-shell-command ${pkgs.zellij}/bin/zellij run -f -- ${pkgs.direnv}/bin/direnv exec . just test";
+          };
+          "C-j" = ["delete_selection" "paste_after"];
+          "C-k" = ["delete_selection" "move_line_up" "paste_before"];
+          X = ["extend_line_up" "extend_to_line_bounds"];
+          n = {
+            d = ["goto_next_diag" "align_view_center"];
+            D = ["goto_last_diag" "align_view_center"];
+            f = ["goto_next_function" "align_view_center"];
+            t = ["goto_next_test" "align_view_center"];
+          };
+          N = {
+            d = ["goto_prev_diag" "align_view_center"];
+            D = ["goto_first_diag" "align_view_center"];
+            f = ["goto_prev_function" "align_view_center"];
+            t = ["goto_prev_test" "align_view_center"];
+          };
         };
-        "C-j" = ["delete_selection" "paste_after"];
-        "C-k" = ["delete_selection" "move_line_up" "paste_before"];
-        X = ["extend_line_up" "extend_to_line_bounds"];
       };
     };
 
