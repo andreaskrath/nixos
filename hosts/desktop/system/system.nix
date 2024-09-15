@@ -4,5 +4,6 @@
     ./display.nix
     ./boot.nix
     ./picom.nix
+    ./network.nix
   ];
 }
