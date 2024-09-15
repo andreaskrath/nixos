@@ -26,8 +26,11 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git"];
       theme = "robbyrussell";
+      plugins = [
+        "git"
+        "ssh"
+      ];
     };
   };
 }
