@@ -17,13 +17,6 @@ in {
       marksman # markdown lsp
       nil # nix lsp
       alejandra # nix formatter
-      rust-analyzer # rust lsp
-      taplo # toml toolkit
-      gopls # go lsp
-      golangci-lint-langserver # go linting lsp
-      svelte-language-server #svelte lsp
-      python312Packages.python-lsp-server # python3 lsp
-      haskell-language-server # haskell lsp
     ];
 
     settings = {
