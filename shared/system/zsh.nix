@@ -22,6 +22,7 @@
       lg = "${pkgs.lazygit}/bin/lazygit";
       ld = "${pkgs.lazydocker}/bin/lazydocker";
       config = "/etc/nixos";
+      c = "clear";
     };
 
     ohMyZsh = {
