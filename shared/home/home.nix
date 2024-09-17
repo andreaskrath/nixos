@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./git.nix
-    ./zsh/zsh.nix
     ./i3.nix
     ./i3status.nix
     ./rofi.nix
@@ -20,7 +19,6 @@
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
     # terminal tools
-    bat
     tree
     lf
     btop

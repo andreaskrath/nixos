@@ -1,11 +1,12 @@
 {pkgs, ...}: {
-  home.packages = [
-    (import ./scripts/setup_env.nix {inherit pkgs;})
-    (import ./scripts/justfiles.nix {inherit pkgs;})
+  environment.systemPackages = with pkgs; [
+    eza
+    bat
   ];
+
   programs.zsh = {
     enable = true;
-    autosuggestion.enable = true;
+    autosuggestions.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
 
@@ -17,14 +18,12 @@
       ".." = "cd ../";
       "...." = "cd ../../";
       "......" = "cd ../../../";
-      switch = "sudo nixos-rebuild switch";
-      boot = "sudo nixos-rebuild boot";
       lg = "${pkgs.lazygit}/bin/lazygit";
       ld = "${pkgs.lazydocker}/bin/lazydocker";
       config = "/etc/nixos";
     };
 
-    oh-my-zsh = {
+    ohMyZsh = {
       enable = true;
       plugins = [
         "git"
