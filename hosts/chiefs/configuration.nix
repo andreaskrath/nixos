@@ -7,6 +7,7 @@
     ./hardware-configuration.nix
     ./network.nix
     ./zsh.nix
+    ./nginx.nix
   ];
 
   boot.loader.grub.enable = true;
