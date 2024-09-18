@@ -1,12 +1,12 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     eza
     bat
   ];
 
   programs.zsh = {
     enable = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
 
@@ -25,7 +25,7 @@
       c = "clear";
     };
 
-    ohMyZsh = {
+    oh-my-zsh = {
       enable = true;
       plugins = [
         "git"

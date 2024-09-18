@@ -7,7 +7,6 @@
     ./docker.nix
     ./display.nix
     ./settings.nix
-    ./zsh.nix
   ];
 
   environment.systemPackages = with pkgs; [

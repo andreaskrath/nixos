@@ -10,6 +10,7 @@
     ./gtk.nix
     ./direnv.nix
     ./zellij.nix
+    ./zsh.nix
   ];
 
   systemd.user.startServices = true;
