@@ -14,6 +14,8 @@ in {
     defaultEditor = true;
 
     extraPackages = with pkgs; [
+      xclip # clipboard utility
+
       marksman # markdown lsp
       nil # nix lsp
       alejandra # nix formatter
