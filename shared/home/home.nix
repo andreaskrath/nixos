@@ -21,7 +21,6 @@
   home.packages = with pkgs; [
     # terminal tools
     tree
-    lf
     btop
     p7zip
     unzip

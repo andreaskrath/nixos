@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     eza
     bat
+    yazi
   ];
 
   programs.zsh = {
@@ -23,6 +24,7 @@
       ld = "${pkgs.lazydocker}/bin/lazydocker";
       config = "/etc/nixos";
       c = "clear";
+      f = "${pkgs.yazi}/bin/yazi";
     };
 
     oh-my-zsh = {
