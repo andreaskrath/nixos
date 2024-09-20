@@ -21,7 +21,6 @@
       font = {
         normal = {
           family = "Cascadia Mono";
-          style = "Bold";
         };
       };
 
