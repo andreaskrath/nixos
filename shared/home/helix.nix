@@ -91,6 +91,7 @@ in {
             f = ["goto_prev_function" "align_view_center"];
             t = ["goto_prev_test" "align_view_center"];
           };
+          "*" = ["move_prev_word_start" "move_next_word_end" "search_selection" "global_search"];
         };
       };
     };
