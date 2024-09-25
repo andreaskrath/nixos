@@ -8,7 +8,7 @@
     clientMaxBodySize = "500m";
 
     virtualHosts = {
-      "www.datamagikeren.dk" = {
+      "datamagikeren.dk" = {
         forceSSL = true;
         enableACME = true;
 
@@ -17,10 +17,10 @@
         };
       };
 
-      "datamagikeren.dk" = {
+      "www.datamagikeren.dk" = {
         forceSSL = true;
         enableACME = true;
-        globalRedirect = "www.datamagikeren.dk";
+        globalRedirect = "datamagikeren.dk";
       };
     };
   };
