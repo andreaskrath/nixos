@@ -13,7 +13,7 @@
         enableACME = true;
 
         locations."/" = {
-          return = "301 https://www.youtube.com/watch?v=dQw4w9WgXcQ"; # rick roll for the time being
+          return = "307 https://www.youtube.com/watch?v=dQw4w9WgXcQ"; # rick roll for the time being
         };
       };
 
