@@ -116,6 +116,11 @@ in {
           name = "nix";
           auto-format = true;
         }
+
+        {
+          name = "haskell";
+          auto-format = true;
+        }
       ];
 
       language-server.rust-analyzer = {
@@ -158,6 +163,10 @@ in {
 
       language-server.taplo = {
         command = "${pkgs.taplo}/bin/taplo";
+      };
+
+      language-server.haskell-language-server = {
+        config.haskell.formattingProvider = "ormolu";
       };
     };
   };
