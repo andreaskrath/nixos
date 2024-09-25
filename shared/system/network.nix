@@ -1,4 +1,5 @@
 {...}: {
+  hardware.bluetooth.enable = true;
   # Enable networking
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

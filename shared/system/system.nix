@@ -12,5 +12,6 @@
   environment.systemPackages = with pkgs; [
     just
     nix-output-monitor
+    overskride
   ];
 }
