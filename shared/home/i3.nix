@@ -56,7 +56,7 @@ in {
         };
 
         window = {
-          border = 0;
+          border = 1;
           titlebar = false;
         };
 
