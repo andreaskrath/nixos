@@ -25,6 +25,7 @@
       config = "/etc/nixos";
       c = "clear";
       f = "${pkgs.yazi}/bin/yazi";
+      ports = "${pkgs.unixtools.netstat}/bin/netstat -tulpn";
     };
 
     oh-my-zsh = {
