@@ -35,6 +35,7 @@ in {
         bufferline = "always";
         gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
         preview-completion-insert = false;
+        end-of-line-diagnostics = "hint";
 
         lsp = {
           display-messages = true;
@@ -61,7 +62,7 @@ in {
 
         inline-diagnostics = {
           cursor-line = "hint";
-          other-lines = "error";
+          other-lines = "disable";
         };
       };
 
