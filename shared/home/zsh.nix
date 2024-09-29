@@ -22,7 +22,6 @@
       "......" = "cd ../../../";
       lg = "${pkgs.lazygit}/bin/lazygit";
       ld = "${pkgs.lazydocker}/bin/lazydocker";
-      config = "/etc/nixos";
       c = "clear";
       f = "${pkgs.yazi}/bin/yazi";
       ports = "${pkgs.unixtools.netstat}/bin/netstat -tulpn";
