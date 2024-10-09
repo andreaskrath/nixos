@@ -131,7 +131,6 @@ in {
           cargo = {
             autoreload = true;
             buildScripts.enable = true;
-            features = "all";
           };
 
           completion = {
