@@ -42,6 +42,7 @@
     vesktop
     speedcrunch
     thunderbird
+    bruno
   ];
 
   programs.home-manager.enable = true;
