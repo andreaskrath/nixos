@@ -158,11 +158,11 @@ in {
       };
 
       language-server.gopls = {
-        command = "${pkgs.gopls}/bin/gopls";
+        command = "gopls";
       };
 
       language-server.taplo = {
-        command = "${pkgs.taplo}/bin/taplo";
+        command = "taplo";
       };
 
       language-server.haskell-language-server = {
