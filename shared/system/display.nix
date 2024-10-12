@@ -13,6 +13,11 @@
     desktopManager.xterm.enable = false;
     displayManager.lightdm = {
       enable = true;
+
+      extraSeatDefaults = ''
+        greeter-setup-script=${pkgs.numlockx}/bin/numlockx on
+      '';
+
       greeters.mini = {
         enable = true;
         user = "krath";
