@@ -1,7 +1,7 @@
 {...}: {
   programs.alacritty = {
     settings = {
-      font.size = 15.0;
+      font.size = 14.0;
     };
   };
 }
