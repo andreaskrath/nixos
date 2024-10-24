@@ -23,7 +23,6 @@ in {
   home.file.".config/zellij/layouts/default.kdl".text = ''
     layout {
         default_tab_template {
-            children
             pane size=1 borderless=true {
                 plugin location="${zjstatus}" {
                     format_left   "{mode}#[bg=#${colors.base00}] {tabs}"
@@ -76,6 +75,7 @@ in {
                     command_git_branch_rendermode  "static"
                 }
             }
+            children
         }
     }
   '';
