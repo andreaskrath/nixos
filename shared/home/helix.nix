@@ -1,16 +1,11 @@
-{pkgs, ...}: let
-  helixSrc = pkgs.fetchFromGitHub {
-    owner = "helix-editor";
-    repo = "helix";
-    rev = "38e6fcd5c51478635ffa405815c7b9bbeadc35a9";
-    hash = "sha256-+nUWRR6mV+EV6pG51tgTG7CckGrHcp3Fq6zz0OzcA9w=";
-  };
-
-  helixPkg = import helixSrc;
-in {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.helix = {
     enable = true;
-    package = helixPkg.default;
+    package = inputs.helix-master.packages."x86_64-linux".default;
     defaultEditor = true;
 
     extraPackages = with pkgs; [

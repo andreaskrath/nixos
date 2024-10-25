@@ -1,6 +1,6 @@
-{...}: {
+{inputs, ...}: {
   imports = [
-    <home-manager/nixos>
+    inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
     ./system/system.nix
     ../../shared/system/system.nix
@@ -13,6 +13,7 @@
   };
 
   home-manager = {
+    extraSpecialArgs = {inherit inputs;};
     useGlobalPkgs = true;
     useUserPackages = true;
     users.krath = {

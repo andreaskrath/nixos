@@ -36,7 +36,7 @@
           font-size = 15
           text-color = "#e0dee3"
           show-image-on-all-monitors = true
-          background-image = "${/etc/nixos/shared/home/wallpaper.png}"
+          background-image = "${../home/wallpaper.png}"
           background-color = "#727282"
           window-color = "#37353a"
           bordor-bordor = "#0bb6d9"
