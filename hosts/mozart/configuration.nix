@@ -3,8 +3,8 @@
     inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
     ./system/system.nix
-    ../../shared/system/system.nix
-    ../../shared/base-config.nix
+    ../../modules/system/system.nix
+    ../../modules/base-config.nix
   ];
 
   fileSystems."/mnt/external" = {
@@ -19,7 +19,7 @@
     users.krath = {
       imports = [
         ./home/home.nix
-        ../../shared/home/home.nix
+        ../../modules/home/home.nix
       ];
     };
   };
