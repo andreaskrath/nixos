@@ -2,10 +2,12 @@ default:
     just --list
 
 switch:
-    sudo nixos-rebuild switch |& nom
+    @git add .
+    sudo nixos-rebuild switch --flake . |& nom
 
 boot:
-    sudo nixos-rebuild boot |& nom
+    @git add .
+    sudo nixos-rebuild boot --flake . |& nom
 
 deploy ACTION:
     nixos-rebuild -I nixos-config=./hosts/chiefs/configuration.nix --target-host root@datamagikeren.dk {{ACTION}} |& nom
