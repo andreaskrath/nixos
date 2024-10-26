@@ -36,8 +36,13 @@
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {inherit pkgs inputs;};
       modules = [
+        inputs.home-manager.nixosModules.default
         hostConfig
         {
+          nix.nixPath = [
+            "nixpkgs=${inputs.nixpkgs}"
+            "home-manager=${inputs.home-manager}"
+          ];
           networking.hostName = hostname;
         }
       ];

@@ -1,6 +1,5 @@
 {inputs, ...}: {
   imports = [
-    inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
     ./system/system.nix
     ../../modules/system/system.nix
