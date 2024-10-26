@@ -1,23 +1,20 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
-    <home-manager/nixos>
+    inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
     ./system/system.nix
-    ../../shared/system/system.nix
-    ../../shared/base-config.nix
+    ../../modules/system/system.nix
+    ../../modules/base-config.nix
   ];
 
   home-manager = {
+    extraSpecialArgs = {inherit inputs;};
     useGlobalPkgs = true;
     useUserPackages = true;
     users.krath = {
       imports = [
         ./home/home.nix
-        ../../shared/home/home.nix
+        ../../modules/home/home.nix
       ];
     };
   };

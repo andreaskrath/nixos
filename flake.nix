@@ -27,6 +27,11 @@
         mozart = mkNixOS {
           hostname = "mozart";
         };
+
+        # laptop
+        chopin = mkNixOS {
+          hostname = "chopin";
+        };
       };
     };
 }
