@@ -4,6 +4,7 @@ in {
   home.file.".config/zellij/layouts/default.kdl".text = ''
     layout {
         default_tab_template {
+            children
             pane size=1 borderless=true {
                 plugin location="file:${zjstatus}/bin/zjstatus.wasm" {
                     format_left  "{mode}#[fg=#89B4FA,bold] {tabs}"
@@ -19,7 +20,6 @@ in {
                     tab_floating_indicator   "󰉈 "
                 }
             }
-            children
         }
     }
   '';
