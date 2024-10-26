@@ -99,10 +99,9 @@
             formatting.command = ["${pkgs.alejandra}/bin/alejandra" "--"];
             nixpkgs.expr = ''import (builtins.getFlake "/etc/nixos").inputs.nixpkgs {}'';
 
-            # does not work at the moment
-            # options = {
-            #   home-manager.expr = ''(builtins.getFlake "/etc/nixos").homeConfiguration.currentSystem.options'';
-            # };
+            options = {
+              nixos.expr = ''(builtins.getFlake "/etc/nixos").nixosConfiguration.currentSystem.options'';
+            };
           };
         };
       };
