@@ -20,14 +20,10 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: {
+  outputs = {...} @ inputs: {
     nixosConfigurations = {
       # desktop
-      mozart = nixpkgs.lib.nixosSystem {
+      mozart = inputs.nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/mozart/configuration.nix
