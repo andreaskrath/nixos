@@ -12,7 +12,7 @@
       xclip # clipboard utility
 
       marksman # markdown lsp
-      nil # nix lsp
+      nixd # nix lsp
       alejandra # nix formatter
     ];
 
@@ -92,16 +92,17 @@
     };
 
     languages = {
-      language-server.nil = {
-        command = "${pkgs.nil}/bin/nil";
+      language-server.nixd = {
+        command = "${pkgs.nixd}/bin/nixd";
         config = {
-          nil = {
-            nix = {
-              binary = "/run/current-system/sw/bin/nix";
-            };
-            formatting = {
-              command = ["${pkgs.alejandra}/bin/alejandra" "--"];
-            };
+          nixd = {
+            formatting.command = ["${pkgs.alejandra}/bin/alejandra" "--"];
+            nixpkgs.expr = ''import (builtins.getFlake "/etc/nixos").inputs.nixpkgs {}'';
+
+            # does not work at the moment
+            # options = {
+            #   home-manager.expr = ''(builtins.getFlake "/etc/nixos").homeConfiguration.currentSystem.options'';
+            # };
           };
         };
       };
@@ -110,6 +111,7 @@
         {
           name = "nix";
           auto-format = true;
+          language-servers = ["nixd"];
         }
 
         {
