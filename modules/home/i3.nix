@@ -132,7 +132,7 @@ in {
 
         startup = [
           {
-            command = "${pkgs.feh}/bin/feh --bg-scale /etc/nixos/shared/home/wallpaper.png";
+            command = "${pkgs.feh}/bin/feh --bg-scale /etc/nixos/modules/home/wallpaper.png";
             always = true;
             notification = false;
           }
