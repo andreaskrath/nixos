@@ -20,15 +20,13 @@
     };
   };
 
-  outputs = {...} @ inputs: {
-    nixosConfigurations = {
-      # desktop
-      mozart = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/mozart/configuration.nix
-        ];
+  outputs = inputs:
+    with import ./make.nix {inherit inputs;}; {
+      nixosConfigurations = {
+        # desktop
+        mozart = mkNixOS {
+          hostname = "mozart";
+        };
       };
     };
-  };
 }
