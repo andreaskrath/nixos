@@ -1,5 +1,5 @@
-{...}: let
-  zjstatus = "https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm";
+{inputs, ...}: let
+  zjstatus = inputs.zjstatus.packages."x86_64-linux".default;
 
   colors = {
     base00 = "1e1e2e"; # base
@@ -24,7 +24,7 @@ in {
     layout {
         default_tab_template {
             pane size=1 borderless=true {
-                plugin location="${zjstatus}" {
+                plugin location="file:${zjstatus}/bin/zjstatus.wasm" {
                     format_left   "{mode}#[bg=#${colors.base00}] {tabs}"
                     format_center ""
                     format_space  ""
