@@ -30,4 +30,5 @@
     extraGroups = ["networkmanager" "wheel" "docker" "dialout" "video"];
   };
   programs.zsh.enable = true;
+  programs.dconf.enable = true;
 }
