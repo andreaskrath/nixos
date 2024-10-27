@@ -9,9 +9,24 @@ in {
   options.style = {
     enable = lib.mkEnableOption "enable stylix module";
 
-    fontsize = lib.mkOption {
-      default = 14;
-      description = "font size for applications, terminal, desktop, and popups";
+    app-fontsize = lib.mkOption {
+      default = 10;
+      description = "font size for applications";
+    };
+
+    terminal-fontsize = lib.mkOption {
+      default = 10;
+      description = "font size for terminals";
+    };
+
+    desktop-fontsize = lib.mkOption {
+      default = 10;
+      description = "font size for desktop";
+    };
+
+    popup-fontsize = lib.mkOption {
+      default = 10;
+      description = "font size for popups";
     };
   };
 
@@ -43,10 +58,10 @@ in {
         };
 
         sizes = {
-          applications = cfg.fontsize - 2;
-          terminal = cfg.fontsize;
-          desktop = cfg.fontsize;
-          popups = cfg.fontsize;
+          applications = cfg.app-fontsize;
+          terminal = cfg.terminal-fontsize;
+          desktop = cfg.desktop-fontsize;
+          popups = cfg.popup-fontsize;
         };
       };
 

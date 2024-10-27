@@ -9,6 +9,9 @@
 
   style = {
     enable = true;
-    fontsize = 14;
+    app-fontsize = 10;
+    terminal-fontsize = 14;
+    desktop-fontsize = 12;
+    popup-fontsize = 10;
   };
 }
