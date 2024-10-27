@@ -44,6 +44,7 @@
     thunderbird
     bruno
   ];
+  home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
   programs.home-manager.enable = true;
 }
