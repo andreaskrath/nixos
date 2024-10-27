@@ -43,7 +43,7 @@ in {
         };
 
         sizes = {
-          applications = cfg.fontsize;
+          applications = cfg.fontsize - 2;
           terminal = cfg.fontsize;
           desktop = cfg.fontsize;
           popups = cfg.fontsize;
