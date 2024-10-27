@@ -35,7 +35,7 @@ in {
         };
         sansSerif = {
           package = pkgs.dejavu_fonts;
-          name = "DejaVu Sans";
+          name = "Open Sans";
         };
         serif = {
           package = pkgs.dejavu_fonts;
