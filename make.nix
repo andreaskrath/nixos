@@ -41,9 +41,9 @@
         {
           nix.nixPath = [
             "nixpkgs=${inputs.nixpkgs}"
-            "home-manager=${inputs.home-manager}"
           ];
           networking.hostName = hostname;
+          nixpkgs.pkgs = pkgs;
         }
       ];
     };
