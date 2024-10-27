@@ -7,7 +7,6 @@
     ./redshift.nix
     ./alacritty.nix
     ./helix.nix
-    ./gtk.nix
     ./direnv.nix
     ./zellij.nix
     ./zsh.nix

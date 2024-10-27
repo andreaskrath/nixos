@@ -37,6 +37,7 @@
       specialArgs = {inherit pkgs inputs;};
       modules = [
         inputs.home-manager.nixosModules.default
+        inputs.stylix.nixosModules.stylix
         hostConfig
         {
           nix.nixPath = [

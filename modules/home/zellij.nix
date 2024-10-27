@@ -31,7 +31,6 @@ in {
     settings = {
       simplified_ui = true;
       pane_frames = false;
-      theme = "gruvbox";
       copy_on_select = true;
       plugins = {};
       ui = {

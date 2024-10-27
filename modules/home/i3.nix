@@ -40,12 +40,6 @@ in {
           }
         ];
 
-        fonts = {
-          names = ["Cascadia Mono"];
-          style = "Bold";
-          size = 12.0;
-        };
-
         assigns = {
           "${ws1}" = [{class = "^Brave-browser$";} {class = "^brave-browser$";}];
           "${ws2}" = [{class = "^Alacritty$";}];
@@ -129,14 +123,6 @@ in {
           "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
           "${modifier}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
         };
-
-        startup = [
-          {
-            command = "${pkgs.feh}/bin/feh --bg-scale /etc/nixos/modules/home/wallpaper.png";
-            always = true;
-            notification = false;
-          }
-        ];
       };
 
       extraConfig = ''
