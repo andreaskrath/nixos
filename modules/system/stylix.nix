@@ -49,6 +49,10 @@ in {
           popups = cfg.fontsize;
         };
       };
+
+      targets = {
+        grub.enable = false;
+      };
     };
 
     home-manager.users.krath.stylix = {
