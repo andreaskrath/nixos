@@ -16,7 +16,7 @@
         };
       };
       cursor.style.shape = "Beam";
-      shell = {program = "${pkgs.zsh}/bin/zsh";};
+      terminal.shell = {program = "${pkgs.zsh}/bin/zsh";};
     };
   };
 }
