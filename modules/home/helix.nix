@@ -34,7 +34,7 @@
 
         lsp = {
           display-messages = true;
-          auto-signature-help = false;
+          auto-signature-help = true;
         };
 
         cursor-shape = {
