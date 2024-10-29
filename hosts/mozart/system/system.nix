@@ -12,6 +12,6 @@
     app-fontsize = 10;
     terminal-fontsize = 14;
     desktop-fontsize = 12;
-    popup-fontsize = 10;
+    popup-fontsize = 12;
   };
 }
