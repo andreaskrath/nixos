@@ -28,8 +28,8 @@ in {
                     mode_tmux         "#[fg=${colors.orange}, bold] TMUX   "
                     mode_default_to_mode "tmux"
 
-                    tab_normal               "#[fg=${colors.blue}] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
-                    tab_active               "#[fg=${colors.gray},bold,italic] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+                    tab_normal               "#[fg=${colors.gray},italic] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+                    tab_active               "#[fg=${colors.blue},bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
                     tab_fullscreen_indicator "□ "
                     tab_sync_indicator       "  "
                     tab_floating_indicator   "󰉈 "
