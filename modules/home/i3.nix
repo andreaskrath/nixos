@@ -43,7 +43,6 @@ in {
         assigns = {
           "${ws1}" = [{class = "^Brave-browser$";} {class = "^brave-browser$";}];
           "${ws2}" = [{class = "^Alacritty$";}];
-          "${ws3}" = [{class = "^code$";} {class = "^Code$";}];
           "${ws6}" = [{class = "^obsidian$";}];
           "${ws9}" = [{class = "^vesktop$";}];
           "${ws10}" = [{class = "^spotify$";}];

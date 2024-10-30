@@ -26,9 +26,6 @@
     unzip
     time
 
-    # text editors
-    vscode
-
     # misc
     obsidian
     zotero
