@@ -12,7 +12,6 @@
     xautolock.enable = false;
     desktopManager.xterm.enable = false;
 
-    autoRepeatDelay = 200;
     autoRepeatInterval = 30;
 
     displayManager.lightdm = {
