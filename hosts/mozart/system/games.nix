@@ -10,5 +10,6 @@
     wine
     winetricks
     wowup-cf
+    lime3ds
   ];
 }
