@@ -12,4 +12,6 @@
     wowup-cf
     lime3ds
   ];
+
+  hardware.xpadneo.enable = true;
 }
