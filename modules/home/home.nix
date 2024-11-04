@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./git.nix
     ./i3.nix
@@ -25,6 +29,7 @@
     p7zip
     unzip
     time
+    inputs.nixvim.packages.${pkgs.system}.default
 
     # misc
     obsidian
