@@ -11,6 +11,7 @@
     winetricks
     wowup-cf
     lime3ds
+    melonDS
   ];
 
   hardware.xpadneo.enable = true;
