@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   system.stateVersion = "23.05";
 
   time.timeZone = "Europe/Copenhagen";
@@ -31,4 +35,8 @@
   };
   programs.zsh.enable = true;
   programs.dconf.enable = true;
+
+  environment.variables.EDITOR = lib.mkOverride 900 "nvim";
+  environment.variables.VISUAL = lib.mkOverride 900 "nvim";
+  environment.variables.SUDO_EDITOR = lib.mkOverride 900 "nvim";
 }
