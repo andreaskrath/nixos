@@ -12,6 +12,7 @@
     wowup-cf
     lime3ds
     melonDS
+    mgba
   ];
 
   hardware.xpadneo.enable = true;
