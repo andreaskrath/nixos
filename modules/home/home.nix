@@ -35,7 +35,7 @@
     zotero
     spotify
     bitwarden
-    brave
+    firefox
     qbittorrent
     vlc
     element-desktop
