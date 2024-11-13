@@ -51,8 +51,6 @@ in {
     pane_frames false
     copy_command "xclip -selection clipboard"
     copy_on_select true
-    session_name "default"
-    attach_to_session true
     session_serialization false
 
     theme "stylix"
