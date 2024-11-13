@@ -46,8 +46,14 @@
         statusline = {
           separator = "|";
           left = ["mode" "spinner" "version-control" "file-modification-indicator"];
-          center = ["read-only-indicator"];
-          right = ["diagnostics" "file-type" "total-line-numbers" "position"];
+          center = ["file-name"];
+          right = [
+            "read-only-indicator"
+            "diagnostics"
+            "file-type"
+            "total-line-numbers"
+            "position"
+          ];
           mode = {
             normal = "NORMAL";
             insert = "INSERT";
