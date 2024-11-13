@@ -10,7 +10,6 @@
     ./rofi.nix
     ./redshift.nix
     ./alacritty.nix
-    ./helix.nix
     ./direnv.nix
     ./zellij.nix
     ./zsh.nix
