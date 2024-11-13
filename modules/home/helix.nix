@@ -103,7 +103,6 @@
         config = {
           nixd = {
             formatting.command = ["${pkgs.alejandra}/bin/alejandra" "--"];
-            nixpkgs.expr = ''import (builtins.getFlake "/etc/nixos").inputs.nixpkgs {}'';
           };
         };
       };
