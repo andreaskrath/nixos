@@ -47,9 +47,8 @@ in {
   home.file.".config/zellij/config.kdl".text = ''
     simplified_ui true
     default_mode "locked"
-    mouse_mode false
+    mouse_mode true
     pane_frames false
-    copy_command "xclip -selection clipboard"
     copy_on_select true
     session_serialization false
 
