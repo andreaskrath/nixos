@@ -37,12 +37,6 @@ in {
       polarity = "dark";
       image = ../home/wallpaper.png;
 
-      cursor = {
-        package = pkgs.bibata-cursors;
-        name = "Bibata-Original-Classic";
-        size = 24;
-      };
-
       fonts = {
         monospace = {
           package = pkgs.cascadia-code;
