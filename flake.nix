@@ -11,10 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    helix-master = {
-      url = "github:helix-editor/helix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # helix-master = {
+    #   url = "github:helix-editor/helix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     zjstatus = {
       url = "github:dj95/zjstatus";
