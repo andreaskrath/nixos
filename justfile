@@ -10,5 +10,5 @@ boot:
     sudo nixos-rebuild boot --flake . |& nom
 
 deploy ACTION:
-    nixos-rebuild -I nixos-config=./hosts/chiefs/configuration.nix --target-host root@datamagikeren.dk {{ACTION}} |& nom
+    nixos-rebuild --flake .#chiefs --target-host root@datamagikeren.dk {{ACTION}} |& nom
 
