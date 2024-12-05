@@ -16,7 +16,6 @@
 
   # networking.firewall.enable = false;
   # networking.firewall.allowedUDPPorts = [ ... ];
-  networking.hostName = "chiefs"; # Define your hostname.
   networking.firewall.allowedTCPPorts = [80 443];
 
   # enables ipv6

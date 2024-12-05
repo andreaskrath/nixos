@@ -1,31 +1,12 @@
-{inputs, ...}: let
-  # might get this working in the future
-  # mkHomeManager = {
-  #   username,
-  #   homeDirectory ? "/home/${username}",
-  #   system ? "x86_64-linux",
-  # }: let
-  #   pkgs = import inputs.nixpkgs {
-  #     inherit system;
-  #     config.allowUnfree = true;
-  #   };
-  # in
-  #   inputs.home-manager.lib.homeManagerConfiguration {
-  #     inherit pkgs inputs;
-  #     modules = [
-  #       {
-  #         home = {
-  #           inherit username homeDirectory;
-  #           useGlobalPkgs = true;
-  #           useUserPackages = true;
-  #         };
-  #         programs.home-manager.enable = true;
-  #       }
-  #     ];
-  #   };
+{
+  inputs,
+  lib,
+  ...
+}: let
   mkNixOS = {
     hostname,
     system ? "x86_64-linux",
+    remote ? false,
   }: let
     hostConfig = ./hosts + "/${hostname}/configuration.nix";
     pkgs = import inputs.nixpkgs {
@@ -35,17 +16,20 @@
   in
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {inherit pkgs inputs;};
-      modules = [
-        inputs.home-manager.nixosModules.default
-        inputs.stylix.nixosModules.stylix
-        hostConfig
-        {
-          nix.nixPath = [
-            "nixpkgs=${inputs.nixpkgs}"
-          ];
-          networking.hostName = hostname;
-          nixpkgs.pkgs = pkgs;
-        }
-      ];
+      modules =
+        [
+          hostConfig
+          {
+            nix.nixPath = [
+              "nixpkgs=${inputs.nixpkgs}"
+            ];
+            networking.hostName = hostname;
+            nixpkgs.pkgs = pkgs;
+          }
+        ]
+        ++ lib.optionals (!remote) [
+          inputs.home-manager.nixosModules.default
+          inputs.stylix.nixosModules.stylix
+        ];
     };
 in {inherit mkNixOS;}

@@ -29,7 +29,10 @@
   };
 
   outputs = inputs:
-    with import ./make.nix {inherit inputs;}; {
+    with import ./make.nix {
+      inherit inputs;
+      lib = inputs.nixpkgs.lib;
+    }; {
       nixosConfigurations = {
         # desktop
         mozart = mkNixOS {
@@ -39,6 +42,11 @@
         # laptop
         chopin = mkNixOS {
           hostname = "chopin";
+        };
+
+        chiefs = mkNixOS {
+          hostname = "chiefs";
+          remote = true;
         };
       };
     };
