@@ -14,4 +14,9 @@
     desktop-fontsize = 12;
     popup-fontsize = 12;
   };
+
+  services.hardware.openrgb = {
+    enable = true;
+    motherboard = "intel";
+  };
 }
