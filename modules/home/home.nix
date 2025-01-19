@@ -37,7 +37,7 @@
     bitwarden
     firefox
     qbittorrent
-    vlc
+    mpv
     element-desktop
     vesktop
     speedcrunch
