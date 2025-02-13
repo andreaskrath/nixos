@@ -39,7 +39,7 @@ in {
 
       cursor = {
         package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Ice";
+        name = "Bibata-Original-Classic";
       };
 
       fonts = {
