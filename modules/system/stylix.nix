@@ -37,6 +37,11 @@ in {
       polarity = "dark";
       image = ../home/wallpaper.png;
 
+      cursor = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Ice";
+      };
+
       fonts = {
         monospace = {
           package = pkgs.cascadia-code;
