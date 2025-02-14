@@ -14,6 +14,7 @@
     ./zellij.nix
     ./zsh.nix
     ./zoxide.nix
+    ./discord.nix
   ];
 
   systemd.user.startServices = true;
@@ -39,7 +40,6 @@
     qbittorrent
     mpv
     element-desktop
-    vesktop
     speedcrunch
     thunderbird
     bruno
@@ -47,4 +47,9 @@
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
   programs.home-manager.enable = true;
+
+  programs.discord = {
+    enable = true;
+    wrapDiscord = true;
+  };
 }

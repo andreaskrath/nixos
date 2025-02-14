@@ -44,7 +44,7 @@ in {
           "${ws1}" = [{class = "^Navigator$";} {class = "^firefox$";}];
           "${ws2}" = [{class = "^Alacritty$";}];
           "${ws6}" = [{class = "^obsidian$";}];
-          "${ws9}" = [{class = "^vesktop$";}];
+          "${ws9}" = [{class = "^discord$";}];
           "${ws10}" = [{class = "^spotify$";}];
         };
 
