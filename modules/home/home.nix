@@ -36,7 +36,7 @@
     zotero
     spotify
     bitwarden
-    firefox
+    brave
     qbittorrent
     mpv
     element-desktop

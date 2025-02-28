@@ -41,7 +41,7 @@ in {
         ];
 
         assigns = {
-          "${ws1}" = [{class = "^Navigator$";} {class = "^firefox$";}];
+          "${ws1}" = [{class = "^Navigator$";} {class = "^brave-browser$";} {class = "^Brave-browser$";}];
           "${ws2}" = [{class = "^Alacritty$";}];
           "${ws6}" = [{class = "^obsidian$";}];
           "${ws9}" = [{class = "^discord$";}];
@@ -119,7 +119,7 @@ in {
           "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
           "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
           "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
-          "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
+          "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
           "${modifier}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
         };
       };
