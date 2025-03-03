@@ -43,6 +43,7 @@
     speedcrunch
     thunderbird
     bruno
+    jetbrains.datagrip
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
