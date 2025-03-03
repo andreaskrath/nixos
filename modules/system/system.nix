@@ -12,5 +12,7 @@
     just
     nix-output-monitor
     overskride
+
+    devenv
   ];
 }
