@@ -9,10 +9,6 @@
     remote ? false,
   }: let
     hostConfig = ./hosts + "/${hostname}/configuration.nix";
-    pkgs = import inputs.nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
   in
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
@@ -20,11 +16,16 @@
         [
           hostConfig
           {
+            nixpkgs = {
+              system = system;
+              config.allowUnfree = true;
+            };
+
+            networking.hostName = hostname;
+
             nix.nixPath = [
               "nixpkgs=${inputs.nixpkgs}"
             ];
-            networking.hostName = hostname;
-            nixpkgs.pkgs = pkgs;
           }
         ]
         ++ lib.optionals (!remote) [
