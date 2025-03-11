@@ -14,5 +14,7 @@
     overskride
 
     devenv
+
+    (callPackage ./scripts/flash.nix {})
   ];
 }
