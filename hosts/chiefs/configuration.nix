@@ -8,6 +8,7 @@
     ./network.nix
     ./zsh.nix
     ./nginx.nix
+    ./services.nix
   ];
 
   boot.loader.grub.enable = true;
