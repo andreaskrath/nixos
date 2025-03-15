@@ -2,7 +2,7 @@
   greeter = pkgs.callPackage ./greeter.nix {};
 in {
   systemd.services.greeter = {
-    script = "${greeter}/bin/src";
+    script = "${greeter}/bin/greeter";
     wantedBy = ["multi-user.target"];
   };
 }

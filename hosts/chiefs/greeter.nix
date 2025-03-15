@@ -1,17 +1,19 @@
 {
-  buildGoModule,
+  rustPlatform,
   fetchFromGitHub,
   ...
 }:
-buildGoModule rec {
+rustPlatform.buildRustPackage rec {
   pname = "greeter";
-  version = "0.3.2";
+  version = "1.0.1";
+
   src = fetchFromGitHub {
     owner = "thegrubster";
     repo = pname;
-    rev = "${version}";
-    sha256 = "sha256-QO2Ukte7hKMwPHQC4BZMPhkLsql2Q+pAigJ/i0dg7zA=";
+    rev = version;
+    sha256 = "sha256-VeQlkXSIehgZdt0svhaCi2Z4uUe+gp6NBNW6K9jIljA=";
   };
 
-  vendorHash = "sha256-+tEmXHlvG6R4NAXBoVbYpPe7hrF77BV5vfeFI0PaYxA=";
+  useFetchCargoVendor = true;
+  cargoHash = "sha256-lK2Z6bjnVymYqWmR2t5AANsrnowWtK94XRmv90xFzu4=";
 }
