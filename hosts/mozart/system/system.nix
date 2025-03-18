@@ -4,6 +4,7 @@
     ./display.nix
     ./boot.nix
     ./picom.nix
+    ./jellyfin.nix
     ../../../modules/system/stylix.nix
   ];
 
