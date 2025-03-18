@@ -6,6 +6,7 @@
     ./docker.nix
     ./display.nix
     ./settings.nix
+    ./jellyfin.nix
   ];
 
   environment.systemPackages = with pkgs; [
