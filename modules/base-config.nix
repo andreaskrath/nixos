@@ -39,4 +39,6 @@
   environment.variables.EDITOR = lib.mkOverride 900 "nvim";
   environment.variables.VISUAL = lib.mkOverride 900 "nvim";
   environment.variables.SUDO_EDITOR = lib.mkOverride 900 "nvim";
+
+  nix.settings.auto-optimise-store = true;
 }
