@@ -51,6 +51,7 @@ in {
     pane_frames false
     copy_on_select true
     session_serialization false
+    show_startup_tips false
 
     theme "stylix"
     themes {
