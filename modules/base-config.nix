@@ -41,4 +41,8 @@
   environment.variables.SUDO_EDITOR = lib.mkOverride 900 "nvim";
 
   nix.settings.auto-optimise-store = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "beekeeper-studio-5.1.5"
+  ];
 }
