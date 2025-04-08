@@ -62,7 +62,7 @@
         enable = true;
         position = 9;
         settings = {
-          format = "%Y-%m-%d %H:%M:%S";
+          format = "%H:%M:%S %d-%m-%Y";
         };
       };
     };
