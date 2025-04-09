@@ -3,6 +3,7 @@
     eza
     bat
     yazi
+    i3lock
   ];
 
   programs.zsh = {
@@ -25,6 +26,7 @@
       c = "clear";
       f = "${pkgs.yazi}/bin/yazi";
       ports = "${pkgs.unixtools.netstat}/bin/netstat -tulpn";
+      lock = "${pkgs.i3lock}/bin/i3lock -n -c 000000";
     };
 
     oh-my-zsh = {
