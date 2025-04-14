@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixvim.url = "github:thegrubster/nixvim";
+    nixvim.url = "github:andreaskrath/nixvim";
 
     home-manager = {
       url = "github:nix-community/home-manager";
