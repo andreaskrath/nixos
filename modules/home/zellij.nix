@@ -30,7 +30,7 @@ in {
                     mode_move           "#[fg=${colors.aqua}, bold] MOVE   "
                     mode_resize         "#[fg=${colors.aqua}, bold] RESIZE "
                     mode_locked          "#[fg=${colors.red}, bold] LOCKED "
-                    mode_tmux         "#[fg=${colors.orange}, bold] TMUX   "
+                    mode_scroll       "#[fg=${colors.orange}, bold] SCROLL "
                     mode_default_to_mode "tmux"
 
                     tab_normal               "#[fg=${colors.gray},italic] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
