@@ -21,7 +21,6 @@
       ".." = "cd ../";
       "...." = "cd ../../";
       "......" = "cd ../../../";
-      lg = "${pkgs.lazygit}/bin/lazygit";
       ld = "${pkgs.lazydocker}/bin/lazydocker";
       c = "clear";
       f = "${pkgs.yazi}/bin/yazi";
