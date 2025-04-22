@@ -14,14 +14,14 @@
     modules = {
       "memory" = {
         enable = true;
-        position = 1;
+        position = 10;
         settings = {
           format = "RAM %percentage_used";
         };
       };
       "cpu_usage" = {
         enable = true;
-        position = 2;
+        position = 20;
         settings = {
           format = "CPU %usage";
           max_threshold = 80;
@@ -29,7 +29,7 @@
       };
       "cpu_temperature 0" = {
         enable = true;
-        position = 3;
+        position = 30;
         settings = {
           format = "TEMP %degrees °C";
           max_threshold = 80;
@@ -37,7 +37,7 @@
       };
       "load" = {
         enable = true;
-        position = 4;
+        position = 40;
         settings = {
           format = "LOAD %1min";
           max_threshold = 5;
@@ -45,14 +45,14 @@
       };
       "disk /" = {
         enable = true;
-        position = 6;
+        position = 50;
         settings = {
           format = "DISK %free";
         };
       };
       "volume master" = {
         enable = true;
-        position = 7;
+        position = 60;
         settings = {
           format = "VOL %volume";
           mixer = "Master";
@@ -60,7 +60,7 @@
       };
       "time" = {
         enable = true;
-        position = 9;
+        position = 70;
         settings = {
           format = "%H:%M:%S %d-%m-%Y";
         };
