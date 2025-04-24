@@ -2,7 +2,7 @@
   programs.i3status.modules = {
     "battery all" = {
       enable = true;
-      position = 71;
+      position = 61;
       settings = {
         format = "%status %percentage %remaining";
         status_chr = "";
