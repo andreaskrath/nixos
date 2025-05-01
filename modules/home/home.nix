@@ -30,6 +30,7 @@
     unzip
     time
     inputs.nixvim.packages.${pkgs.system}.default
+    feh
 
     # misc
     obsidian
