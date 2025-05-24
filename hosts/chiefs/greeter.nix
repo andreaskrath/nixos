@@ -5,15 +5,17 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "greeter";
-  version = "1.0.1";
+
+  # Remember to clear hashes upon version bumping
+  version = "1.1.0";
 
   src = fetchFromGitHub {
     owner = "andreaskrath";
     repo = pname;
     rev = version;
-    sha256 = "sha256-VeQlkXSIehgZdt0svhaCi2Z4uUe+gp6NBNW6K9jIljA=";
+    sha256 = "sha256-4pA5Xr/rCOVa0+S4DK+TlkI5+V+IWZ4WEQgOoD+U5GU=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-lK2Z6bjnVymYqWmR2t5AANsrnowWtK94XRmv90xFzu4=";
+  cargoHash = "sha256-9j/1S8gJK7UkpEneInIj0zW+Xj0rSeG4YjkZLnmOj7k=";
 }
