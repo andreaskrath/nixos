@@ -4,17 +4,18 @@
   ...
 }: {
   imports = [
+    ./alacritty.nix
+    ./direnv.nix
+    ./discord.nix
+    ./dunst.nix
     ./git.nix
     ./i3.nix
     ./i3status.nix
-    ./rofi.nix
     ./redshift.nix
-    ./alacritty.nix
-    ./direnv.nix
+    ./rofi.nix
     ./zellij.nix
-    ./zsh.nix
     ./zoxide.nix
-    ./discord.nix
+    ./zsh.nix
   ];
 
   systemd.user.startServices = true;
