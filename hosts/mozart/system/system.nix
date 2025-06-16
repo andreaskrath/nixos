@@ -3,7 +3,7 @@
     ./games.nix
     ./display.nix
     ./boot.nix
-    ./picom.nix
+    # ./picom.nix
     ./jellyfin.nix
     ../../../modules/system/stylix.nix
   ];
