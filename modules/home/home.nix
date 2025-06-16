@@ -28,6 +28,7 @@
     tree
     btop
     p7zip
+    zip
     unzip
     time
     inputs.nixvim.packages.${pkgs.system}.default
