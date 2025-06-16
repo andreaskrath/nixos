@@ -248,21 +248,15 @@ in {
             bind "r" { SwitchToMode "resize"; }
         }
         shared_among "scroll" "search" {
-            bind "PageDown" { PageScrollDown; }
-            bind "PageUp" { PageScrollUp; }
-            bind "left" { PageScrollUp; }
-            bind "down" { ScrollDown; }
-            bind "up" { ScrollUp; }
-            bind "right" { PageScrollDown; }
             bind "Ctrl b" { PageScrollUp; }
+            bind "Ctrl f" { PageScrollDown; }
             bind "Ctrl c" { ScrollToBottom; SwitchToMode "locked"; }
             bind "d" { HalfPageScrollDown; }
-            bind "Ctrl f" { PageScrollDown; }
-            bind "h" { PageScrollUp; }
+            bind "u" { HalfPageScrollUp; }
             bind "j" { ScrollDown; }
             bind "k" { ScrollUp; }
-            bind "l" { PageScrollDown; }
-            bind "u" { HalfPageScrollUp; }
+            bind "g" { ScrollToTop; }
+            bind "G" { ScrollToBottom; }
         }
         entersearch {
             bind "Ctrl c" { SwitchToMode "scroll"; }
