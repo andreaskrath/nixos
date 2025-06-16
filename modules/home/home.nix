@@ -47,6 +47,7 @@
     thunderbird
     bruno
     beekeeper-studio
+    teams-for-linux
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
