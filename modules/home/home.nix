@@ -46,7 +46,7 @@
     speedcrunch
     thunderbird
     bruno
-    beekeeper-studio
+    jetbrains.datagrip
     teams-for-linux
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
