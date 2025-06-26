@@ -6,11 +6,11 @@
     ./docker.nix
     ./display.nix
     ./settings.nix
+    ./nh.nix
   ];
 
   environment.systemPackages = with pkgs; [
     just
-    nix-output-monitor
     overskride
 
     devenv

@@ -4,12 +4,12 @@ default:
 switch:
     @git add .
     @sudo true
-    sudo nixos-rebuild switch --flake . |& nom
+    nh os switch .
 
 boot:
     @git add .
     @sudo true
-    sudo nixos-rebuild boot --flake . |& nom
+    nh os boot .
 
 deploy ACTION:
     nixos-rebuild --flake .#chiefs --target-host root@datamagikeren.dk {{ACTION}} |& nom
