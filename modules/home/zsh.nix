@@ -38,7 +38,7 @@
       theme = "kafeitu";
     };
 
-    initExtra = ''
+    initContent = ''
       function current_dir() {
           local current_dir=$PWD
           if [[ $current_dir == $HOME ]]; then
