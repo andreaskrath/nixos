@@ -10,5 +10,6 @@ boot:
     @nh os boot .
 
 deploy ACTION:
-    nixos-rebuild --flake .#chiefs --target-host root@datamagikeren.dk {{ACTION}} |& nom
+    @git add .
+    @nh os {{ACTION}} .#nixosConfigurations.chiefs --target-host root@datamagikeren.dk
 
