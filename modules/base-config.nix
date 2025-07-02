@@ -31,7 +31,6 @@
     description = "krath";
     extraGroups = ["networkmanager" "wheel" "docker" "dialout" "video"];
   };
-  programs.zsh.enable = true;
   programs.dconf.enable = true;
 
   environment.variables.EDITOR = lib.mkOverride 900 "nvim";

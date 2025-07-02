@@ -1,4 +1,8 @@
-{inputs, ...}: let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   zjstatus = inputs.zjstatus.packages."x86_64-linux".default;
   colors = {
     red = "#cc241d";
@@ -52,6 +56,7 @@ in {
     copy_on_select true
     session_serialization false
     show_startup_tips false
+    default_shell "${pkgs.zsh}/bin/zsh"
 
     theme "stylix"
     themes {
