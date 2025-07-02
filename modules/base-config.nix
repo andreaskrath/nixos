@@ -26,8 +26,6 @@
 
   services.printing.enable = true;
 
-  environment.shells = with pkgs; [zsh];
-  users.defaultUserShell = pkgs.zsh;
   users.users.krath = {
     isNormalUser = true;
     description = "krath";
