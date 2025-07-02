@@ -17,5 +17,6 @@
 
     (callPackage ./scripts/flash.nix {})
     (callPackage ./scripts/shows.nix {})
+    (callPackage ./scripts/dev.nix {})
   ];
 }
