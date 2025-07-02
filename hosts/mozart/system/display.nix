@@ -11,7 +11,7 @@
         enable = false;
         finegrained = false;
       };
-      open = true;
+      open = false;
       nvidiaSettings = true;
     };
 
