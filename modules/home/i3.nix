@@ -26,19 +26,15 @@ in {
         floating.titlebar = false;
         terminal = "alacritty";
 
-        bars = [
+        startup = [
           {
-            id = "bar-default";
-            command = "${pkgs.i3}/bin/i3bar";
-            statusCommand = "${pkgs.i3status}/bin/i3status";
-            trayOutput = "primary";
-            fonts = {
-              names = ["Cascadia Mono"];
-              style = "Bold";
-              size = 12.0;
-            };
+            command = "systemctl --user restart polybar";
+            always = true;
+            notification = false;
           }
         ];
+
+        bars = [];
 
         assigns = {
           "${ws1}" = [{class = "^Navigator$";} {class = "^brave-browser$";} {class = "^Brave-browser$";}];
