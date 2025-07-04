@@ -9,13 +9,16 @@ alert = #fb4934
 success = #b8bb26
 
 [bar/primary]
-width = 100%
+width = 98.4%
+offset-x = 0.8%
+offset-y = 10
 height = 28
 radius = 0
 fixed-center = true
-
-border-bottom-size = 1
-border-bottom-color = ${colors.primary}
+override-redirect = true
+wm-restack = i3
+border-size = 1
+border-color = ${colors.primary}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
