@@ -20,14 +20,11 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = ${colors.primary}
 
-border-size = 0
-border-color = #00000000
-
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 font-0 = "Cascadia Mono NF:size=14;2"
 font-1 = "Cascadia Mono NF:size=16;3"
@@ -92,9 +89,9 @@ mount-0 = /
 mount-1 = /mnt/external
 
 format-mounted = <label-mounted>
-format-mounted-prefix = "󰋊 "
-format-mounted-prefix-foreground = ${colors.primary}
-label-mounted = %percentage_used%%
+format-mounted-suffix = " 󰋊"
+format-mounted-suffix-foreground = ${colors.primary}
+label-mounted = %percentage_used:3%%
 
 format-unmounted = <label-unmounted>
 label-unmounted = %mountpoint% not mounted
@@ -103,27 +100,27 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "󰍛 "
-format-prefix-foreground = ${colors.primary}
-label = %percentage_used%%
+format-suffix = " 󰍛"
+format-suffix-foreground = ${colors.primary}
+label = %percentage_used:3%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "󰻠 "
-format-prefix-foreground = ${colors.primary}
-label = %percentage%%
+format-suffix = " 󰻠"
+format-suffix-foreground = ${colors.primary}
+label = %percentage:3%%
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 80
 
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
+format = <label> <ramp>
+format-warn = <label-warn> <ramp>
 
-label = %temperature-c%
-label-warn = %temperature-c%
+label = %temperature-c:4%
+label-warn = %temperature-c:4%
 label-warn-foreground = ${colors.alert}
 
 ramp-0 = 󰔏
@@ -137,9 +134,9 @@ interface-type = wired
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-prefix = "󰇚 "
-format-connected-prefix-foreground = ${colors.primary}
-label-connected = %downspeed:9%
+format-connected-suffix = " 󰇚"
+format-connected-suffix-foreground = ${colors.primary}
+label-connected = %downspeed:10%
 
 format-disconnected =
 
@@ -149,17 +146,17 @@ interface-type = wired
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-prefix = "󰕒 "
-format-connected-prefix-foreground = ${colors.primary}
-label-connected = %upspeed:9%
+format-connected-suffix = " 󰕒"
+format-connected-suffix-foreground = ${colors.primary}
+label-connected = %upspeed:10%
 
 format-disconnected =
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
+format-volume = <label-volume> <ramp-volume>
+label-volume = %percentage:3%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 󰝟 muted
@@ -180,7 +177,6 @@ date-alt = %A, %B %d, %Y
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = "󰥔 "
 format-prefix-foreground = ${colors.primary}
 
 label = %date% %time%
