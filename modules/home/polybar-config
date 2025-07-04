@@ -122,7 +122,8 @@ label = %percentage:3%%
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 2
+zone-type = x86_pkg_temp
 warn-temperature = 80
 
 format = <label> <ramp>
