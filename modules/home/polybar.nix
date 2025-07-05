@@ -49,7 +49,7 @@ in {
         override.redirect = true;
 
         # Tells polybar that the underlying WM is i3 for z-ordering purposes
-        wm.respace = "i3";
+        wm.restack = "i3";
 
         border.size = 1;
         border.color = colors.primary;
