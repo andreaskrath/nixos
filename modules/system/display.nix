@@ -3,6 +3,7 @@
   lib,
   ...
 }: {
+  programs.i3lock.enable = true;
   hardware = {
     graphics.enable = true;
     enableRedistributableFirmware = true;

@@ -3,7 +3,6 @@
     eza
     bat
     yazi
-    i3lock
   ];
 
   programs.zsh = {
