@@ -10,7 +10,6 @@
     ./dunst.nix
     ./git.nix
     ./i3.nix
-    # ./i3status.nix
     ./polybar.nix
     ./redshift.nix
     ./rofi.nix

@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  configName,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./system/system.nix
@@ -12,7 +16,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs configName;};
     useGlobalPkgs = true;
     useUserPackages = true;
     users.krath = {

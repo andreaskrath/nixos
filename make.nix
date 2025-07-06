@@ -11,7 +11,10 @@
     hostConfig = ./hosts + "/${hostname}/configuration.nix";
   in
     inputs.nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {
+        inherit inputs;
+        configName = hostname;
+      };
       modules =
         [
           hostConfig

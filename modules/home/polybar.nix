@@ -1,4 +1,10 @@
-{pkgs, ...}: let
+{
+  configName,
+  pkgs,
+  lib,
+  ...
+}: let
+  _ = builtins.trace "configName is: ${configName}" null;
   colors = {
     background = "#282828";
     background-alt = "#3c3836";
@@ -10,6 +16,42 @@
     success = "#b8bb26";
     nix = "#6aaedf";
   };
+
+  configs = {
+    mozart = {
+      launchScriptEnding = ''
+        # Launch primary monitor with its own log
+        MONITOR=DP-4 polybar --reload primary 2>&1 | ${pkgs.toybox}/bin/tee -a /tmp/polybar-primary.log & disown
+
+        # Launch secondary monitor with its own log
+        MONITOR=DP-2 polybar --reload secondary 2>&1 | ${pkgs.toybox}/bin/tee -a /tmp/polybar-secondary.log & disown
+      '';
+      primary-bar-width = "98.4%";
+      offset-x = "0.8%";
+      modules-right = "network-down network-up filesystem memory cpu temperature pulseaudio tray";
+      thermal-zone = 2;
+      thermal-type = "x86_pkg_temp";
+    };
+
+    chopin = {
+      launchScriptEnding = ''
+        # Launch only monitor with a single log file
+        MONITOR=eDP polybar --reload primary 2>&1 | ${pkgs.toybox}/bin/tee -a /tmp/polybar.log & disown
+      '';
+      primary-bar-width = "97.8%";
+      offset-x = "1.1%";
+      modules-right = "filesystem memory cpu temperature pulseaudio tray battery";
+      thermal-zone = 0;
+      thermal-type = "acpitz";
+    };
+  };
+
+  config =
+    if configName == "mozart"
+    then configs.mozart
+    else if configName == "chopin"
+    then configs.chopin
+    else builtins.throw "'${configName}' does not have a polybar configuration specified";
 in {
   services.polybar = {
     enable = true;
@@ -19,24 +61,21 @@ in {
       pulseSupport = true;
     };
 
-    script = ''
-      # Terminate already running bar instances
-      ${pkgs.toybox}/bin/killall -q polybar
+    script =
+      ''
+        # Terminate already running bar instances
+        ${pkgs.toybox}/bin/killall -q polybar
 
-      # Wait until the processes have been shut down
-      while ${pkgs.toybox}/bin/pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+        # Wait until the processes have been shut down
+        while ${pkgs.toybox}/bin/pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-      # Launch primary monitor with its own log
-      MONITOR=DP-4 polybar --reload primary 2>&1 | ${pkgs.toybox}/bin/tee -a /tmp/polybar-primary.log & disown
-
-      # Launch secondary monitor with its own log
-      MONITOR=DP-2 polybar --reload secondary 2>&1 | ${pkgs.toybox}/bin/tee -a /tmp/polybar-secondary.log & disown
-    '';
+      ''
+      + config.launchScriptEnding;
 
     settings = {
       "bar/primary" = {
-        width = "98.4%";
-        offset.x = "0.8%";
+        width = config.primary-bar-width;
+        offset.x = config.offset-x;
         height = 28;
         offset-y = 10;
 
@@ -75,7 +114,7 @@ in {
 
         modules.left = "powermenu i3";
         modules.center = "date";
-        modules.right = "network-down network-up filesystem memory cpu temperature pulseaudio tray";
+        modules.right = config.modules-right;
 
         cursor.click = "pointer";
         cursor.scroll = "ns-resize";
@@ -89,11 +128,13 @@ in {
         enable.ipc = true;
       };
 
-      "bar/secondary" = {
-        "inherit" = "bar/primary";
-        modules-right = "network-down network-up filesystem memory cpu temperature pulseaudio";
-        modules-left = "i3";
-      };
+      "bar/secondary" =
+        lib.mkIf
+        (configName == "mozart") {
+          "inherit" = "bar/primary";
+          modules-right = "network-down network-up filesystem memory cpu temperature pulseaudio";
+          modules-left = "i3";
+        };
 
       "module/i3" = {
         type = "internal/i3";
@@ -134,7 +175,9 @@ in {
         interval = 25;
 
         mount-0 = "/";
-        mount-1 = "/mnt/external";
+        mount-1 =
+          lib.mkIf
+          (configName == "mozart") "/mnt/external";
 
         format-mounted = "<label-mounted>";
         format-mounted-suffix = " 󰋊";
@@ -165,8 +208,8 @@ in {
       "module/temperature" = {
         type = "internal/temperature";
         interval = 2;
-        thermal-zone = 2;
-        zone-type = "x86_pkg_temp";
+        thermal-zone = config.thermal-zone;
+        zone-type = config.thermal-type;
         warn-temperature = 80;
 
         format = "<label> <ramp>";
@@ -182,31 +225,35 @@ in {
         ramp-foreground = colors.primary;
       };
 
-      "module/network-down" = {
-        type = "internal/network";
-        interface-type = "wired";
-        interval = 2;
+      "module/network-down" =
+        lib.mkIf
+        (configName == "mozart") {
+          type = "internal/network";
+          interface-type = "wired";
+          interval = 2;
 
-        format-connected = "<label-connected>";
-        format-connected-suffix = " 󰇚";
-        format-connected-suffix-foreground = colors.primary;
-        label-connected = "%downspeed:10%";
+          format-connected = "<label-connected>";
+          format-connected-suffix = " 󰇚";
+          format-connected-suffix-foreground = colors.primary;
+          label-connected = "%downspeed:10%";
 
-        format-disconnected = "";
-      };
+          format-disconnected = "";
+        };
 
-      "module/network-up" = {
-        type = "internal/network";
-        interface-type = "wired";
-        interval = 2;
+      "module/network-up" =
+        lib.mkIf
+        (configName == "mozart") {
+          type = "internal/network";
+          interface-type = "wired";
+          interval = 2;
 
-        format-connected = "<label-connected>";
-        format-connected-suffix = " 󰕒";
-        format-connected-suffix-foreground = colors.primary;
-        label-connected = "%upspeed:10%";
+          format-connected = "<label-connected>";
+          format-connected-suffix = " 󰕒";
+          format-connected-suffix-foreground = colors.primary;
+          label-connected = "%upspeed:10%";
 
-        format-disconnected = "";
-      };
+          format-disconnected = "";
+        };
 
       "module/pulseaudio" = {
         type = "internal/pulseaudio";
@@ -269,6 +316,22 @@ in {
 
         menu-0-3 = "⏻ Power off";
         menu-0-3-exec = "${pkgs.systemd}/bin/systemctl poweroff";
+      };
+
+      "module/battery" = lib.mkIf (configName == "chopin") {
+        type = "internal/battery";
+        battery = "BAT1";
+        adapter = "ACAD";
+        poll-interval = 2;
+        full-at = 86;
+
+        format-charging = "<label-charging>";
+        format-discharging = "<label-discharging>";
+        format-full = "<label-full>";
+
+        label-charging = "%percentage%% 󰂄";
+        label-discharging = "%percentage%% 󰁾";
+        label-full = "100%";
       };
     };
   };
