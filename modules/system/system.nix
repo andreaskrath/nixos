@@ -1,22 +1,22 @@
 {pkgs, ...}: {
   imports = [
     ./audio.nix
-    ./network.nix
     ./boot.nix
-    ./docker.nix
     ./display.nix
-    ./settings.nix
+    ./docker.nix
+    ./network.nix
     ./nh.nix
+    ./security.nix
+    ./settings.nix
   ];
 
   environment.systemPackages = with pkgs; [
+    devenv
     just
     overskride
 
-    devenv
-
+    (callPackage ./scripts/dev.nix {})
     (callPackage ./scripts/flash.nix {})
     (callPackage ./scripts/shows.nix {})
-    (callPackage ./scripts/dev.nix {})
   ];
 }
