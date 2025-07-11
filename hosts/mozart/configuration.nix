@@ -1,6 +1,7 @@
 {
   inputs,
   configName,
+  homeModules,
   ...
 }: {
   imports = [
@@ -16,7 +17,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs configName;};
+    extraSpecialArgs = {inherit inputs configName homeModules;};
     useGlobalPkgs = true;
     useUserPackages = true;
     users.krath = {
