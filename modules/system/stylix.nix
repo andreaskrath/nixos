@@ -2,6 +2,7 @@
   pkgs,
   config,
   lib,
+  misc,
   ...
 }: let
   cfg = config.style;
@@ -35,7 +36,7 @@ in {
       enable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
       polarity = "dark";
-      image = ../home/wallpaper.png;
+      image = "${misc}/wallpaper.png";
 
       cursor = {
         package = pkgs.bibata-cursors;

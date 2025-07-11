@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  misc,
   ...
 }: {
   programs.i3lock.enable = true;
@@ -40,7 +41,7 @@
           font-size = 15
           text-color = "#e0dee3"
           show-image-on-all-monitors = true
-          background-image = "${../home/wallpaper.png}"
+          background-image = "${misc}/wallpaper.png"
           background-color = "#727282"
           window-color = "#37353a"
           bordor-bordor = "#0bb6d9"
