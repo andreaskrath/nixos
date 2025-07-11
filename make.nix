@@ -14,6 +14,9 @@
       specialArgs = {
         inherit inputs;
         configName = hostname;
+        modules = ./modules/system;
+        homeModules = ./modules/home;
+        misc = ./misc;
       };
       modules =
         [
