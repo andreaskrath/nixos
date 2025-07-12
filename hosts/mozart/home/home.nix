@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ./i3.nix
     ./git.nix
     "${homeModules}/polybar.nix"
     "${homeModules}/i3.nix"
@@ -28,6 +27,7 @@
 
     i3 = {
       enable = true;
+
       extraAssigns = {
         "4" = [
           {class = "^steam$";}
@@ -36,6 +36,7 @@
           {class = "^battle.net.exe$";}
         ];
       };
+
       extraStartup = [
         {
           command = ''
@@ -45,6 +46,11 @@
           notification = false;
         }
       ];
+
+      bindWorkspaces = {
+        DP-2 = ["9" "10"];
+        DP-4 = ["1" "2" "3" "4" "5" "6" "7" "8"];
+      };
     };
   };
 }

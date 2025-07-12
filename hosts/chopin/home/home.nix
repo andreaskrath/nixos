@@ -4,9 +4,9 @@
   ...
 }: {
   imports = [
-    ./i3.nix
     ./git.nix
     "${homeModules}/polybar.nix"
+    "${homeModules}/i3.nix"
   ];
 
   home.packages = with pkgs; [
@@ -27,6 +27,14 @@
 
       thermalZone = 0;
       thermalType = "acpitz";
+    };
+
+    i3 = {
+      enable = true;
+      extraKeybinds = {
+        "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
+        "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
+      };
     };
   };
 }

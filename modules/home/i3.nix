@@ -7,23 +7,78 @@
   cfg = config.krath.home.i3;
 
   bindWorkspaceToOutput = output: workspace: "workspace ${workspace} output ${output}";
-
-  ws1 = "1";
-  ws2 = "2";
-  ws3 = "3";
-  ws4 = "4";
-  ws5 = "5";
-  ws6 = "6";
-  ws7 = "7";
-  ws8 = "8";
-  ws9 = "9";
-  ws10 = "10";
 in {
   options.krath.home.i3 = {
     enable = lib.mkEnableOption "Enable i3 module.";
 
+    workspace1 = lib.mkOption {
+      type = lib.types.str;
+      default = "1";
+      description = "Workspace 1.";
+    };
+
+    workspace2 = lib.mkOption {
+      type = lib.types.str;
+      default = "2";
+      description = "Workspace 2.";
+    };
+
+    workspace3 = lib.mkOption {
+      type = lib.types.str;
+      default = "3";
+      description = "Workspace 3.";
+    };
+
+    workspace4 = lib.mkOption {
+      type = lib.types.str;
+      default = "4";
+      description = "Workspace 4.";
+    };
+
+    workspace5 = lib.mkOption {
+      type = lib.types.str;
+      default = "5";
+      description = "Workspace 5.";
+    };
+
+    workspace6 = lib.mkOption {
+      type = lib.types.str;
+      default = "6";
+      description = "Workspace 6.";
+    };
+
+    workspace7 = lib.mkOption {
+      type = lib.types.str;
+      default = "7";
+      description = "Workspace 7.";
+    };
+
+    workspace8 = lib.mkOption {
+      type = lib.types.str;
+      default = "8";
+      description = "Workspace 8.";
+    };
+
+    workspace9 = lib.mkOption {
+      type = lib.types.str;
+      default = "9";
+      description = "Workspace 9.";
+    };
+
+    workspace10 = lib.mkOption {
+      type = lib.types.str;
+      default = "10";
+      description = "Workspace 10.";
+    };
+
     extraAssigns = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.listOf (lib.types.attrsOf (lib.types.str)));
+      type = lib.types.attrsOf (
+        lib.types.listOf (
+          lib.types.attrsOf (
+            lib.types.either lib.types.str lib.types.bool
+          )
+        )
+      );
       default = {};
       description = ''
         Extra assignments of application classes to specific workspaces.
@@ -31,7 +86,24 @@ in {
     };
 
     extraStartup = lib.mkOption {
-      type = lib.types.listOf (lib.types.attrsOf (lib.types.str lib.types.bool));
+      type = lib.types.listOf (
+        lib.types.submodule {
+          options = {
+            command = lib.mkOption {
+              type = lib.types.str;
+              description = "Command to execute on startup";
+            };
+            always = lib.mkOption {
+              type = lib.types.bool;
+              description = "Whether to run the command on each restart.";
+            };
+            notification = lib.mkOption {
+              type = lib.types.bool;
+              description = "Whether to enable startup notifications for this command.";
+            };
+          };
+        }
+      );
       default = [];
       description = ''
         Extra startup commands to run.
@@ -39,7 +111,7 @@ in {
     };
 
     extraKeybinds = lib.mkOption {
-      type = lib.types.attrsOf lib.types.str;
+      type = lib.types.attrsOf (lib.types.nullOr lib.types.str);
       default = {};
       description = ''
         Extra keybinds to add.
@@ -71,7 +143,7 @@ in {
 
         config = rec {
           modifier = "Mod4";
-          defaultWorkspace = "workspace ${ws1}";
+          defaultWorkspace = "workspace ${cfg.workspace1}";
           focus = {
             followMouse = false;
             mouseWarping = false;
@@ -93,11 +165,11 @@ in {
 
           assigns = lib.mkMerge [
             {
-              "${ws1}" = [{class = "^Navigator$";} {class = "^brave-browser$";} {class = "^Brave-browser$";}];
-              "${ws2}" = [{class = "^Alacritty$";}];
-              "${ws6}" = [{class = "^obsidian$";}];
-              "${ws9}" = [{class = "^discord$";}];
-              "${ws10}" = [{class = "^spotify$";}];
+              "${cfg.workspace1}" = [{class = "^Navigator$";} {class = "^brave-browser$";} {class = "^Brave-browser$";}];
+              "${cfg.workspace2}" = [{class = "^Alacritty$";}];
+              "${cfg.workspace6}" = [{class = "^obsidian$";}];
+              "${cfg.workspace9}" = [{class = "^discord$";}];
+              "${cfg.workspace10}" = [{class = "^spotify$";}];
             }
             cfg.extraAssigns
           ];
@@ -115,27 +187,27 @@ in {
 
           keybindings = lib.mkMerge [
             {
-              "${modifier}+1" = "workspace ${ws1}";
-              "${modifier}+2" = "workspace ${ws2}";
-              "${modifier}+3" = "workspace ${ws3}";
-              "${modifier}+4" = "workspace ${ws4}";
-              "${modifier}+5" = "workspace ${ws5}";
-              "${modifier}+6" = "workspace ${ws6}";
-              "${modifier}+7" = "workspace ${ws7}";
-              "${modifier}+8" = "workspace ${ws8}";
-              "${modifier}+9" = "workspace ${ws9}";
-              "${modifier}+0" = "workspace ${ws10}";
+              "${modifier}+1" = "workspace ${cfg.workspace1}";
+              "${modifier}+2" = "workspace ${cfg.workspace2}";
+              "${modifier}+3" = "workspace ${cfg.workspace3}";
+              "${modifier}+4" = "workspace ${cfg.workspace4}";
+              "${modifier}+5" = "workspace ${cfg.workspace5}";
+              "${modifier}+6" = "workspace ${cfg.workspace6}";
+              "${modifier}+7" = "workspace ${cfg.workspace7}";
+              "${modifier}+8" = "workspace ${cfg.workspace8}";
+              "${modifier}+9" = "workspace ${cfg.workspace9}";
+              "${modifier}+0" = "workspace ${cfg.workspace10}";
 
-              "${modifier}+Shift+1" = "move container to workspace ${ws1}";
-              "${modifier}+Shift+2" = "move container to workspace ${ws2}";
-              "${modifier}+Shift+3" = "move container to workspace ${ws3}";
-              "${modifier}+Shift+4" = "move container to workspace ${ws4}";
-              "${modifier}+Shift+5" = "move container to workspace ${ws5}";
-              "${modifier}+Shift+6" = "move container to workspace ${ws6}";
-              "${modifier}+Shift+7" = "move container to workspace ${ws7}";
-              "${modifier}+Shift+8" = "move container to workspace ${ws8}";
-              "${modifier}+Shift+9" = "move container to workspace ${ws9}";
-              "${modifier}+Shift+0" = "move container to workspace ${ws10}";
+              "${modifier}+Shift+1" = "move container to workspace ${cfg.workspace1}";
+              "${modifier}+Shift+2" = "move container to workspace ${cfg.workspace2}";
+              "${modifier}+Shift+3" = "move container to workspace ${cfg.workspace3}";
+              "${modifier}+Shift+4" = "move container to workspace ${cfg.workspace4}";
+              "${modifier}+Shift+5" = "move container to workspace ${cfg.workspace5}";
+              "${modifier}+Shift+6" = "move container to workspace ${cfg.workspace6}";
+              "${modifier}+Shift+7" = "move container to workspace ${cfg.workspace7}";
+              "${modifier}+Shift+8" = "move container to workspace ${cfg.workspace8}";
+              "${modifier}+Shift+9" = "move container to workspace ${cfg.workspace9}";
+              "${modifier}+Shift+0" = "move container to workspace ${cfg.workspace10}";
 
               "${modifier}+Shift+q" = "kill";
 
@@ -184,7 +256,7 @@ in {
 
         extraConfig =
           ''
-            for_window [class="Spotify"] move to workspace ${ws10}
+            for_window [class="Spotify"] move to workspace ${cfg.workspace10}
           ''
           + builtins.concatStringsSep "\n" (
             lib.flatten (
