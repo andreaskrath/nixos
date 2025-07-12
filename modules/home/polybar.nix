@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  cfg = config.krath.polybar;
+  cfg = config.krath.home.polybar;
 
   launchPolybar = index: monitor: "MONITOR=${monitor} polybar --reload ${
     if index == 0
@@ -23,7 +23,7 @@
     nix = "#6aaedf";
   };
 in {
-  options.krath.polybar = {
+  options.krath.home.polybar = {
     enable = lib.mkEnableOption "Enable Polybar module";
 
     monitors = lib.mkOption {

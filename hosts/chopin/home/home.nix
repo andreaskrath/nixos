@@ -14,7 +14,7 @@
     libreoffice
   ];
 
-  krath = {
+  krath.home = {
     polybar = {
       enable = true;
       enableBattery = true;

@@ -5,7 +5,7 @@
     "${homeModules}/polybar.nix"
   ];
 
-  krath = {
+  krath.home = {
     polybar = {
       enable = true;
       enableDownload = true;
