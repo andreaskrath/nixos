@@ -8,12 +8,14 @@
     "${modules}/stylix.nix"
   ];
 
-  style = {
-    enable = true;
-    app-fontsize = 10;
-    terminal-fontsize = 14;
-    desktop-fontsize = 12;
-    popup-fontsize = 12;
+  krath.system = {
+    stylix = {
+      enable = true;
+      appFontSize = 10;
+      terminalFontSize = 14;
+      desktopFontSize = 12;
+      popupFontSize = 12;
+    };
   };
 
   services.hardware.openrgb = {

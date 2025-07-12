@@ -5,29 +5,29 @@
   misc,
   ...
 }: let
-  cfg = config.style;
+  cfg = config.krath.system.stylix;
 in {
-  options.style = {
-    enable = lib.mkEnableOption "enable stylix module";
+  options.krath.system.stylix = {
+    enable = lib.mkEnableOption "Enable stylix module.";
 
-    app-fontsize = lib.mkOption {
-      default = 10;
-      description = "font size for applications";
+    appFontSize = lib.mkOption {
+      type = lib.types.int;
+      description = "Font size for applications.";
     };
 
-    terminal-fontsize = lib.mkOption {
-      default = 10;
-      description = "font size for terminals";
+    terminalFontSize = lib.mkOption {
+      type = lib.types.int;
+      description = "Font size for terminals.";
     };
 
-    desktop-fontsize = lib.mkOption {
-      default = 10;
-      description = "font size for desktop";
+    desktopFontSize = lib.mkOption {
+      type = lib.types.int;
+      description = "Font size for desktop.";
     };
 
-    popup-fontsize = lib.mkOption {
-      default = 10;
-      description = "font size for popups";
+    popupFontSize = lib.mkOption {
+      type = lib.types.int;
+      description = "Font size for popups.";
     };
   };
 
@@ -59,10 +59,10 @@ in {
         };
 
         sizes = {
-          applications = cfg.app-fontsize;
-          terminal = cfg.terminal-fontsize;
-          desktop = cfg.desktop-fontsize;
-          popups = cfg.popup-fontsize;
+          applications = cfg.appFontSize;
+          terminal = cfg.terminalFontSize;
+          desktop = cfg.desktopFontSize;
+          popups = cfg.popupFontSize;
         };
       };
 
