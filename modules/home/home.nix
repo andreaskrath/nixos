@@ -8,7 +8,6 @@
     ./direnv.nix
     ./discord.nix
     ./dunst.nix
-    ./git.nix
     # ./i3.nix
     ./redshift.nix
     ./rofi.nix

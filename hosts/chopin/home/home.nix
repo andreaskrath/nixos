@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./git.nix
+    "${homeModules}/git.nix"
     "${homeModules}/polybar.nix"
     "${homeModules}/i3.nix"
   ];
@@ -35,6 +35,11 @@
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
         "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
       };
+    };
+
+    git = {
+      enable = true;
+      allowedSignersKey = "AAAAC3NzaC1lZDI1NTE5AAAAIEmQFlZI9ovaJXVgNv+c3hnLcN8z9ub1pzFSV/4dUeEQ";
     };
   };
 }
