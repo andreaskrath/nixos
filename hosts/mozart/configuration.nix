@@ -22,7 +22,7 @@
     useUserPackages = true;
     users.krath = {
       imports = [
-        ./home/home.nix
+        ./home.nix
         ../../modules/home/home.nix
       ];
     };
