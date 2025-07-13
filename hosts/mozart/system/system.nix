@@ -4,8 +4,8 @@
     ./display.nix
     ./boot.nix
     # ./picom.nix
-    ./jellyfin.nix
     "${modules}/stylix.nix"
+    "${modules}/jellyfin.nix"
   ];
 
   krath.system = {
@@ -15,6 +15,10 @@
       terminalFontSize = 14;
       desktopFontSize = 12;
       popupFontSize = 12;
+    };
+
+    jellyfin = {
+      enable = true;
     };
   };
 
