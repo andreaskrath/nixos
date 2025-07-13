@@ -1,16 +1,18 @@
-{...}: {
+{modules, ...}: {
   imports = [
     ./display.nix
     ./boot.nix
     ./network.nix
-    ../../../modules/system/stylix.nix
+    "${modules}/stylix.nix"
   ];
 
-  style = {
-    enable = true;
-    app-fontsize = 9;
-    terminal-fontsize = 9;
-    desktop-fontsize = 10;
-    popup-fontsize = 11;
+  krath.system = {
+    stylix = {
+      enable = true;
+      appFontSize = 9;
+      terminalFontSize = 9;
+      desktopFontSize = 10;
+      popupFontSize = 11;
+    };
   };
 }
