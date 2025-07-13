@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./audio.nix
-    ./boot.nix
     ./display.nix
     ./docker.nix
     ./network.nix

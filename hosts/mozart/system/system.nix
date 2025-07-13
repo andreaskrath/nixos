@@ -2,13 +2,20 @@
   imports = [
     ./games.nix
     ./display.nix
-    ./boot.nix
     # ./picom.nix
     "${modules}/stylix.nix"
     "${modules}/jellyfin.nix"
+    "${modules}/boot.nix"
   ];
 
   krath.system = {
+    boot = {
+      enable = true;
+      canTouchEFIVariables = true;
+      kernelModules = ["nvidia"];
+      blacklistedKernelModules = ["nouveau"];
+    };
+
     stylix = {
       enable = true;
       appFontSize = 10;

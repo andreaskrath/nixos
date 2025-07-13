@@ -1,12 +1,17 @@
 {modules, ...}: {
   imports = [
     ./display.nix
-    ./boot.nix
     ./network.nix
     "${modules}/stylix.nix"
+    "${modules}/boot.nix"
   ];
 
   krath.system = {
+    boot = {
+      enable = true;
+      EFIInstallAsRemovable = true;
+    };
+
     stylix = {
       enable = true;
       appFontSize = 9;
