@@ -45,6 +45,7 @@
     bruno
     jetbrains.datagrip
     teams-for-linux
+    pavucontrol
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
