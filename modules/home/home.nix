@@ -27,6 +27,7 @@
     p7zip
     zip
     unzip
+    unrar
     time
     inputs.nixvim.packages.${pkgs.system}.default
     feh
