@@ -6,7 +6,7 @@
     authentication = pkgs.lib.mkOverride 10 ''
       # type  database user_name address   auth_method
         local all      all                 trust
-        host  all      all       0.0.0.0/0 trust
+        host  all      all       0.0.0.0/0 scram-sha-256
     '';
 
     settings = {
