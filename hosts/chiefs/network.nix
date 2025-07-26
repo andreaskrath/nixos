@@ -16,7 +16,7 @@
 
   # networking.firewall.enable = false;
   # networking.firewall.allowedUDPPorts = [ ... ];
-  networking.firewall.allowedTCPPorts = [80 443];
+  networking.firewall.allowedTCPPorts = [80 443 5432];
 
   # enables ipv6
   networking.useDHCP = false;

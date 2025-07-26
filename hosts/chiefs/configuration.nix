@@ -9,6 +9,7 @@
     ./zsh.nix
     ./nginx.nix
     ./services.nix
+    ./postgres.nix
   ];
 
   boot.loader.grub.enable = true;
