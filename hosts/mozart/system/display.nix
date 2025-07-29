@@ -36,11 +36,5 @@
       Option         "AllowIndirectGLXProtocol" "off"
       Option         "TripleBuffer" "on"
     '';
-
-    sessionCommands = ''
-      ${pkgs.xorg.xset}/bin/xset s off
-      ${pkgs.xorg.xset}/bin/xset -dpms
-      ${pkgs.xorg.xset}/bin/xset s noblank
-    '';
   };
 }
