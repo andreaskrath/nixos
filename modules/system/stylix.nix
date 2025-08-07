@@ -74,6 +74,7 @@ in {
     home-manager.users.krath.stylix = {
       targets.helix.enable = false;
       targets.zellij.enable = false;
+      targets.neovim.enable = false;
     };
   };
 }

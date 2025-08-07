@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }: {
   imports = [
@@ -8,6 +7,7 @@
     ./direnv.nix
     ./discord.nix
     ./dunst.nix
+    ./neovim.nix
     ./redshift.nix
     ./rofi.nix
     ./zellij.nix
@@ -29,7 +29,6 @@
     unzip
     unrar
     time
-    inputs.nixvim.packages.${pkgs.system}.default
     feh
 
     # misc
