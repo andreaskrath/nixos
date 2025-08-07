@@ -17,18 +17,22 @@
         pkgs = import nixpkgs {
           inherit system overlays;
         };
+
+        rustToolchain = pkgs.rust-bin.stable.latest.default.override {
+          extensions = ["rust-src" "rust-analyzer"];
+        };
       in {
         devShells.default = with pkgs;
           mkShell {
             buildInputs = [
-              rust-bin.stable.latest.default
-              rust-analyzer
+              rustToolchain
               vscode-extensions.vadimcn.vscode-lldb.adapter
 
               # Tokio
               pkg-config
               openssl
             ];
+            RUST_SRC_PATH = "${rustToolchain}/lib/rustlib/src/rust/library";
           };
       }
     );
