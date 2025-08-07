@@ -25,7 +25,7 @@
       f = "${pkgs.yazi}/bin/yazi";
       ports = "${pkgs.unixtools.netstat}/bin/netstat -tulpn";
       lock = "${pkgs.i3lock}/bin/i3lock -n -c 000000";
-      gg = ''vi --cmd "lua vim.g.disable_telescope_startup = true" -c "Neogit"'';
+      G = ''vi --cmd "lua vim.g.disable_telescope_startup = true" -c "Neogit"'';
       j = "${pkgs.just}/bin/just";
     };
 
