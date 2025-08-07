@@ -1,4 +1,9 @@
-{ config, pkgs, lib,...}: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -12,8 +17,10 @@
       taplo
       nil
       alejandra
+      clang # For treesitter grammars
     ];
   };
 
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink /etc/nixos/nvim;
 }
+
