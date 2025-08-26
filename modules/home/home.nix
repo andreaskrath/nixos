@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./alacritty.nix
     ./direnv.nix
@@ -46,6 +43,7 @@
     jetbrains.datagrip
     teams-for-linux
     pavucontrol
+    rustdesk
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
