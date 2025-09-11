@@ -165,7 +165,7 @@ in {
 
           assigns = lib.mkMerge [
             {
-              "${cfg.workspace1}" = [{class = "^Navigator$";} {class = "^brave-browser$";} {class = "^Brave-browser$";}];
+              "${cfg.workspace1}" = [{class = "^Navigator$";} {class = "^Firefox$";} {class = "^firefox$";}];
               "${cfg.workspace2}" = [{class = "^Alacritty$";}];
               "${cfg.workspace6}" = [{class = "^obsidian$";}];
               "${cfg.workspace9}" = [{class = "^discord$";}];
@@ -247,7 +247,7 @@ in {
               "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
               "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
               "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
-              "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
+              "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
               "${modifier}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
             }
             cfg.extraKeybinds

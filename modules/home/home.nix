@@ -33,7 +33,7 @@
     zotero
     spotify
     bitwarden
-    brave
+    firefox
     qbittorrent
     mpv
     element-desktop
