@@ -27,6 +27,7 @@
       lock = "${pkgs.i3lock}/bin/i3lock -n -c 000000";
       G = ''vi --cmd "lua vim.g.disable_telescope_startup = true" -c "Neogit"'';
       j = "${pkgs.just}/bin/just";
+      mpv = "${pkgs.mpv}/bin/mpv --pause --idle --force-window --keep-open";
     };
 
     oh-my-zsh = {
