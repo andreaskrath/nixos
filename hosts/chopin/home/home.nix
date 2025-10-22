@@ -22,9 +22,6 @@
       monitors = ["eDP"];
       fileSystems = ["/"];
 
-      primaryBarWidth = "97.8%";
-      xOffset = "1.1%";
-
       thermalZone = 0;
       thermalType = "acpitz";
     };

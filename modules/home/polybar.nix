@@ -66,22 +66,6 @@ in {
       '';
     };
 
-    primaryBarWidth = lib.mkOption {
-      type = lib.types.str;
-      description = ''
-        The width of the primary Polybar instance, the notation should be "<number>%" and can be a decimal number.
-
-        If the host only has single screen, then this refers to the that monitor.
-      '';
-    };
-
-    xOffset = lib.mkOption {
-      type = lib.types.str;
-      description = ''
-        The x offset of the bars, the notation should be "<number>%", and sum to 100% with `primaryBarWidth`.
-      '';
-    };
-
     thermalZone = lib.mkOption {
       type = lib.types.int;
       description = ''
@@ -136,24 +120,14 @@ in {
 
       settings = {
         "bar/primary" = {
-          width = cfg.primaryBarWidth;
-          offset.x = cfg.xOffset;
+          width = "100%";
           height = 28;
-          offset-y = 10;
 
           # No rounding of corners
           radius = 0;
 
-          fixed.center = true;
-
-          # Makes floating bars work correctly
-          override.redirect = true;
-
           # Tells polybar that the underlying WM is i3 for z-ordering purposes
           wm.restack = "i3";
-
-          border.size = 1;
-          border.color = colors.primary;
 
           background = colors.background;
           foreground = colors.foreground;
@@ -172,9 +146,9 @@ in {
           font-0 = "Cascadia Mono NF:size=14;2";
           font-1 = "Cascadia Mono NF:size=16;3";
           font-2 = "Cascadia Mono NF:size=18;3";
-          font-3 = "Cascadia Mono NF:size=28;7";
+          font-3 = "Cascadia Mono NF:size=20;3";
 
-          modules.left = "powermenu i3";
+          modules.left = "i3 xwindow";
           modules.center = "date";
           modules.right = "${download} ${upload} filesystem memory cpu temperature pulseaudio tray ${battery}";
 
@@ -221,7 +195,7 @@ in {
           # Active workspace on unfocused monitor
           label-visible = "%index%";
           label.visible.background = colors.background-alt;
-          label.visible.underline = colors.primary;
+          label.visible.underline = colors.background-alt;
           label.visible.padding = 2;
 
           # Urgent - workspace has something new
@@ -241,7 +215,7 @@ in {
 
           format-mounted = "<label-mounted>";
           format-mounted-suffix = " 󰋊";
-          format-mounted-suffix-foreground = colors.primary;
+          format-mounted-suffix-foreground = "#616161";
           label-mounted = "%percentage_used:3%%";
 
           format-unmounted = "<label-unmounted>";
@@ -252,15 +226,15 @@ in {
         "module/memory" = {
           type = "internal/memory";
           interval = 2;
-          format-suffix = " 󰍛";
-          format-suffix-foreground = colors.primary;
+          format-suffix = "%{T4} 󰍛%{T-}";
+          format-suffix-foreground = "#4CAF50";
           label = "%percentage_used:3%%";
         };
 
         "module/cpu" = {
           type = "internal/cpu";
           interval = 2;
-          format-suffix = " 󰻠";
+          format-suffix = "%{T4} 󰻠%{T-}";
           format-suffix-foreground = colors.primary;
           label = "%percentage:3%%";
         };
@@ -282,7 +256,7 @@ in {
           ramp-0 = "󰔏";
           ramp-1 = "󱃂";
           ramp-2 = "󰸁";
-          ramp-foreground = colors.primary;
+          ramp-foreground = "#F44336";
         };
 
         "module/network-down" = lib.mkIf cfg.enableDownload {
@@ -292,7 +266,7 @@ in {
 
           format-connected = "<label-connected>";
           format-connected-suffix = " 󰇚";
-          format-connected-suffix-foreground = colors.primary;
+          format-connected-suffix-foreground = "#4CAF50";
           label-connected = "%downspeed:10%";
 
           format-disconnected = "";
@@ -305,7 +279,7 @@ in {
 
           format-connected = "<label-connected>";
           format-connected-suffix = " 󰕒";
-          format-connected-suffix-foreground = colors.primary;
+          format-connected-suffix-foreground = "#2196F3";
           label-connected = "%upspeed:10%";
 
           format-disconnected = "";
@@ -324,7 +298,7 @@ in {
           ramp-volume-0 = "󰕿";
           ramp-volume-1 = "󰖀";
           ramp-volume-2 = "󰕾";
-          ramp-volume-foreground = colors.primary;
+          ramp-volume-foreground = "#00BCD4";
         };
 
         "module/date" = {
@@ -349,31 +323,6 @@ in {
           tray-padding = 2;
         };
 
-        "module/powermenu" = {
-          type = "custom/menu";
-
-          expand-right = true;
-          format-spacing = 1;
-
-          label-open = "%{T4} 󱄅%{T-}";
-          label-open-foreground = colors.nix;
-          label-close = "%{T3} %{T-}";
-          label-separator = "|";
-          label-separator-foreground = colors.foreground-alt;
-
-          menu-0-0 = " Lock";
-          menu-0-0-exec = "${pkgs.i3lock}/bin/i3lock -c 000000";
-
-          menu-0-1 = "󰒲 Suspend";
-          menu-0-1-exec = "${pkgs.systemd}/bin/systemctl suspend";
-
-          menu-0-2 = " Reboot";
-          menu-0-2-exec = "${pkgs.systemd}/bin/systemctl reboot";
-
-          menu-0-3 = "⏻ Power off";
-          menu-0-3-exec = "${pkgs.systemd}/bin/systemctl poweroff";
-        };
-
         "module/battery" = lib.mkIf cfg.enableBattery {
           type = "internal/battery";
           battery = "BAT1";
@@ -388,6 +337,12 @@ in {
           label-charging = "%percentage%% 󰂄";
           label-discharging = "%percentage%% 󰁾";
           label-full = "100%";
+        };
+
+        "module/xwindow" = {
+          type = "internal/xwindow";
+          label = " %class:0:60:...%";
+          label-empty = "";
         };
       };
     };

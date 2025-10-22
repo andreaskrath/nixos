@@ -179,12 +179,6 @@ in {
             titlebar = false;
           };
 
-          gaps = {
-            inner = 15;
-            outer = 5;
-            top = 40;
-          };
-
           keybindings = lib.mkMerge [
             {
               "${modifier}+1" = "workspace ${cfg.workspace1}";
