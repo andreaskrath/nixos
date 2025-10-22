@@ -15,6 +15,8 @@
     gray = "#a89984";
   };
 in {
+  stylix.targets.zellij.enable = false;
+
   programs.zellij = {
     enable = true;
     enableZshIntegration = true;

@@ -4,6 +4,8 @@
   lib,
   ...
 }: {
+  stylix.targets.neovim.enable = false;
+
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -23,4 +25,3 @@
 
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink /etc/nixos/nvim;
 }
-
