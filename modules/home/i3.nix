@@ -177,6 +177,7 @@ in {
           window = {
             border = 1;
             titlebar = false;
+            hideEdgeBorders = "smart";
           };
 
           keybindings = lib.mkMerge [
