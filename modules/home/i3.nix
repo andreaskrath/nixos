@@ -240,6 +240,8 @@ in {
               "${modifier}+Shift+r" = "restart";
               "${modifier}+Shift+e" = "exec i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes' 'i3-msg exit'";
 
+              "${modifier}+Control+L" = "exec ${pkgs.i3lock}/bin/i3lock -n -c 000000";
+
               "${modifier}+r" = "mode resize";
               "XF86AudioMute" = "exec ${pkgs.alsa-utils}/bin/amixer set Master toggle";
               "XF86AudioLowerVolume" = "exec ${pkgs.alsa-utils}/bin/amixer set Master 5%-";
