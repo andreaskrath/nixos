@@ -250,9 +250,9 @@ in {
               "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
               "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
               "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
-              "${modifier}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
+              "${modifier}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s --hidecursor | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
               "${modifier}+Shift+x" = ''
-                exec ${pkgs.maim}/bin/maim -s /tmp/screenshot.png && \
+                exec ${pkgs.maim}/bin/maim -s --hidecursor /tmp/screenshot.png && \
                 ${pkgs.toybox}/bin/mv /tmp/screenshot.png $(${pkgs.zenity}/bin/zenity --file-selection --save --filename="$HOME/Pictures/$(${pkgs.toybox}/bin/date +'%Y-%m-%d-%H%M%S').png")
               '';
             }
