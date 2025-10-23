@@ -328,7 +328,6 @@ in {
           battery = "BAT1";
           adapter = "ACAD";
           poll-interval = 2;
-          full-at = 86;
 
           format-charging = "<label-charging>";
           format-discharging = "<label-discharging>";
