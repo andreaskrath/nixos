@@ -43,7 +43,6 @@
     jetbrains.datagrip
     teams-for-linux
     pavucontrol
-    rustdesk
     zathura
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
