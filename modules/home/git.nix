@@ -20,15 +20,19 @@ in {
   config = lib.mkIf cfg.enable {
     programs.git = {
       enable = true;
-      userName = "Andreas Krath";
-      userEmail = "andreas.krath+github@gmail.com";
-      signing.format = "ssh";
 
-      extraConfig = {
+      settings = {
+        user = {
+          name = "Andreas Krath";
+          email = "andreas.krath+github@gmail.com";
+          signingkey = "~/.ssh/id_ed25519.pub";
+        };
+
         commit.gpgsign = true; # sign all commits using ssh key
         gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
-        user.signingkey = "~/.ssh/id_ed25519.pub";
       };
+
+      signing.format = "ssh";
     };
 
     home.file.".ssh/allowed_signers".text = lib.mkIf (cfg.allowedSignersKey != "") ''
