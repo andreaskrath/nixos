@@ -150,7 +150,7 @@ in {
 
           modules.left = "i3 xwindow";
           modules.center = "date";
-          modules.right = "${download} ${upload} filesystem memory cpu temperature pulseaudio tray ${battery}";
+          modules.right = "${download} ${upload} filesystem memory cpu temperature pulseaudio ${battery} tray ";
 
           cursor.click = "pointer";
           cursor.scroll = "ns-resize";
