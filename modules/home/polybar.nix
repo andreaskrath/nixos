@@ -216,7 +216,7 @@ in {
           format-mounted = "<label-mounted>";
           format-mounted-suffix = " 󰋊";
           format-mounted-suffix-foreground = "#616161";
-          label-mounted = "%percentage_used:3%%";
+          label-mounted = "%free:4%";
 
           format-unmounted = "<label-unmounted>";
           label-unmounted = "%mountpoint% not mounted";
