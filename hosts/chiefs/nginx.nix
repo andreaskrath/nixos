@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   services.nginx = {
     enable = true;
     recommendedTlsSettings = true;
@@ -21,6 +21,27 @@
         forceSSL = true;
         enableACME = true;
         globalRedirect = "datamagikeren.dk";
+      };
+
+      "hooks.datamagikeren.dk" = {
+        forceSSL = true;
+        enableACME = true;
+
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:9000";
+        };
+      };
+
+      "recipes.datamagikeren.dk" = {
+        forceSSL = true;
+        enableACME = true;
+
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:9080";
+          basicAuthFile = pkgs.writeText ".htpasswd" ''
+            krath:$apr1$wmxqi036$CWdRdI19fzj7KASXP1/9e0
+          '';
+        };
       };
     };
   };

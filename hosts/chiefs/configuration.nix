@@ -10,6 +10,8 @@
     ./nginx.nix
     ./services.nix
     ./postgres.nix
+    ./webhook.nix
+    ./cook.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
