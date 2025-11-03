@@ -12,7 +12,7 @@ in {
       script = "${initiative}/bin/initiative";
       wantedBy = ["multi-user.target"];
       environment = {
-        DB_CONNECTION_STRING = "postgresql://postgres@localhost:5432/dnd";
+        DB_CONNECTION_STRING = "postgresql://postgres@localhost/dnd?host=/run/postgresql";
       };
     };
   };
