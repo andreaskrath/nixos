@@ -32,7 +32,7 @@
     obsidian
     zotero
     spotify
-    bitwarden
+    bitwarden-desktop
     firefox
     qbittorrent
     mpv
