@@ -43,6 +43,18 @@
           '';
         };
       };
+
+      "initiative.datamagikeren.dk" = {
+        forceSSL = true;
+        enableACME = true;
+
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:5173";
+          basicAuthFile = pkgs.writeText ".htpasswd" ''
+            krath:$apr1$s3jhxr0b$zfrjRZL4LwexHW1B92YhU1
+          '';
+        };
+      };
     };
   };
 
