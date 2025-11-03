@@ -44,6 +44,9 @@
     teams-for-linux
     pavucontrol
     zathura
+    azahar
+    melonDS
+    claude-code
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
