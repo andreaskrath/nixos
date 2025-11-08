@@ -236,7 +236,6 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay",
         "stylix": "stylix",
         "zjstatus": "zjstatus"
       }
@@ -244,15 +243,16 @@
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
+          "zjstatus",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1761964689,
-        "narHash": "sha256-Zo3LQQDz+64EQ9zor/WmeNTFLoZkjmhp0UY3G0D3seE=",
+        "lastModified": 1762396738,
+        "narHash": "sha256-BarSecuxtzp1boERdABLkkoxQTi6s/V33lJwUbWLrLY=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "63d22578600f70d293aede6bc737efef60ebd97f",
+        "rev": "c63598992afd54d215d54f2b764adc0484c2b159",
         "type": "github"
       },
       "original": {
@@ -413,20 +413,19 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "rust-overlay": [
-          "rust-overlay"
-        ]
+        "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1761162625,
-        "narHash": "sha256-cJD5RccT5aFwLFiId8PW91z39MpoQZIymj+qZEJ5jTE=",
-        "owner": "dj95",
+        "lastModified": 1762443382,
+        "narHash": "sha256-p/1yu0grNO1KY4ehCYT26s5PpBOrS2GnGVBeWieO31s=",
+        "owner": "andreaskrath",
         "repo": "zjstatus",
-        "rev": "a4bb655af8f49fe53de7fefca54348de21ecbbb2",
+        "rev": "4f586aaa07524bce682746b140fb741aae1e9233",
         "type": "github"
       },
       "original": {
-        "owner": "dj95",
+        "owner": "andreaskrath",
+        "ref": "fix-lock-file",
         "repo": "zjstatus",
         "type": "github"
       }
