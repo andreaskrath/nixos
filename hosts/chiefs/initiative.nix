@@ -1,5 +1,4 @@
 {
-  lib,
   npmHooks,
   fetchNpmDeps,
   nodejs,
