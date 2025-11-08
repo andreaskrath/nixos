@@ -25,6 +25,7 @@
       f = "${pkgs.yazi}/bin/yazi";
       ports = "${pkgs.unixtools.netstat}/bin/netstat -tulpn";
       G = ''vi --cmd "lua vim.g.disable_telescope_startup = true" -c "Neogit"'';
+      F = ''vi --cmd "lua vim.g.disable_telescope_startup = true" -c "Oil"'';
       j = "${pkgs.just}/bin/just";
       mpv = "${pkgs.mpv}/bin/mpv --pause --idle --force-window --keep-open";
     };
