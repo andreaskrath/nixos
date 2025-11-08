@@ -14,13 +14,13 @@ rustPlatform.buildRustPackage rec {
   pname = "initiative";
 
   # Remember to clear hashes upon version bumping
-  version = "1.1.1";
+  version = "1.1.2";
 
   src = fetchFromGitHub {
     owner = "andreaskrath";
     repo = pname;
     rev = version;
-    sha256 = "sha256-/nXgMh51ldV3GdTc/EBLajewtrk3v9ezcBTVCnNFTu8=";
+    sha256 = "sha256-dofcvP4hy+H1wgCbKN1OZ58xKx7d0CI8VNdfGTuUrSs=";
   };
 
   cargoHash = "sha256-CEmRwq1/1+lhsidto4aQk6+DZiQ7VBhAaCEkozkiu8M=";
