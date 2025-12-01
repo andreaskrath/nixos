@@ -6,10 +6,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    lutris
     wine
     winetricks
-    wowup-cf
   ];
 
   hardware.xpadneo.enable = true;

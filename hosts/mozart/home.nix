@@ -26,12 +26,7 @@
       enable = true;
 
       extraAssigns = {
-        "4" = [
-          {class = "^steam$";}
-          {class = "^Lutris$";}
-          {class = "^lutris$";}
-          {class = "^battle.net.exe$";}
-        ];
+        "4" = [{class = "^steam$";} {class = "^battle.net.exe$";}];
       };
 
       extraStartup = [
