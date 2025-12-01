@@ -34,6 +34,7 @@ in {
   config = lib.mkIf cfg.enable {
     stylix = {
       enable = true;
+      enableReleaseChecks = false;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
       polarity = "dark";
       image = "${misc}/wallpaper.png";

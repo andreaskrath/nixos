@@ -14,6 +14,8 @@
 
   systemd.user.startServices = true;
 
+  stylix.enableReleaseChecks = false;
+
   home.username = "krath";
   home.homeDirectory = "/home/krath";
   home.stateVersion = "23.05";
