@@ -52,7 +52,7 @@
 
   programs.home-manager.enable = true;
 
-  programs.discord = {
+  programs.custom-discord = {
     enable = true;
     wrapDiscord = true;
   };
