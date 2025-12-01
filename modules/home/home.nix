@@ -49,6 +49,7 @@
     azahar
     melonDS
     claude-code
+    pokemmo-installer
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
