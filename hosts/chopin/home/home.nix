@@ -12,6 +12,7 @@
   home.packages = with pkgs; [
     (pkgs.callPackage ./monitor-script.nix {})
     libreoffice
+    azure-cli
   ];
 
   krath.home = {
