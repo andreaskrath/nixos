@@ -23,10 +23,6 @@
       desktopFontSize = 12;
       popupFontSize = 12;
     };
-
-    jellyfin = {
-      enable = true;
-    };
   };
 
   services.hardware.openrgb = {

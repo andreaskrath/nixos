@@ -9,6 +9,19 @@
     "${homeModules}/i3.nix"
   ];
 
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      arsenal = {
+        hostname = "192.168.0.158";
+      };
+
+      chiefs = {
+        hostname = "datamagikeren.dk";
+      };
+    };
+  };
+
   krath.home = {
     polybar = {
       enable = true;

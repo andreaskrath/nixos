@@ -36,7 +36,6 @@
     spotify
     bitwarden-desktop
     firefox
-    qbittorrent
     mpv
     element-desktop
     speedcrunch

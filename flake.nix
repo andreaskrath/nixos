@@ -40,6 +40,11 @@
           hostname = "chiefs";
           remote = true;
         };
+
+        arsenal = mkNixOS {
+          hostname = "arsenal";
+          remote = true;
+        };
       };
     };
 }
