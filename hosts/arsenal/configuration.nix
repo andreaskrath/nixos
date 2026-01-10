@@ -75,6 +75,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
+
+    (pkgs.callPackage ../../modules/system/scripts/shows.nix {})
   ];
 
   # Open ports in the firewall.

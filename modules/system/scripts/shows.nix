@@ -6,7 +6,7 @@ pkgs.writeShellApplication {
     set -euo pipefail
 
     # Define the base output directory
-    OUTPUT_BASE="/mnt/external/shows"
+    OUTPUT_BASE="/srv/media/shows"
 
     # Get the directory where the script is run from
     current_dir="$(pwd)"
