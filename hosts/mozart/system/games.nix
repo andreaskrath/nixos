@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     wine
     winetricks
+    xivlauncher
   ];
 
   hardware.xpadneo.enable = true;
