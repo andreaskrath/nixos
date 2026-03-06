@@ -9,6 +9,7 @@
     wine
     winetricks
     xivlauncher
+    wowup-cf
   ];
 
   hardware.xpadneo.enable = true;
