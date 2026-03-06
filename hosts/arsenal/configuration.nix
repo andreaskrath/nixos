@@ -8,6 +8,8 @@
     ./hardware-configuration.nix
     ./boot.nix
     ./network.nix
+    ./secrets.nix
+    ./wireguard.nix
     "${modules}/jellyfin.nix"
   ];
 

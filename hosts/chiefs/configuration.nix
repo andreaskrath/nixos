@@ -13,6 +13,7 @@
     ./webhook.nix
     ./cook.nix
     ./secrets.nix
+    ./wireguard.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

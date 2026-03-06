@@ -8,4 +8,7 @@ let
   servers = [chiefs arsenal];
 in {
   "cloudflare-api-key.age".publicKeys = users ++ servers;
+
+  "wg-chiefs-private.age".publicKeys = users ++ [chiefs];
+  "wg-arsenal-private.age".publicKeys = users ++ [arsenal];
 }
