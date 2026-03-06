@@ -33,6 +33,7 @@
               "nixpkgs=${inputs.nixpkgs}"
             ];
           }
+          inputs.agenix.nixosModules.default
         ]
         ++ lib.optionals (!remote) [
           inputs.home-manager.nixosModules.default

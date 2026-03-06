@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  agenix = inputs.agenix.packages.${pkgs.system}.default;
+in {
   imports = [
     ./audio.nix
     ./display.nix
@@ -13,6 +19,7 @@
     devenv
     just
     overskride
+    agenix
 
     (callPackage ./scripts/dev.nix {})
     (callPackage ./scripts/flash.nix {})
