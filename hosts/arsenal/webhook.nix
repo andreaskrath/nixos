@@ -9,7 +9,7 @@
 in {
   services.webhook = {
     enable = true;
-    user = "mahomes";
+    user = "henry";
     group = "users";
 
     hooks = {

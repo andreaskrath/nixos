@@ -3,15 +3,10 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {pkgs, ...}: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./network.nix
     ./zsh.nix
     ./nginx.nix
-    ./services.nix
-    ./postgres.nix
-    ./webhook.nix
-    ./cook.nix
     ./secrets.nix
     ./wireguard.nix
   ];

@@ -10,6 +10,11 @@
     ./network.nix
     ./secrets.nix
     ./wireguard.nix
+    ./postgres.nix
+    ./services.nix
+    ./cook.nix
+    ./webhook.nix
+    ./nginx.nix
     "${modules}/jellyfin.nix"
   ];
 
