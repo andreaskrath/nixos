@@ -11,6 +11,8 @@ in {
     initiative = {
       script = "${initiative}/bin/initiative";
       wantedBy = ["multi-user.target"];
+      after = ["postgresql.service"];
+      requires = ["postgresql.service"];
       environment = {
         DB_CONNECTION_STRING = "postgresql://postgres@localhost/dnd?host=/run/postgresql";
       };
