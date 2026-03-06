@@ -12,6 +12,7 @@
     ./postgres.nix
     ./webhook.nix
     ./cook.nix
+    ./secrets.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

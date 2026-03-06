@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
   services.nginx = {
     enable = true;
     recommendedTlsSettings = true;
@@ -62,6 +62,8 @@
     acceptTerms = true;
     defaults = {
       email = "andreas.krath@gmail.com";
+      dnsProvider = "cloudflare";
+      environmentFile = config.age.secrets.cloudflare-api-key.path;
     };
   };
 }
