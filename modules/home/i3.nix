@@ -7,68 +7,30 @@
   cfg = config.krath.home.i3;
 
   bindWorkspaceToOutput = output: workspace: "workspace ${workspace} output ${output}";
+
+  workspaces = {
+    web = "web";
+    code = "code";
+    notes = "notes";
+    chat = "chat";
+    media = "media";
+    games = "games";
+  };
 in {
   options.krath.home.i3 = {
     enable = lib.mkEnableOption "Enable i3 module.";
 
-    workspace1 = lib.mkOption {
-      type = lib.types.str;
-      default = "1";
-      description = "Workspace 1.";
+    enableGames = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable the games workspace (Mod+6)";
     };
 
-    workspace2 = lib.mkOption {
-      type = lib.types.str;
-      default = "2";
-      description = "Workspace 2.";
-    };
-
-    workspace3 = lib.mkOption {
-      type = lib.types.str;
-      default = "3";
-      description = "Workspace 3.";
-    };
-
-    workspace4 = lib.mkOption {
-      type = lib.types.str;
-      default = "4";
-      description = "Workspace 4.";
-    };
-
-    workspace5 = lib.mkOption {
-      type = lib.types.str;
-      default = "5";
-      description = "Workspace 5.";
-    };
-
-    workspace6 = lib.mkOption {
-      type = lib.types.str;
-      default = "6";
-      description = "Workspace 6.";
-    };
-
-    workspace7 = lib.mkOption {
-      type = lib.types.str;
-      default = "7";
-      description = "Workspace 7.";
-    };
-
-    workspace8 = lib.mkOption {
-      type = lib.types.str;
-      default = "8";
-      description = "Workspace 8.";
-    };
-
-    workspace9 = lib.mkOption {
-      type = lib.types.str;
-      default = "9";
-      description = "Workspace 9.";
-    };
-
-    workspace10 = lib.mkOption {
-      type = lib.types.str;
-      default = "10";
-      description = "Workspace 10.";
+    ws = lib.mkOption {
+      type = lib.types.attrs;
+      default = workspaces;
+      readOnly = true;
+      description = "Workspace names for use in bindWorkspaces, etc.";
     };
 
     extraAssigns = lib.mkOption {
@@ -143,7 +105,7 @@ in {
 
         config = rec {
           modifier = "Mod4";
-          defaultWorkspace = "workspace ${cfg.workspace1}";
+          defaultWorkspace = "workspace ${workspaces.web}";
           focus = {
             followMouse = false;
             mouseWarping = false;
@@ -165,12 +127,15 @@ in {
 
           assigns = lib.mkMerge [
             {
-              "${cfg.workspace1}" = [{class = "^Navigator$";} {class = "^Firefox$";} {class = "^firefox$";}];
-              "${cfg.workspace2}" = [{class = "^Alacritty$";}];
-              "${cfg.workspace6}" = [{class = "^obsidian$";}];
-              "${cfg.workspace9}" = [{class = "^discord$";}];
-              "${cfg.workspace10}" = [{class = "^spotify$";}];
+              "${workspaces.web}" = [{class = "^Navigator$";} {class = "^Firefox$";} {class = "^firefox$";}];
+              "${workspaces.code}" = [{class = "^Alacritty$";}];
+              "${workspaces.notes}" = [{class = "^obsidian$";}];
+              "${workspaces.chat}" = [{class = "^discord$";}];
+              "${workspaces.media}" = [{class = "^spotify$";}];
             }
+            (lib.mkIf cfg.enableGames {
+              "${workspaces.games}" = [{class = "^steam$";} {class = "^Steam$";} {class = "^battle.net.exe$";}];
+            })
             cfg.extraAssigns
           ];
 
@@ -182,28 +147,23 @@ in {
 
           keybindings = lib.mkMerge [
             {
-              "${modifier}+1" = "workspace ${cfg.workspace1}";
-              "${modifier}+2" = "workspace ${cfg.workspace2}";
-              "${modifier}+3" = "workspace ${cfg.workspace3}";
-              "${modifier}+4" = "workspace ${cfg.workspace4}";
-              "${modifier}+5" = "workspace ${cfg.workspace5}";
-              "${modifier}+6" = "workspace ${cfg.workspace6}";
-              "${modifier}+7" = "workspace ${cfg.workspace7}";
-              "${modifier}+8" = "workspace ${cfg.workspace8}";
-              "${modifier}+9" = "workspace ${cfg.workspace9}";
-              "${modifier}+0" = "workspace ${cfg.workspace10}";
+              "${modifier}+1" = "workspace ${workspaces.web}";
+              "${modifier}+2" = "workspace ${workspaces.code}";
+              "${modifier}+3" = "workspace ${workspaces.notes}";
+              "${modifier}+4" = "workspace ${workspaces.chat}";
+              "${modifier}+5" = "workspace ${workspaces.media}";
 
-              "${modifier}+Shift+1" = "move container to workspace ${cfg.workspace1}";
-              "${modifier}+Shift+2" = "move container to workspace ${cfg.workspace2}";
-              "${modifier}+Shift+3" = "move container to workspace ${cfg.workspace3}";
-              "${modifier}+Shift+4" = "move container to workspace ${cfg.workspace4}";
-              "${modifier}+Shift+5" = "move container to workspace ${cfg.workspace5}";
-              "${modifier}+Shift+6" = "move container to workspace ${cfg.workspace6}";
-              "${modifier}+Shift+7" = "move container to workspace ${cfg.workspace7}";
-              "${modifier}+Shift+8" = "move container to workspace ${cfg.workspace8}";
-              "${modifier}+Shift+9" = "move container to workspace ${cfg.workspace9}";
-              "${modifier}+Shift+0" = "move container to workspace ${cfg.workspace10}";
-
+              "${modifier}+Shift+1" = "move container to workspace ${workspaces.web}";
+              "${modifier}+Shift+2" = "move container to workspace ${workspaces.code}";
+              "${modifier}+Shift+3" = "move container to workspace ${workspaces.notes}";
+              "${modifier}+Shift+4" = "move container to workspace ${workspaces.chat}";
+              "${modifier}+Shift+5" = "move container to workspace ${workspaces.media}";
+            }
+            (lib.mkIf cfg.enableGames {
+              "${modifier}+6" = "workspace ${workspaces.games}";
+              "${modifier}+Shift+6" = "move container to workspace ${workspaces.games}";
+            })
+            {
               "${modifier}+Shift+q" = "kill";
 
               "${modifier}+h" = "focus left";
@@ -257,7 +217,7 @@ in {
 
         extraConfig =
           ''
-            for_window [class="Spotify"] move to workspace ${cfg.workspace10}
+            for_window [class="Spotify"] move to workspace ${workspaces.media}
           ''
           + builtins.concatStringsSep "\n" (
             lib.flatten (

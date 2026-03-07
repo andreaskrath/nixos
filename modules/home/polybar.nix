@@ -183,23 +183,23 @@ in {
           label.mode.background = colors.primary;
 
           # Active workspaces
-          label-focused = "%index%";
+          label-focused = "%name%";
           label.focused.background = colors.background-alt;
           label.focused.underline = colors.primary;
           label.focused.padding = 2;
 
           # Inactive workspaces
-          label-unfocused = "%index%";
+          label-unfocused = "%name%";
           label.unfocused.padding = 2;
 
           # Active workspace on unfocused monitor
-          label-visible = "%index%";
+          label-visible = "%name%";
           label.visible.background = colors.background-alt;
           label.visible.underline = colors.background-alt;
           label.visible.padding = 2;
 
           # Urgent - workspace has something new
-          label-urgent = "%index%";
+          label-urgent = "%name%";
           label.urgent.background = colors.alert;
           label.urgent.padding = 2;
         };

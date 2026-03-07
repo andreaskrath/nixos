@@ -1,6 +1,7 @@
 {
   pkgs,
   homeModules,
+  config,
   ...
 }: {
   imports = [
@@ -38,10 +39,6 @@
     i3 = {
       enable = true;
 
-      extraAssigns = {
-        "4" = [{class = "^steam$";} {class = "^battle.net.exe$";}];
-      };
-
       extraStartup = [
         {
           command = ''
@@ -52,9 +49,9 @@
         }
       ];
 
-      bindWorkspaces = {
-        DP-2 = ["9" "10"];
-        DP-4 = ["1" "2" "3" "4" "5" "6" "7" "8"];
+      bindWorkspaces = with config.krath.home.i3; {
+        DP-2 = [ws.chat ws.media];
+        DP-4 = [ws.web ws.code ws.notes ws.games];
       };
     };
 
