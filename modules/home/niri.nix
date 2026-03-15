@@ -171,7 +171,7 @@ in {
       }
       {
         matches = [{app-id = "^spotify$";}];
-        open-on-workspace = ws.chat;
+        open-on-workspace = ws.media;
       }
       {
         matches = [{app-id = "^firefox-media$";}];
