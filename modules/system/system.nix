@@ -23,6 +23,7 @@ in {
 
     (callPackage ./scripts/dev.nix {})
     (callPackage ./scripts/flash.nix {})
+    (callPackage ./scripts/flash60.nix {})
     (callPackage ./scripts/shows.nix {})
   ];
 }
