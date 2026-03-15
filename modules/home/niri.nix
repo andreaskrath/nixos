@@ -85,11 +85,11 @@ in {
       mod = "Mod";
     in {
       # Launch applications
-      "${mod}+Return".action = spawn ["alacritty"];
-      "${mod}+D".action = spawn ["rofi" "-show" "run"];
+      "${mod}+Return".action = spawn ["${pkgs.alacritty}/bin/alacritty"];
+      "${mod}+D".action = spawn ["${pkgs.rofi}/bin/rofi" "-show" "run"];
       "${mod}+Shift+Q".action = close-window;
-      "${mod}+B".action = spawn ["firefox"];
-      "${mod}+Shift+B".action = spawn ["firefox" "--name=firefox-media" "--no-remote" "-P" "media"];
+      "${mod}+B".action = spawn ["${pkgs.firefox}/bin/firefox" "--name=firefox" "--no-remote" "-P" "default"];
+      "${mod}+Shift+B".action = spawn ["${pkgs.firefox}/bin/firefox" "--name=firefox-media" "--no-remote" "-P" "media"];
 
       # Focus actions
       "${mod}+H".action = focus-column-left;
