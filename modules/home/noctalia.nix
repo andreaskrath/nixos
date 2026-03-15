@@ -13,28 +13,71 @@
         enabled = false;
       };
 
+      colorSchemes = {
+        predefinedScheme = "Gruvbox";
+      };
+
       bar = {
-        density = "compact";
         position = "top";
+        fontScale = 1.25;
         widgets = {
           left = [
+            # Control Center
+            {
+              id = "ControlCenter";
+              useDistroLogo = true;
+            }
+
+            # Workspaces
             {
               id = "Workspace";
               labelMode = "name";
               characterCount = "10";
               hideUnoccupied = true;
+              pillSize = 1.0;
+              enableScrollWheel = false;
+              unfocusedOpacity = 0.5;
             }
-            {id = "ActiveWindow";}
+
+            # Media Player
+            {
+              id = "MediaMini";
+              hideWhenIdle = true;
+              maxWidth = 500;
+              useFixedWidth = true;
+              showVisualizer = true;
+            }
           ];
 
           center = [
-            {id = "Clock";}
+            # Clock
+            {
+              id = "Clock";
+            }
           ];
 
           right = [
-            {id = "Volume";}
-            {id = "Tray";}
-            {id = "NotificationHistory";}
+            # System Monitor
+            {
+              id = "SystemMonitor";
+              compactMode = false;
+              showMemoryAsPercent = true;
+            }
+
+            # Audio Controls
+            {
+              id = "Volume";
+            }
+
+            # Notification Hub
+            {
+              id = "NotificationHistory";
+            }
+
+            # System Tray
+            {
+              id = "Tray";
+            }
           ];
         };
       };
