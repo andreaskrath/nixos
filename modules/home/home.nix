@@ -5,6 +5,8 @@
     ./discord.nix
     ./dunst.nix
     ./neovim.nix
+    ./niri.nix
+    ./noctalia.nix
     ./redshift.nix
     ./rofi.nix
     ./zellij.nix
@@ -29,6 +31,7 @@
     unrar
     time
     feh
+    jq
 
     # misc
     obsidian

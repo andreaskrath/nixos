@@ -25,6 +25,12 @@
             nixpkgs = {
               system = system;
               config.allowUnfree = true;
+
+              overlays =
+                []
+                ++ lib.optionals (!remote) [
+                  inputs.niri.overlays.niri
+                ];
             };
 
             networking.hostName = hostname;
@@ -38,6 +44,7 @@
         ++ lib.optionals (!remote) [
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
+          inputs.niri.nixosModules.niri
         ];
     };
 in {inherit mkNixOS;}

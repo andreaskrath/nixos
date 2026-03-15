@@ -1,19 +1,14 @@
 {
-  pkgs,
   config,
   ...
 }: {
   hardware = {
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.production;
-      modesetting.enable = false;
-      powerManagement = {
-        enable = false;
-        finegrained = false;
-      };
+      modesetting.enable = true;
+      powerManagement.enable = true;
       open = false;
       nvidiaSettings = true;
-      forceFullCompositionPipeline = true;
     };
 
     graphics = {
@@ -22,19 +17,13 @@
 
     cpu.intel.updateMicrocode = true;
   };
-  services.xserver = {
-    videoDrivers = ["nvidia"];
 
-    displayManager.setupCommands = ''
-      LEFT='DP-2'
-      RIGHT='DP-4'
-      ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --primary --auto
-      ${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --auto --left-of $RIGHT
-    '';
+  services.xserver.videoDrivers = ["nvidia"];
 
-    screenSection = ''
-      Option         "AllowIndirectGLXProtocol" "off"
-      Option         "TripleBuffer" "on"
-    '';
+  # Required for Wayland on Nvidia
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    MOZ_ENABLE_WAYLAND = "1";
   };
 }

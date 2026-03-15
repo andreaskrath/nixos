@@ -1,13 +1,6 @@
-{
-  pkgs,
-  homeModules,
-  config,
-  ...
-}: {
+{homeModules, ...}: {
   imports = [
     "${homeModules}/git.nix"
-    "${homeModules}/polybar.nix"
-    "${homeModules}/i3.nix"
   ];
 
   programs.ssh = {
@@ -24,37 +17,6 @@
   };
 
   krath.home = {
-    polybar = {
-      enable = true;
-      enableDownload = true;
-      enableUpload = true;
-
-      monitors = ["DP-4" "DP-2"];
-      fileSystems = ["/" "/mnt/external"];
-
-      thermalZone = 2;
-      thermalType = "x86_pkg_temp";
-    };
-
-    i3 = {
-      enable = true;
-
-      extraStartup = [
-        {
-          command = ''
-            ${pkgs.xorg.xinput}/bin/xinput set-prop "pointer:Logitech G903 LS" "libinput Middle Emulation Enabled" 0
-          '';
-          always = true;
-          notification = false;
-        }
-      ];
-
-      bindWorkspaces = with config.krath.home.i3; {
-        DP-2 = [ws.chat ws.media];
-        DP-4 = [ws.web ws.code ws.notes ws.games];
-      };
-    };
-
     git = {
       enable = true;
       allowedSignersKey = "AAAAC3NzaC1lZDI1NTE5AAAAIJNjyEbOjbtKjrVjzEZo+3WWm/Z1TECQ4u80cRPnCv3W";

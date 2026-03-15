@@ -1,4 +1,5 @@
 {
+  pkgs,
   inputs,
   configName,
   homeModules,
@@ -14,6 +15,11 @@
   fileSystems."/mnt/external" = {
     device = "/dev/disk/by-uuid/60de9566-d001-4586-a3fd-0604a61f428d";
     fsType = "ext4";
+  };
+
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable;
   };
 
   home-manager = {
