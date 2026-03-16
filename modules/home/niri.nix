@@ -177,6 +177,14 @@ in {
         matches = [{app-id = "^firefox-media$";}];
         open-on-workspace = ws.media;
       }
+      {
+        matches = [{app-id = "^steam$";}];
+        open-on-workspace = ws.games;
+      }
+      {
+        matches = [{app-id = "steam_app";}];
+        open-on-workspace = ws.games;
+      }
     ];
   };
 }
