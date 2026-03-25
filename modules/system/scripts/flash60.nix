@@ -19,11 +19,30 @@ pkgs.writeShellApplication {
 
     flash_keyboard() {
         keyboard_dev="$1"
-        echo "Flashing dev $keyboard_dev"
+        echo "Waiting for $keyboard_dev..."
+
+        # Wait for the by-label directory to exist (created when first labeled device appears)
+        timeout=60
+        while ! [ -d /dev/disk/by-label ]; do
+            sleep 1
+            timeout=$((timeout - 1))
+            if [ "$timeout" -le 0 ]; then
+                echo "Timed out waiting for /dev/disk/by-label to appear"
+                exit 1
+            fi
+        done
+
+        # Now the directory exists — if the device isn't there yet, watch for it
         if ! [ -e /dev/disk/by-label/"$keyboard_dev" ]; then
-            inotifywait -qq -e create -t 60 --include "$keyboard_dev" /dev/disk/by-label
+            inotifywait -qq -e create -t "$timeout" --include "$keyboard_dev" /dev/disk/by-label
         fi
 
+        if ! [ -e /dev/disk/by-label/"$keyboard_dev" ]; then
+            echo "$keyboard_dev did not appear in time"
+            exit 1
+        fi
+
+        echo "Flashing $keyboard_dev"
         $sudo_cmd cp "$firmware" "/dev/disk/by-label/$keyboard_dev"
     }
 
