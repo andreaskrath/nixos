@@ -140,10 +140,10 @@ in {
       # Screenshots
       "${mod}+Shift+S".action.screenshot-window = {};
 
-      # Session
-      "${mod}+Shift+E".action = quit;
-
       "${mod}+Tab".action = open-overview;
+
+      # Session
+      "${mod}+Control+L".action = spawn ["noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
     };
 
     window-rules = [
