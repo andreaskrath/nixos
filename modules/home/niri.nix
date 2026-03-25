@@ -38,6 +38,8 @@ in {
 
     gestures.hot-corners.enable = false;
 
+    hotkey-overlay.skip-at-startup = true;
+
     outputs = {
       ${LEFT_MONITOR} = {
         position = {
