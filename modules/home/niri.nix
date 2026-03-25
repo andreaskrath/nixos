@@ -139,6 +139,7 @@ in {
 
       # Screenshots
       "${mod}+Shift+S".action.screenshot-window = {};
+      "${mod}+Print".action = spawn-sh "${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g - - | ${pkgs.wl-clipboard}/bin/wl-copy";
 
       "${mod}+Tab".action = open-overview;
 
