@@ -1,13 +1,14 @@
 {
   config,
+  inputs,
   pkgs,
-  lib,
   ...
 }: {
   stylix.targets.neovim.enable = false;
 
   programs.neovim = {
     enable = true;
+    package = inputs.neovim.legacyPackages.${pkgs.system}.neovim-unwrapped;
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
