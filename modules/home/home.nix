@@ -55,6 +55,20 @@
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
+  # Claude Code keybindings
+  # Ctrl+E: Open $EDITOR for writing message (save and quit to send)
+  home.file.".claude/keybindings.json".text = builtins.toJSON {
+    bindings = [
+      {
+        context = "Chat";
+        bindings = {
+          "ctrl+g" = null;
+          "ctrl+e" = "chat:externalEditor";
+        };
+      }
+    ];
+  };
+
   programs.home-manager.enable = true;
 
   programs.custom-discord = {
