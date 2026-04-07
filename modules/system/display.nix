@@ -4,7 +4,6 @@
   misc,
   ...
 }: {
-
   hardware = {
     graphics = {
       enable = true;
@@ -13,10 +12,10 @@
     enableRedistributableFirmware = true;
   };
 
-
   # Greetd for session login
   services.greetd = {
     enable = true;
+    useTextGreeter = true;
     settings = {
       default_session = {
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri-session";
