@@ -38,15 +38,6 @@
               enableScrollWheel = false;
               unfocusedOpacity = 0.5;
             }
-
-            # Media Player
-            {
-              id = "MediaMini";
-              hideWhenIdle = true;
-              maxWidth = 500;
-              useFixedWidth = true;
-              showVisualizer = true;
-            }
           ];
 
           center = [
