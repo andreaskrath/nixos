@@ -40,6 +40,10 @@
     };
 
     initContent = ''
+      autoload -U edit-command-line
+      zle -N edit-command-line
+      bindkey '^e' edit-command-line
+
       function current_dir() {
           local current_dir=$PWD
           if [[ $current_dir == $HOME ]]; then
