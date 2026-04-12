@@ -205,7 +205,7 @@ in {
               "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
               "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
               "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
-              "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
+              "${modifier}+b" = "exec env GTK_CSD=0 ${pkgs.firefox}/bin/firefox";
               "${modifier}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s --hidecursor | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
               "${modifier}+Shift+x" = ''
                 exec ${pkgs.maim}/bin/maim -s --hidecursor /tmp/screenshot.png && \
