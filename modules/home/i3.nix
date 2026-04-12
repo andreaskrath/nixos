@@ -181,7 +181,7 @@ in {
               "${modifier}+f" = "fullscreen toggle";
 
               "${modifier}+s" = "layout stacking";
-              "${modifier}+w" = "layout tabbed";
+              "${modifier}+t" = "layout tabbed";
               "${modifier}+e" = "layout toggle split";
 
               "${modifier}+Shift+space" = "floating toggle";
