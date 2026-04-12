@@ -130,8 +130,7 @@ in {
               "${workspaces.web}" = [{class = "^Navigator$";} {class = "^Firefox$";} {class = "^firefox$";}];
               "${workspaces.code}" = [{class = "^Alacritty$";}];
               "${workspaces.notes}" = [{class = "^obsidian$";}];
-              "${workspaces.chat}" = [{class = "^discord$";}];
-              "${workspaces.chat}" = [{class = "^teams-for-linux$";}];
+              "${workspaces.chat}" = [{class = "^discord$";} {class = "^teams-for-linux$";}];
               "${workspaces.media}" = [{class = "^spotify$";}];
             }
             (lib.mkIf cfg.enableGames {
