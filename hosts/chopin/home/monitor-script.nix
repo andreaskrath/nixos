@@ -3,7 +3,7 @@ pkgs.writeShellApplication {
   name = "select-display";
   runtimeInputs = with pkgs; [
     rofi
-    xorg.xrandr
+    xrandr
     gnugrep
     gawk
     coreutils

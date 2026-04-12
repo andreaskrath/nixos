@@ -8,7 +8,7 @@
 
   programs.neovim = {
     enable = true;
-    package = inputs.neovim.legacyPackages.${pkgs.system}.neovim-unwrapped;
+    package = inputs.neovim.legacyPackages.${pkgs.stdenv.hostPlatform.system}.neovim-unwrapped;
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;

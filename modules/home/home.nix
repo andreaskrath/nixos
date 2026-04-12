@@ -46,7 +46,7 @@
     pavucontrol
     zathura
     azahar
-    melonDS
+    melonds
     claude-code
     pokemmo-installer
   ];

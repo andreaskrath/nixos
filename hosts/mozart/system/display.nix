@@ -2,7 +2,9 @@
   pkgs,
   config,
   ...
-}: {
+}: let
+  xrandr = pkgs.xrandr;
+in {
   hardware = {
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.production;
@@ -28,8 +30,8 @@
     displayManager.setupCommands = ''
       LEFT='DP-2'
       RIGHT='DP-4'
-      ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --primary --auto
-      ${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --auto --left-of $RIGHT
+      ${xrandr}/bin/xrandr --output $RIGHT --primary --auto
+      ${xrandr}/bin/xrandr --output $LEFT --auto --left-of $RIGHT
     '';
 
     screenSection = ''

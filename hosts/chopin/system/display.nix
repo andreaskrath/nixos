@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  xset = pkgs.xset;
+in {
   hardware.cpu.amd.updateMicrocode = true;
 
   services.libinput = {
@@ -10,9 +12,9 @@
     videoDrivers = ["amdgpu"];
 
     displayManager.sessionCommands = ''
-      ${pkgs.xorg.xset}/bin/xset s off
-      ${pkgs.xorg.xset}/bin/xset -dpms
-      ${pkgs.xorg.xset}/bin/xset s noblank
+      ${xset}/bin/xset s off
+      ${xset}/bin/xset -dpms
+      ${xset}/bin/xset s noblank
     '';
   };
 }

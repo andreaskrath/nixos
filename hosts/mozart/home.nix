@@ -12,6 +12,7 @@
 
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     matchBlocks = {
       arsenal = {
         hostname = "192.168.0.158";
@@ -42,7 +43,7 @@
       extraStartup = [
         {
           command = ''
-            ${pkgs.xorg.xinput}/bin/xinput set-prop "pointer:Logitech G903 LS" "libinput Middle Emulation Enabled" 0
+            ${pkgs.xinput}/bin/xinput set-prop "pointer:Logitech G903 LS" "libinput Middle Emulation Enabled" 0
           '';
           always = true;
           notification = false;
