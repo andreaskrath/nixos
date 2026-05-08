@@ -21,6 +21,13 @@ in {
     programs.git = {
       enable = true;
 
+      extraConfig = {
+        pull.rebase = true;
+        pull.autostash = true;
+        rebase.autoStash = true;
+        ff.only = true;
+      };
+
       settings = {
         user = {
           name = "Andreas Krath";
