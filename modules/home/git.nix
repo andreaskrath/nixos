@@ -22,10 +22,12 @@ in {
       enable = true;
 
       extraConfig = {
-        pull.rebase = true;
-        pull.autostash = true;
+        pull = {
+          rebase = true;
+          autostash = true;
+          ff = true;
+        };
         rebase.autoStash = true;
-        ff.only = true;
       };
 
       settings = {
