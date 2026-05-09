@@ -15,6 +15,7 @@
     ./cook.nix
     ./webhook.nix
     ./nginx.nix
+    ./runner.nix
     "${modules}/jellyfin.nix"
   ];
 

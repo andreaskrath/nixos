@@ -48,7 +48,9 @@
     azahar
     melonds
     claude-code
+    gemini-cli
     pokemmo-installer
+    zenity
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 

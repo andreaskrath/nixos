@@ -11,4 +11,6 @@ in {
 
   "wg-chiefs-private.age".publicKeys = users ++ [chiefs];
   "wg-arsenal-private.age".publicKeys = users ++ [arsenal];
+
+  "arsenal-runner-token.age".publicKeys = users ++ [arsenal];
 }
