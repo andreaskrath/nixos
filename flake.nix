@@ -12,7 +12,7 @@
     };
 
     zjstatus = {
-      url = "github:andreaskrath/zjstatus/fix-lock-file";
+      url = "github:dj95/zjstatus";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
