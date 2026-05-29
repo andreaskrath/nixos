@@ -51,6 +51,7 @@
     gemini-cli
     pokemmo-installer
     zenity
+    signal-desktop
   ];
   home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
