@@ -8,6 +8,7 @@
     ./redshift.nix
     ./rofi.nix
     ./zellij.nix
+    ./zk.nix
     ./zoxide.nix
     ./zsh.nix
   ];
@@ -29,6 +30,7 @@
     unrar
     time
     feh
+    fzf
 
     # misc
     obsidian
