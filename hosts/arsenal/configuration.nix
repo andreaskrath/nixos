@@ -17,6 +17,7 @@
     ./nginx.nix
     ./runner.nix
     "${modules}/jellyfin.nix"
+    "${modules}/foundryvtt.nix"
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

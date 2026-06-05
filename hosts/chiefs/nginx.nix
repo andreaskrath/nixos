@@ -12,7 +12,10 @@
         serverAliases = ["*.datamagikeren.dk"];
         forceSSL = true;
         useACMEHost = "datamagikeren.dk";
-        locations."/".proxyPass = "http://10.100.0.2";
+        locations."/" = {
+          proxyPass = "http://10.100.0.2";
+          proxyWebsockets = true;
+        };
       };
     };
   };

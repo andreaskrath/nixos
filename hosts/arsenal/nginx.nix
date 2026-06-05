@@ -10,22 +10,42 @@
 
     virtualHosts = {
       "datamagikeren.dk" = {
-        listen = [{addr = "10.100.0.2"; port = 80;}];
+        listen = [
+          {
+            addr = "10.100.0.2";
+            port = 80;
+          }
+        ];
         locations."/".proxyPass = "http://127.0.0.1:8080";
       };
 
       "www.datamagikeren.dk" = {
-        listen = [{addr = "10.100.0.2"; port = 80;}];
+        listen = [
+          {
+            addr = "10.100.0.2";
+            port = 80;
+          }
+        ];
         globalRedirect = "datamagikeren.dk";
       };
 
       "hooks.datamagikeren.dk" = {
-        listen = [{addr = "10.100.0.2"; port = 80;}];
+        listen = [
+          {
+            addr = "10.100.0.2";
+            port = 80;
+          }
+        ];
         locations."/".proxyPass = "http://127.0.0.1:9000";
       };
 
       "recipes.datamagikeren.dk" = {
-        listen = [{addr = "10.100.0.2"; port = 80;}];
+        listen = [
+          {
+            addr = "10.100.0.2";
+            port = 80;
+          }
+        ];
         locations."/" = {
           proxyPass = "http://127.0.0.1:9080";
           basicAuthFile = pkgs.writeText ".htpasswd" ''
@@ -35,7 +55,12 @@
       };
 
       "initiative.datamagikeren.dk" = {
-        listen = [{addr = "10.100.0.2"; port = 80;}];
+        listen = [
+          {
+            addr = "10.100.0.2";
+            port = 80;
+          }
+        ];
         locations."/" = {
           proxyPass = "http://127.0.0.1:5173";
           basicAuthFile = pkgs.writeText ".htpasswd" ''
@@ -45,13 +70,36 @@
       };
 
       "torrents.datamagikeren.dk" = {
-        listen = [{addr = "10.100.0.2"; port = 80;}];
+        listen = [
+          {
+            addr = "10.100.0.2";
+            port = 80;
+          }
+        ];
         locations."/".proxyPass = "http://127.0.0.1:42069";
       };
 
       "jellyfin.datamagikeren.dk" = {
-        listen = [{addr = "10.100.0.2"; port = 80;}];
+        listen = [
+          {
+            addr = "10.100.0.2";
+            port = 80;
+          }
+        ];
         locations."/".proxyPass = "http://127.0.0.1:8096";
+      };
+
+      "foundryvtt.datamagikeren.dk" = {
+        listen = [
+          {
+            addr = "10.100.0.2";
+            port = 80;
+          }
+        ];
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:30000";
+          proxyWebsockets = true;
+        };
       };
     };
   };
