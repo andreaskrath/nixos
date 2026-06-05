@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   port = 30000;
 
   # Where FoundryVTT will store all its data.
@@ -49,6 +53,45 @@ in {
       ExecStart = "${pkgs.nodejs_24}/bin/node ${foundryvtt}/main.js --dataPath=${dataDir} --port=${toString port}";
       Restart = "on-failure";
       RestartSec = "5s";
+    };
+  };
+
+  # Setup backup to b2 via restic.
+  services.restic.backups = {
+    foundryvtt = {
+      initialize = true;
+      passwordFile = config.age.secrets.b2-password.path;
+      repositoryFile = config.age.secrets.b2-bucket.path;
+      environmentFile = config.age.secrets.b2-environment.path;
+
+      # Stop foundry before backup starts (to avoid partial file writes and inconsistent state).
+      backupPrepareCommand = "systemctl stop foundryvtt.service";
+
+      # Start foundry after the backup is done.
+      backupCleanupCommand = "systemctl start foundryvtt.service";
+
+      # When to run the backup.
+      timerConfig = {
+        OnCalendar = "03:00:00";
+        Persistent = true;
+      };
+
+      paths = [dataDir];
+
+      # Ensure we keep recent changes, but protect against thing being fucked and not noticing.
+      pruneOpts = [
+        # Always keep 5 most recent snapshots.
+        "--keep-last 5"
+
+        # Keep once per week for 2 weeks.
+        "--keep-weekly 2"
+
+        # Keep one per month for 2 months.
+        "--keep-monthly 2"
+
+        # Keep one per year for 2 years.
+        "--keep-yearly 2"
+      ];
     };
   };
 }
