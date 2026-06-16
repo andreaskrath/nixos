@@ -57,6 +57,8 @@ in {
   };
 
   # Setup backup to b2 via restic.
+  #
+  # Restic is what "manages" the backups, not b2 - b2 is just a box that stores everything.
   services.restic.backups = {
     foundryvtt = {
       initialize = true;
