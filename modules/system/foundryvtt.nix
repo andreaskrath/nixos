@@ -66,12 +66,6 @@ in {
       repositoryFile = config.age.secrets.b2-bucket.path;
       environmentFile = config.age.secrets.b2-environment.path;
 
-      # Stop foundry before backup starts (to avoid partial file writes and inconsistent state).
-      backupPrepareCommand = "systemctl stop foundryvtt.service";
-
-      # Start foundry after the backup is done.
-      backupCleanupCommand = "systemctl start foundryvtt.service";
-
       # When to run the backup.
       timerConfig = {
         OnCalendar = "03:00:00";
