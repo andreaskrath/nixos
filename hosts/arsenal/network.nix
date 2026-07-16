@@ -19,6 +19,7 @@
   services.mullvad-vpn = {
     enable = true;
     package = pkgs.mullvad;
+    enableEarlyBootBlocking = true;
   };
 
   # networking.firewall.allowedTCPPorts = [80 443 5432];
