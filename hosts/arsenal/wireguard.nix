@@ -21,7 +21,7 @@ in {
       {
         # chiefs
         publicKey = "ejnq5lp2fFqlG0DYYmkgXtX+bOuQw3r+L1l9Fvn32ns=";
-        endpoint = "datamagikeren.dk:51820";
+        endpoint = "krath.dev:51820";
         allowedIPs = ["10.100.0.1/32"];
         persistentKeepalive = 25;
       }

@@ -19,7 +19,7 @@
       };
 
       chiefs = {
-        hostname = "datamagikeren.dk";
+        hostname = "krath.dev";
       };
     };
   };

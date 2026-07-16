@@ -8,10 +8,10 @@
     clientMaxBodySize = "500m";
 
     virtualHosts = {
-      "datamagikeren.dk" = {
-        serverAliases = ["*.datamagikeren.dk"];
+      "krath.dev" = {
+        serverAliases = ["*.krath.dev"];
         forceSSL = true;
-        useACMEHost = "datamagikeren.dk";
+        useACMEHost = "krath.dev";
         locations."/" = {
           proxyPass = "http://10.100.0.2";
           proxyWebsockets = true;
@@ -20,18 +20,18 @@
     };
   };
 
-  # Wildcard certificate for *.datamagikeren.dk
+  # Wildcard certificate for *.krath.dev
   security.acme = {
     acceptTerms = true;
     defaults = {
-      email = "andreas.krath@gmail.com";
+      email = "certs@krath.dev";
       dnsProvider = "cloudflare";
       environmentFile = config.age.secrets.cloudflare-api-key.path;
     };
 
-    certs."datamagikeren.dk" = {
-      domain = "datamagikeren.dk";
-      extraDomainNames = ["*.datamagikeren.dk"];
+    certs."krath.dev" = {
+      domain = "krath.dev";
+      extraDomainNames = ["*.krath.dev"];
       group = "nginx";
       dnsProvider = "cloudflare";
       environmentFile = config.age.secrets.cloudflare-api-key.path;

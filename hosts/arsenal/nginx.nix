@@ -9,7 +9,7 @@
     recommendedProxySettings = true;
 
     virtualHosts = {
-      "datamagikeren.dk" = {
+      "krath.dev" = {
         listen = [
           {
             addr = "10.100.0.2";
@@ -19,17 +19,17 @@
         locations."/".proxyPass = "http://127.0.0.1:8080";
       };
 
-      "www.datamagikeren.dk" = {
+      "www.krath.dev" = {
         listen = [
           {
             addr = "10.100.0.2";
             port = 80;
           }
         ];
-        globalRedirect = "datamagikeren.dk";
+        globalRedirect = "krath.dev";
       };
 
-      "hooks.datamagikeren.dk" = {
+      "hooks.krath.dev" = {
         listen = [
           {
             addr = "10.100.0.2";
@@ -39,7 +39,7 @@
         locations."/".proxyPass = "http://127.0.0.1:9000";
       };
 
-      "recipes.datamagikeren.dk" = {
+      "recipes.krath.dev" = {
         listen = [
           {
             addr = "10.100.0.2";
@@ -54,7 +54,7 @@
         };
       };
 
-      "initiative.datamagikeren.dk" = {
+      "initiative.krath.dev" = {
         listen = [
           {
             addr = "10.100.0.2";
@@ -69,7 +69,7 @@
         };
       };
 
-      "torrents.datamagikeren.dk" = {
+      "torrents.krath.dev" = {
         listen = [
           {
             addr = "10.100.0.2";
@@ -79,7 +79,7 @@
         locations."/".proxyPass = "http://127.0.0.1:42069";
       };
 
-      "jellyfin.datamagikeren.dk" = {
+      "jellyfin.krath.dev" = {
         listen = [
           {
             addr = "10.100.0.2";
@@ -89,7 +89,7 @@
         locations."/".proxyPass = "http://127.0.0.1:8096";
       };
 
-      "foundryvtt.datamagikeren.dk" = {
+      "foundryvtt.krath.dev" = {
         listen = [
           {
             addr = "10.100.0.2";
