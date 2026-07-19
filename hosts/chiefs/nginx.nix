@@ -12,6 +12,9 @@
         serverAliases = ["*.krath.dev"];
         forceSSL = true;
         useACMEHost = "krath.dev";
+        extraConfig = ''
+          add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+        '';
         locations."/" = {
           proxyPass = "http://10.100.0.2";
           proxyWebsockets = true;
