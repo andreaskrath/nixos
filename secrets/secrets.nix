@@ -15,6 +15,7 @@ in {
   "arsenal-runner-token.age".publicKeys = users ++ [arsenal];
 
   "b2-password.age".publicKeys = users ++ [arsenal];
-  "b2-environment.age".publicKeys = users ++ [arsenal];
-  "b2-bucket.age".publicKeys = users ++ [arsenal];
+
+  "b2-foundry-environment.age".publicKeys = users ++ [arsenal];
+  "b2-foundry-bucket.age".publicKeys = users ++ [arsenal];
 }

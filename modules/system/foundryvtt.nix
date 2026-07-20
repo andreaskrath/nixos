@@ -63,8 +63,8 @@ in {
     foundryvtt = {
       initialize = true;
       passwordFile = config.age.secrets.b2-password.path;
-      repositoryFile = config.age.secrets.b2-bucket.path;
-      environmentFile = config.age.secrets.b2-environment.path;
+      repositoryFile = config.age.secrets.b2-foundry-bucket.path;
+      environmentFile = config.age.secrets.b2-foundry-environment.path;
 
       # When to run the backup.
       timerConfig = {
