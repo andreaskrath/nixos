@@ -56,6 +56,8 @@ in {
           # possibly make an option if mozart complains
           efiInstallAsRemovable = cfg.EFIInstallAsRemovable;
 
+          memtest86.enable = true;
+
           extraEntries = ''
             menuentry "Shutdown" {
               halt

@@ -102,6 +102,19 @@
           extraConfig = "client_max_body_size 500m;";
         };
       };
+
+      "vikunja.krath.dev" = {
+        listen = [
+          {
+            addr = "10.100.0.2";
+            port = 80;
+          }
+        ];
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:3456";
+          extraConfig = "client_max_body_size 500m;";
+        };
+      };
     };
   };
 }

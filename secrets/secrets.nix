@@ -18,4 +18,8 @@ in {
 
   "b2-foundry-environment.age".publicKeys = users ++ [arsenal];
   "b2-foundry-bucket.age".publicKeys = users ++ [arsenal];
+
+  "b2-vikunja-environment.age".publicKeys = users ++ [arsenal];
+  "b2-vikunja-bucket.age".publicKeys = users ++ [arsenal];
+  "vikunja-secret.age".publicKeys = users ++ [arsenal];
 }

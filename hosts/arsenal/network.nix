@@ -20,6 +20,4 @@
     enable = true;
     package = pkgs.mullvad;
   };
-
-  # networking.firewall.allowedTCPPorts = [80 443 5432];
 }

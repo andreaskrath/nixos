@@ -16,6 +16,7 @@
     ./webhook.nix
     ./nginx.nix
     ./runner.nix
+    ./vikunja.nix
     "${modules}/jellyfin.nix"
     "${modules}/foundryvtt.nix"
   ];
