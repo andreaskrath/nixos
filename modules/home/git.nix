@@ -33,7 +33,7 @@ in {
       settings = {
         user = {
           name = "Andreas Krath";
-          email = "andreas.krath+github@gmail.com";
+          email = "git@krath.dev";
           signingkey = "~/.ssh/id_ed25519.pub";
         };
 
