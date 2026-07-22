@@ -17,6 +17,7 @@
     ./nginx.nix
     ./runner.nix
     ./vikunja.nix
+    ./actual.nix
     "${modules}/jellyfin.nix"
     "${modules}/foundryvtt.nix"
   ];

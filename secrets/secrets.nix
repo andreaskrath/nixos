@@ -22,4 +22,7 @@ in {
   "b2-vikunja-environment.age".publicKeys = users ++ [arsenal];
   "b2-vikunja-bucket.age".publicKeys = users ++ [arsenal];
   "vikunja-secret.age".publicKeys = users ++ [arsenal];
+
+  "b2-actual-environment.age".publicKeys = users ++ [arsenal];
+  "b2-actual-bucket.age".publicKeys = users ++ [arsenal];
 }
